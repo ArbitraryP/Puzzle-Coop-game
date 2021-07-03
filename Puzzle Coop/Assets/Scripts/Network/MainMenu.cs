@@ -8,6 +8,9 @@ namespace TangentNodes.Network
 
         [Header("UI")]
         [SerializeField] private GameObject landingPagePanel = null;
+        [SerializeField] private GameObject achievementsPanel = null;
+        [SerializeField] private GameObject creditsPanel = null;
+        [SerializeField] private GameObject hostjoinPanel = null;
 
         public void HostLobby()
         {
@@ -15,5 +18,13 @@ namespace TangentNodes.Network
 
             landingPagePanel.SetActive(false);
         }
+
+
+        public void BackToMainMenu(GameObject paneltoClose)
+        {
+            landingPagePanel.SetActive(true);
+            paneltoClose.SetActive(false);
+        }
+
     }
 }
