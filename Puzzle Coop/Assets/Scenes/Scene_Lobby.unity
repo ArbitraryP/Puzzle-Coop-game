@@ -414,7 +414,7 @@ MonoBehaviour:
   onlineScene: Assets/Scenes/Scene_Lobby.unity
   transport: {fileID: 1495594494}
   networkAddress: localhost
-  maxConnections: 2
+  maxConnections: 4
   disconnectInactiveConnections: 0
   disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
@@ -422,8 +422,10 @@ MonoBehaviour:
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs: []
+  minPlayers: 2
   menuScene: Assets/Scenes/Scene_Lobby.unity
   roomPlayerPrefab: {fileID: 4083912325256934388, guid: 2bd1c0cded81eb248ac7e940692b7a98, type: 3}
+  disconnectPanelPrefab: {fileID: 4145042958976832351, guid: 02f156d37197d504abeaa1a9dbdeee03, type: 3}
 --- !u!4 &1495594496
 Transform:
   m_ObjectHideFlags: 0
@@ -445,6 +447,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8688115284963574888, guid: 21728ba17884f8749ab155d6467c7b82, type: 3}
+      propertyPath: networkManager
+      value: 
+      objectReference: {fileID: 1495594495}
     - target: {fileID: 8688115284963574889, guid: 21728ba17884f8749ab155d6467c7b82, type: 3}
       propertyPath: m_RootOrder
       value: 5

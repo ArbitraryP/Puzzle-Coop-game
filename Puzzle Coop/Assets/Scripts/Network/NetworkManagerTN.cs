@@ -1,5 +1,6 @@
 using Mirror;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,7 @@ namespace TangentNodes.Network
     public class NetworkManagerTN : NetworkManager
     {
         
-        //[SerializeField] private int minPlayers = 2;
+        [SerializeField] private int minPlayers = 2;
         [Scene] [SerializeField] private string menuScene = string.Empty;
         
         /*
@@ -20,6 +21,7 @@ namespace TangentNodes.Network
 
         [Header("Room")]
         [SerializeField] private NetworkRoomPlayerTN roomPlayerPrefab = null;
+        [SerializeField] private DisconnectPanel disconnectPanelPrefab = null;
         /*
         [Header("Game")]
         [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
@@ -35,10 +37,10 @@ namespace TangentNodes.Network
         /*
         public static event Action<NetworkConnection> OnServerReadied;
         public static event Action OnServerStopped;
-
-        public List<NetworkRoomPlayerLobby> RoomPlayers { get; } = new List<NetworkRoomPlayerLobby>();
-        public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
         */
+        public List<NetworkRoomPlayerTN> RoomPlayers { get; } = new List<NetworkRoomPlayerTN>();
+        //public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
+        
 
         public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
 
@@ -62,8 +64,10 @@ namespace TangentNodes.Network
         public override void OnClientDisconnect(NetworkConnection conn)
         {
             base.OnClientDisconnect(conn);
-
             OnClientDisconnected?.Invoke();
+
+            // Show Disconnected Panel
+            Instantiate(disconnectPanelPrefab);
         }
         
         public override void OnServerConnect(NetworkConnection conn)
@@ -74,7 +78,7 @@ namespace TangentNodes.Network
                 return;
             }
 
-            if (SceneManager.GetActiveScene().name != menuScene)
+            if (SceneManager.GetActiveScene().path != menuScene)
             {
                 conn.Disconnect();
                 return;
@@ -83,23 +87,23 @@ namespace TangentNodes.Network
         
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
-            if (SceneManager.GetActiveScene().name == menuScene)
+            if (SceneManager.GetActiveScene().path == menuScene)
             {
-                //bool isLeader = RoomPlayers.Count == 0;
+                bool isLeader = RoomPlayers.Count == 0;
 
                 NetworkRoomPlayerTN roomPlayerInstance = Instantiate(roomPlayerPrefab);
-
-                //roomPlayerInstance.IsLeader = isLeader;
+                
+                roomPlayerInstance.IsLeader = isLeader;
 
                 NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
             }
         }
-        /*
+        
         public override void OnServerDisconnect(NetworkConnection conn)
         {
             if (conn.identity != null)
             {
-                var player = conn.identity.GetComponent<NetworkRoomPlayerLobby>();
+                var player = conn.identity.GetComponent<NetworkRoomPlayerTN>();
 
                 RoomPlayers.Remove(player);
 
@@ -108,15 +112,20 @@ namespace TangentNodes.Network
 
             base.OnServerDisconnect(conn);
         }
-
+        
         public override void OnStopServer()
         {
-            OnServerStopped?.Invoke();
+            //OnServerStopped?.Invoke();
 
             RoomPlayers.Clear();
-            GamePlayers.Clear();
-        }
+            //GamePlayers.Clear();
 
+            base.OnStopServer();
+
+            SceneManager.LoadScene("Scene_Lobby");
+            Debug.Log("Server Stopped, Scene Changed");
+        }
+        
         public void NotifyPlayersOfReadyState()
         {
             foreach (var player in RoomPlayers)
@@ -124,7 +133,7 @@ namespace TangentNodes.Network
                 player.HandleReadyToStart(IsReadyToStart());
             }
         }
-
+        
         private bool IsReadyToStart()
         {
             if (numPlayers < minPlayers) { return false; }
@@ -136,7 +145,7 @@ namespace TangentNodes.Network
 
             return true;
         }
-
+        /*
         public void StartGame()
         {
             if (SceneManager.GetActiveScene().name == menuScene)

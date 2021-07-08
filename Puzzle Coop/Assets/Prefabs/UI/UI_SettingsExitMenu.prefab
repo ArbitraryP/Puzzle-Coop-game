@@ -541,9 +541,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2768581215655471386}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 8688115284963574888}
+        m_TargetAssemblyTypeName: SettingsAndExit, Assembly-CSharp
+        m_MethodName: OnToggleQuit
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -961,7 +961,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1185397461300351285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8688115284963574888}
+        m_TargetAssemblyTypeName: SettingsAndExit, Assembly-CSharp
+        m_MethodName: OnClickQuitYes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8208872700110918208}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Toggle, UnityEngine.UI
+        m_MethodName: set_isOn
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8556474485399019680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,7 +2694,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1926eafd2b03d11449ca26aa55ebee21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  networkManager: {fileID: 0}
+  myPlayerIdentity: {fileID: 0}
   toggleFullScreen: {fileID: 8688115284755835419}
+  textDescription: {fileID: 747244191926479891}
+  panelQuitConfirm: {fileID: 2768581215655471386}
 --- !u!1 &8688115285062202547
 GameObject:
   m_ObjectHideFlags: 0

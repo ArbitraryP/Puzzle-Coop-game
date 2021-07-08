@@ -14,6 +14,8 @@ namespace TangentNodes.Network
 
         public void HostLobby()
         {
+            networkManager = FindObjectOfType<NetworkManagerTN>();
+
             networkManager.StartHost();
 
             landingPagePanel.SetActive(false);
