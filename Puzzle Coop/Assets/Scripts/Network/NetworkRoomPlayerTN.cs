@@ -14,13 +14,14 @@ namespace TangentNodes.Network
         [SerializeField] private Button startGameButton = null;
 
         [SyncVar(hook = nameof(HandleDisplayNameChanged))]
-        public string DisplayName = "Loading...";
+        public string displayName = "Loading...";
         [SyncVar(hook = nameof(HandleReadyStatusChanged))]
         public bool IsReady = false;
 
         private bool isLeader;
         public bool IsLeader
         {
+            get { return isLeader; }
             set
             {
                 isLeader = value;
@@ -91,7 +92,7 @@ namespace TangentNodes.Network
 
             for (int i = 0; i < Room.RoomPlayers.Count; i++)
             {
-                playerNameTexts[i].text = Room.RoomPlayers[i].DisplayName;
+                playerNameTexts[i].text = Room.RoomPlayers[i].displayName;
                 playerReadyTexts[i].text = Room.RoomPlayers[i].IsReady ?
                     "<color=green>Ready</color>" :
                     "<color=red>Not Ready</color>";
@@ -108,7 +109,7 @@ namespace TangentNodes.Network
         [Command]
         private void CmdSetDisplayName(string displayName)
         {
-            DisplayName = displayName;
+            this.displayName = displayName;
         }
 
         [Command]
@@ -129,7 +130,7 @@ namespace TangentNodes.Network
             }
 
             Debug.Log("Game Started");
-            //Room.StartGame();
+            Room.StartGame();
         }
     }
 }

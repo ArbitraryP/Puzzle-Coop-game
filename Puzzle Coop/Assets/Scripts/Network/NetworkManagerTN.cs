@@ -1,6 +1,7 @@
 using Mirror;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,9 +23,10 @@ namespace TangentNodes.Network
         [Header("Room")]
         [SerializeField] private NetworkRoomPlayerTN roomPlayerPrefab = null;
         [SerializeField] private DisconnectPanel disconnectPanelPrefab = null;
-        /*
+        
         [Header("Game")]
-        [SerializeField] private NetworkGamePlayerLobby gamePlayerPrefab = null;
+        [SerializeField] private NetworkGamePlayerTN gamePlayerPrefab = null;
+        /*
         [SerializeField] private GameObject playerSpawnSystem = null;
         [SerializeField] private GameObject roundSystem = null;
         
@@ -39,7 +41,7 @@ namespace TangentNodes.Network
         public static event Action OnServerStopped;
         */
         public List<NetworkRoomPlayerTN> RoomPlayers { get; } = new List<NetworkRoomPlayerTN>();
-        //public List<NetworkGamePlayerLobby> GamePlayers { get; } = new List<NetworkGamePlayerLobby>();
+        public List<NetworkGamePlayerTN> GamePlayers { get; } = new List<NetworkGamePlayerTN>();
         
 
         public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
@@ -52,6 +54,11 @@ namespace TangentNodes.Network
             {
                 ClientScene.RegisterPrefab(prefab);
             }
+        }
+
+        new private void Start()
+        {
+            menuScene = Path.GetFileNameWithoutExtension(menuScene).ToString();
         }
 
         public override void OnClientConnect(NetworkConnection conn)
@@ -78,7 +85,7 @@ namespace TangentNodes.Network
                 return;
             }
 
-            if (SceneManager.GetActiveScene().path != menuScene)
+            if (SceneManager.GetActiveScene().name != menuScene)
             {
                 conn.Disconnect();
                 return;
@@ -87,7 +94,7 @@ namespace TangentNodes.Network
         
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
-            if (SceneManager.GetActiveScene().path == menuScene)
+            if (SceneManager.GetActiveScene().name == menuScene)
             {
                 bool isLeader = RoomPlayers.Count == 0;
 
@@ -145,19 +152,21 @@ namespace TangentNodes.Network
 
             return true;
         }
-        /*
+        
         public void StartGame()
         {
             if (SceneManager.GetActiveScene().name == menuScene)
             {
                 if (!IsReadyToStart()) { return; }
 
-                mapHandler = new MapHandler(mapSet, numberOfRounds);
+                //mapHandler = new MapHandler(mapSet, numberOfRounds);
 
-                ServerChangeScene(mapHandler.NextMap);
+                //ServerChangeScene(mapHandler.NextMap);
+
+                ServerChangeScene("Scene_Map_Select");
             }
         }
-
+        
         public override void ServerChangeScene(string newSceneName)
         {
             // From menu to game
@@ -167,17 +176,19 @@ namespace TangentNodes.Network
                 {
                     var conn = RoomPlayers[i].connectionToClient;
                     var gameplayerInstance = Instantiate(gamePlayerPrefab);
-                    gameplayerInstance.SetDisplayName(RoomPlayers[i].DisplayName);
+                    gameplayerInstance.SetDisplayName(RoomPlayers[i].displayName);
+                    gameplayerInstance.IsLeader = RoomPlayers[i].IsLeader;
 
                     NetworkServer.Destroy(conn.identity.gameObject);
 
-                    NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject);
+                    // Modified Code: Added True in replace and swap position of destroy and replace
+                    NetworkServer.ReplacePlayerForConnection(conn, gameplayerInstance.gameObject, true);
                 }
             }
 
             base.ServerChangeScene(newSceneName);
         }
-
+        /*
         public override void OnServerSceneChanged(string sceneName)
         {
             if (sceneName.StartsWith("Scene_Map"))

@@ -426,6 +426,7 @@ MonoBehaviour:
   menuScene: Assets/Scenes/Scene_Lobby.unity
   roomPlayerPrefab: {fileID: 4083912325256934388, guid: 2bd1c0cded81eb248ac7e940692b7a98, type: 3}
   disconnectPanelPrefab: {fileID: 4145042958976832351, guid: 02f156d37197d504abeaa1a9dbdeee03, type: 3}
+  gamePlayerPrefab: {fileID: 3962575222662550940, guid: 7e119970cafe92b4e941bfdedc303196, type: 3}
 --- !u!4 &1495594496
 Transform:
   m_ObjectHideFlags: 0
