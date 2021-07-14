@@ -26,6 +26,7 @@ namespace TangentNodes.Network
         
         [Header("Game")]
         [SerializeField] private NetworkGamePlayerTN gamePlayerPrefab = null;
+        [SerializeField] private MapSelect mapSelectPrefab = null;
         /*
         [SerializeField] private GameObject playerSpawnSystem = null;
         [SerializeField] private GameObject roundSystem = null;
@@ -36,10 +37,10 @@ namespace TangentNodes.Network
         public static event Action OnClientConnected;
         public static event Action OnClientDisconnected;
 
-        /*
+        
         public static event Action<NetworkConnection> OnServerReadied;
         public static event Action OnServerStopped;
-        */
+        
         public List<NetworkRoomPlayerTN> RoomPlayers { get; } = new List<NetworkRoomPlayerTN>();
         public List<NetworkGamePlayerTN> GamePlayers { get; } = new List<NetworkGamePlayerTN>();
         
@@ -115,6 +116,13 @@ namespace TangentNodes.Network
                 RoomPlayers.Remove(player);
 
                 NotifyPlayersOfReadyState();
+
+                //OnServerDisconnected?.Invoke(conn);
+
+                // Since there's only 1 joining. Immediately show Disconnected Client Message.
+                StopHost();
+                DisconnectPanel disconnectPanel = Instantiate(disconnectPanelPrefab);
+                disconnectPanel.ChangeTextToLostClient();
             }
 
             base.OnServerDisconnect(conn);
@@ -188,17 +196,33 @@ namespace TangentNodes.Network
 
             base.ServerChangeScene(newSceneName);
         }
-        /*
+        
         public override void OnServerSceneChanged(string sceneName)
         {
             if (sceneName.StartsWith("Scene_Map"))
             {
+                /*
                 GameObject playerSpawnSystemInstance = Instantiate(playerSpawnSystem);
                 NetworkServer.Spawn(playerSpawnSystemInstance);
-
+                
                 GameObject roundSystemInstance = Instantiate(roundSystem);
                 NetworkServer.Spawn(roundSystemInstance);
+                */
+
+                if (sceneName == "Scene_Map_Select")
+                {
+                    // Spawns a Map UI when loaded owned by leader
+
+                    foreach (NetworkGamePlayerTN player in GamePlayers)
+                    {
+                        if (!player.IsLeader) { continue; }
+                        GameObject mapSelectPrefabInstance = Instantiate(mapSelectPrefab.gameObject);
+                        NetworkServer.Spawn(mapSelectPrefabInstance, player.connectionToClient);
+                    }
+                }
             }
+
+
         }
 
         public override void OnServerReady(NetworkConnection conn)
@@ -207,6 +231,6 @@ namespace TangentNodes.Network
 
             OnServerReadied?.Invoke(conn);
         }
-        */
+        
     }
 }

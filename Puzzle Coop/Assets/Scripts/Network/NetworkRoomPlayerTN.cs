@@ -125,7 +125,6 @@ namespace TangentNodes.Network
         {
             if (Room.RoomPlayers[0].connectionToClient != connectionToClient)
             {
-                Debug.Log("Game NOT Started");
                 return;
             }
 

@@ -15,6 +15,7 @@ namespace TangentNodes.Network
         private bool isLeader;
         public bool IsLeader
         {
+            get { return isLeader; }
             set
             {
                 isLeader = value;
