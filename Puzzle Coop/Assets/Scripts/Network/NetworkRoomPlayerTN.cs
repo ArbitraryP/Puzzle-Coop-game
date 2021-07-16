@@ -17,6 +17,10 @@ namespace TangentNodes.Network
         public string displayName = "Loading...";
         [SyncVar(hook = nameof(HandleReadyStatusChanged))]
         public bool IsReady = false;
+        [SyncVar]
+        public int[] unlockedMaps;
+        [SyncVar]
+        public int[] unlockedAchievements;
 
         private bool isLeader;
         public bool IsLeader
@@ -39,6 +43,8 @@ namespace TangentNodes.Network
             }
         }
 
+        
+
         public override void OnStartAuthority()
         {
             CmdSetDisplayName("SteamPlayer");
@@ -49,6 +55,9 @@ namespace TangentNodes.Network
             SettingsAndExit pause = FindObjectOfType<SettingsAndExit>();
             if (pause == null) { return; }
             pause.myPlayerIdentity = this.netIdentity;
+
+            // Places the Progress of this Player
+            
         }
 
         public override void OnStartClient()

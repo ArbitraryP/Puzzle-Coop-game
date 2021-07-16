@@ -118,9 +118,10 @@ namespace TangentNodes.Network
                 NotifyPlayersOfReadyState();
 
                 //OnServerDisconnected?.Invoke(conn);
+                
+                // Write some code here for AutoSaving Progress
 
                 // Since there's only 1 joining. Immediately show Disconnected Client Message.
-                StopHost();
                 DisconnectPanel disconnectPanel = Instantiate(disconnectPanelPrefab);
                 disconnectPanel.ChangeTextToLostClient();
             }

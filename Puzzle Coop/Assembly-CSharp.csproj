@@ -98,10 +98,14 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\Scripts\Levels\MapSelect.cs" />
+    <Compile Include="Assets\Scripts\Progression\MapSelect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\Scripts\Levels\MapIdentity.cs" />
+    <Compile Include="Assets\Scripts\Progression\PlayerProgress.cs" />
+    <Compile Include="Assets\Scripts\Progression\Map.cs" />
+    <Compile Include="Assets\Scripts\Progression\Achievement.cs" />
+    <Compile Include="Assets\Scripts\Progression\PlayerData.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

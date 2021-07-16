@@ -11,6 +11,7 @@ namespace TangentNodes.Network
     {
         [SerializeField] private TMP_Text textTitle = null;
         [SerializeField] private TMP_Text textDescription = null;
+        private bool isHostLostMode = true;
 
         /// <summary>
         /// Changes the text to tell the Host lost connection
@@ -19,6 +20,7 @@ namespace TangentNodes.Network
         {
             textTitle.text = "DISCONNECTED";
             textDescription.text = "Lost connection to server.";
+            isHostLostMode = true;
         }
 
         /// <summary>
@@ -28,12 +30,22 @@ namespace TangentNodes.Network
         {
             textTitle.text = "DISCONNECTED";
             textDescription.text = "Your partner lost connection.";
+            isHostLostMode = false;
         }
 
         public void OnClickClose()
         {
-            // Clicking Continue will change scene for the Client
-            SceneManager.LoadScene("Scene_Lobby");
+            if (isHostLostMode)
+            {
+                // Clicking Continue will change scene for the Client
+                SceneManager.LoadScene("Scene_Lobby");
+            }
+            else
+            {
+                // Clicking Continue will stop host for the Host
+                FindObjectOfType<NetworkManagerTN>()?.StopHost();
+            }
+            
         }
 
     }

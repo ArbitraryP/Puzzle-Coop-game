@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc60ad9312b552944a024130a5ed2bc6, type: 3}
+  m_Name: 00 Tutorial
+  m_EditorClassIdentifier: 
+  index: 0
+  prerequisite: []
+  displayName: Initialization
+  difficulty: 1
+  achievments:
+  - {fileID: 11400000, guid: 1049a95c7bfef7b43b0d65b962e22773, type: 2}
+  Scene: 
