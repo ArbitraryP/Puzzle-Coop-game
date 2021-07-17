@@ -147,6 +147,17 @@ namespace TangentNodes.Network
             foreach (var player in RoomPlayers)
             {
                 player.HandleReadyToStart(IsReadyToStart());
+
+                // ---- Test Code for checking SyncList ---- //
+                Debug.Log(
+                    player.unlockedMaps[0].ToString() +
+                    player.unlockedMaps[1].ToString() +
+                    player.unlockedMaps[2].ToString() +
+                    " --- " +
+                    player.unlockedAchievements[0].ToString() +
+                    player.unlockedAchievements[1].ToString() +
+                    player.unlockedAchievements[2].ToString());
+
             }
         }
         

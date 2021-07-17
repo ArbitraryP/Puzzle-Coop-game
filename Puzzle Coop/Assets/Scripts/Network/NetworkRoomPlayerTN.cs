@@ -17,10 +17,9 @@ namespace TangentNodes.Network
         public string displayName = "Loading...";
         [SyncVar(hook = nameof(HandleReadyStatusChanged))]
         public bool IsReady = false;
-        [SyncVar]
-        public int[] unlockedMaps;
-        [SyncVar]
-        public int[] unlockedAchievements;
+
+        public SyncList<int> unlockedMaps = new SyncList<int>();
+        public SyncList<int> unlockedAchievements = new SyncList<int>();
 
         private bool isLeader;
         public bool IsLeader
@@ -56,8 +55,28 @@ namespace TangentNodes.Network
             if (pause == null) { return; }
             pause.myPlayerIdentity = this.netIdentity;
 
-            // Places the Progress of this Player
-            
+            // Place code for passing the Progress of this Player
+            CmdSetPlayerProgress();
+            PlayerProgress playerProgress = FindObjectOfType<PlayerProgress>();
+            if (playerProgress != null)
+            {
+                // Add code to save first if not empty or has newer data
+
+                unlockedMaps.Clear();
+                foreach (int i in playerProgress.unlockedMaps)
+                {
+                    unlockedMaps.Add(i);
+                }
+
+                unlockedAchievements.Clear();
+                foreach (int i in playerProgress.unlockedAchievements)
+                {
+                    unlockedAchievements.Add(i);
+                }
+
+            }
+
+
         }
 
         public override void OnStartClient()
@@ -127,6 +146,12 @@ namespace TangentNodes.Network
             IsReady = !IsReady;
 
             Room.NotifyPlayersOfReadyState();
+        }
+
+        [Command]
+        private void CmdSetPlayerProgress()
+        {
+            
         }
 
         [Command]

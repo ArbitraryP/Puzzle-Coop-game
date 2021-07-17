@@ -24,6 +24,16 @@ public class PlayerProgress : MonoBehaviour
         else { instance = this; }
 
         DontDestroyOnLoad(gameObject);
+
+
+        // Test Code to Generate Random Numbers
+
+
+        for (int i = 0; i < 3; i++)
+        {
+            unlockedMaps.Add(Random.Range(1, 10));
+            unlockedAchievements.Add(Random.Range(1, 10));
+        }
     }
 
     // Add Code here where it loads Progress from file

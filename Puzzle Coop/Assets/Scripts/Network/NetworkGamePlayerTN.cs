@@ -10,10 +10,9 @@ namespace TangentNodes.Network
         
         [SyncVar]
         public string displayName = "Loading...";
-        [SyncVar]
-        public int[] unlockedMaps;
-        [SyncVar]
-        public int[] unlockedAchievements;
+
+        SyncList<int> unlockedMaps = new SyncList<int>();
+        SyncList<int> unlockedAchievements = new SyncList<int>();
 
         private bool isLeader;
         public bool IsLeader
