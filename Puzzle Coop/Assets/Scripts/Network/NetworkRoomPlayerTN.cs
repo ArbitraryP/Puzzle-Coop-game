@@ -21,16 +21,8 @@ namespace TangentNodes.Network
         public SyncList<int> unlockedMaps = new SyncList<int>();
         public SyncList<int> unlockedAchievements = new SyncList<int>();
 
-        private bool isLeader;
-        public bool IsLeader
-        {
-            get { return isLeader; }
-            set
-            {
-                isLeader = value;
-                startGameButton.gameObject.SetActive(value);
-            }
-        }
+        [SyncVar]
+        public bool isLeader;
 
         private NetworkManagerTN room;
         private NetworkManagerTN Room
@@ -50,28 +42,32 @@ namespace TangentNodes.Network
 
             lobbyUI.SetActive(true);
 
+            // Enable Start Button for Leader
+            startGameButton.gameObject.SetActive(isLeader);
+
             // Tells the SettingsAndExit that player is inConnection
             SettingsAndExit pause = FindObjectOfType<SettingsAndExit>();
             if (pause == null) { return; }
             pause.myPlayerIdentity = this.netIdentity;
 
             // Place code for passing the Progress of this Player
-            CmdSetPlayerProgress();
+
+            
+            
             PlayerProgress playerProgress = FindObjectOfType<PlayerProgress>();
             if (playerProgress != null)
             {
                 // Add code to save first if not empty or has newer data
 
-                unlockedMaps.Clear();
+                CmdClearPlayerProgress();
                 foreach (int i in playerProgress.unlockedMaps)
                 {
-                    unlockedMaps.Add(i);
+                    CmdAddPlayerMapProgress(i);                    
                 }
-
-                unlockedAchievements.Clear();
+                
                 foreach (int i in playerProgress.unlockedAchievements)
                 {
-                    unlockedAchievements.Add(i);
+                    CmdAddPlayerAchievementProgress(i);
                 }
 
             }
@@ -149,9 +145,17 @@ namespace TangentNodes.Network
         }
 
         [Command]
-        private void CmdSetPlayerProgress()
+        private void CmdAddPlayerMapProgress(int index) => unlockedMaps.Add(index);
+
+        [Command]
+        private void CmdAddPlayerAchievementProgress(int index) => unlockedAchievements.Add(index);
+
+
+        [Command]
+        private void CmdClearPlayerProgress()
         {
-            
+            unlockedAchievements.Clear();
+            unlockedMaps.Clear();
         }
 
         [Command]

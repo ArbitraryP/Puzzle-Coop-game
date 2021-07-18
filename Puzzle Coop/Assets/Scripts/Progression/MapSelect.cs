@@ -28,16 +28,44 @@ namespace TangentNodes.Network
         [Range(0.1f, 10f)]
         public float smoothZoomFactor;
 
+        [Header("Maps")]
+        [SerializeField] private List<MapIdentity> mapButtons = null;
+
         // Map Select
         public int indexOfMapSelected = -1;
+
+        private NetworkManagerTN room;
+        private NetworkManagerTN Room
+        {
+            get
+            {
+                if (room != null) { return room; }
+                return room = NetworkManager.singleton as NetworkManagerTN;
+            }
+        }
+
+        
+        public override void OnStartAuthority()
+        {
+            // Removes the InputBlocker for Host who has Authority
+            inputBlocker.SetActive(false);
+        }
 
         public override void OnStartClient()
         {
             targetZoomSize = zoomOutMax;
 
-            // Removes the InputBlocker
-            if (!hasAuthority) { return; }
-            inputBlocker.SetActive(false);
+            // Enable/disable selectable maps based on leader's progress
+            foreach (NetworkGamePlayerTN player in Room.GamePlayers)
+            {
+                if (!player.isLeader) { continue; }
+                foreach (int mapIndex in player.unlockedMaps)
+                {
+                    int index = mapButtons.FindIndex(i => i.MapIndexNumber == mapIndex);
+                    mapButtons[index].SetMapAsSelectable(true);
+                    
+                }
+            }
 
         }
 
@@ -116,8 +144,10 @@ namespace TangentNodes.Network
             buttonCancel.SetActive(isMapSelected);
             buttonConfirm.SetActive(isMapSelected);
 
-            Debug.Log("Camera Parameters updated");
+            
         }
+
+
 
     }
 }

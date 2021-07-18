@@ -101,7 +101,7 @@ namespace TangentNodes.Network
 
                 NetworkRoomPlayerTN roomPlayerInstance = Instantiate(roomPlayerPrefab);
                 
-                roomPlayerInstance.IsLeader = isLeader;
+                roomPlayerInstance.isLeader = isLeader;
 
                 NetworkServer.AddPlayerForConnection(conn, roomPlayerInstance.gameObject);
             }
@@ -147,17 +147,6 @@ namespace TangentNodes.Network
             foreach (var player in RoomPlayers)
             {
                 player.HandleReadyToStart(IsReadyToStart());
-
-                // ---- Test Code for checking SyncList ---- //
-                Debug.Log(
-                    player.unlockedMaps[0].ToString() +
-                    player.unlockedMaps[1].ToString() +
-                    player.unlockedMaps[2].ToString() +
-                    " --- " +
-                    player.unlockedAchievements[0].ToString() +
-                    player.unlockedAchievements[1].ToString() +
-                    player.unlockedAchievements[2].ToString());
-
             }
         }
         
@@ -197,7 +186,16 @@ namespace TangentNodes.Network
                     var conn = RoomPlayers[i].connectionToClient;
                     var gameplayerInstance = Instantiate(gamePlayerPrefab);
                     gameplayerInstance.SetDisplayName(RoomPlayers[i].displayName);
-                    gameplayerInstance.IsLeader = RoomPlayers[i].IsLeader;
+                    gameplayerInstance.isLeader = RoomPlayers[i].isLeader;
+
+                    foreach(int index in RoomPlayers[i].unlockedMaps)
+                    {
+                        gameplayerInstance.unlockedMaps.Add(index);
+                    }
+                    foreach (int index in RoomPlayers[i].unlockedAchievements)
+                    {
+                        gameplayerInstance.unlockedAchievements.Add(index);
+                    }
 
                     NetworkServer.Destroy(conn.identity.gameObject);
 
@@ -227,7 +225,7 @@ namespace TangentNodes.Network
 
                     foreach (NetworkGamePlayerTN player in GamePlayers)
                     {
-                        if (!player.IsLeader) { continue; }
+                        if (!player.isLeader) { continue; }
                         GameObject mapSelectPrefabInstance = Instantiate(mapSelectPrefab.gameObject);
                         NetworkServer.Spawn(mapSelectPrefabInstance, player.connectionToClient);
                     }
