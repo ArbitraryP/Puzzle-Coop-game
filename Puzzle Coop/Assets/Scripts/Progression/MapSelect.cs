@@ -29,6 +29,7 @@ namespace TangentNodes.Network
         public float smoothZoomFactor;
 
         [Header("Maps")]
+        [SerializeField] private List<Map> mapSet = null;
         [SerializeField] private List<MapIdentity> mapButtons = null;
 
         // Map Select
@@ -55,18 +56,15 @@ namespace TangentNodes.Network
         {
             targetZoomSize = zoomOutMax;
 
-            // Enable/disable selectable maps based on leader's progress
-            foreach (NetworkGamePlayerTN player in Room.GamePlayers)
+            // Loads all maps will be used if there'll be bonus hiden levels ever.
+            var mapScriptableObjects = Resources.LoadAll<Map>("ScriptableObjects/Maps");
+            foreach (var loadedMap in mapScriptableObjects)
             {
-                if (!player.isLeader) { continue; }
-                foreach (int mapIndex in player.unlockedMaps)
-                {
-                    int index = mapButtons.FindIndex(i => i.MapIndexNumber == mapIndex);
-                    mapButtons[index].SetMapAsSelectable(true);
-                    
-                }
+                mapSet.Add(loadedMap);
             }
 
+            // Enable/disable selectable maps based on leader's progress
+            InitializeUnlockedMaps();
         }
 
         private void Update()
@@ -101,7 +99,24 @@ namespace TangentNodes.Network
 
         }
 
-        
+        private void InitializeUnlockedMaps()
+        {
+            foreach (NetworkGamePlayerTN player in Room.GamePlayers)
+            {
+                if (!player.isLeader) { continue; }
+                foreach (int unlockedMapIndex in player.unlockedMaps)
+                {
+                    
+                    // Will enable the maps if prerequisites of unlocked maps are met
+                    MapIdentity mapButton = mapButtons.Find(i => i.map.Index == unlockedMapIndex);
+                    List<int> listOfUnlockedMaps = new List<int>(player.unlockedMaps);
+
+                    mapButton.SetMapAsSelectable(mapButton.map.IsPrerequisiteMet(listOfUnlockedMaps));
+
+                }
+            }
+        }
+
         [Command]
         public void CmdCancelSelectMap()
         {
@@ -113,7 +128,10 @@ namespace TangentNodes.Network
         }
 
         public void SelectMap(MapIdentity mapButton) =>
-            CmdSelectMap(mapButton.transform.position.x, mapButton.transform.position.y, mapButton.MapIndexNumber);
+            CmdSelectMap(
+                mapButton.transform.position.x,
+                mapButton.transform.position.y,
+                mapButton.map.Index);
         
 
         [Command]

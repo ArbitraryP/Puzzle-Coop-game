@@ -24,4 +24,15 @@ public class Map : ScriptableObject
     [Scene]
     public string Scene;
 
+    public bool IsPrerequisiteMet(List<int> unlockedMaps)
+    {
+        if (prerequisite.Count <= 0 || prerequisite == null) { return true; }
+
+        foreach (Map prereqMap in prerequisite)
+        {
+            if (!unlockedMaps.Contains(prereqMap.Index)) { return false; }
+        }
+
+        return true;
+    }
 }
