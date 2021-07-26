@@ -18,4 +18,4 @@ MonoBehaviour:
   difficulty: 1
   achievments:
   - {fileID: 11400000, guid: 1049a95c7bfef7b43b0d65b962e22773, type: 2}
-  Scene: 
+  Scene: Assets/Scenes/Scene_Map_00_Tutorial.unity

@@ -33,7 +33,7 @@ namespace TangentNodes.Network
         [SerializeField] private List<MapIdentity> mapButtons = null;
 
         // Map Select
-        public int indexOfMapSelected = -1;
+        public Map selectedMap;
 
         private NetworkManagerTN room;
         private NetworkManagerTN Room
@@ -122,7 +122,7 @@ namespace TangentNodes.Network
         {
             if (!hasAuthority) { return; } //Only Host can CancelSelectMap
             isMapSelected = false;
-            indexOfMapSelected = -1;
+            selectedMap = null;
             RpcUpdateSelectMapStatus(0, 0, isMapSelected);
 
         }
@@ -139,7 +139,7 @@ namespace TangentNodes.Network
         {
             if (!hasAuthority || isMapSelected) { return; } //Only Host can SelectMap and only select 1 at a time
             isMapSelected = true;
-            indexOfMapSelected = mapIndex;
+            selectedMap = mapSet.Find(i => i.Index == mapIndex);
             RpcUpdateSelectMapStatus(targetPositionX, targetPositionY, isMapSelected);
         }
 
@@ -165,7 +165,15 @@ namespace TangentNodes.Network
             
         }
 
-
+        [Command]
+        public void OnClickEnterSelectedMap()
+        {
+            if (selectedMap.Scene == "")
+                return;
+            
+            Room.ServerChangeScene(selectedMap.Scene);
+            Debug.Log("Change Scene to " + selectedMap.Scene);
+        }
 
     }
 }

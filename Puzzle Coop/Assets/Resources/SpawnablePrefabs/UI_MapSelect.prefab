@@ -2480,7 +2480,7 @@ MonoBehaviour:
   - {fileID: 7868052748233037760}
   - {fileID: 5727474115431701874}
   - {fileID: 2654043301594436703}
-  indexOfMapSelected: -1
+  selectedMap: {fileID: 0}
 --- !u!1 &4554997605175260673
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,7 +4738,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4554997605997618657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4554997605169069631}
+        m_TargetAssemblyTypeName: TangentNodes.Network.MapSelect, Assembly-CSharp
+        m_MethodName: OnClickEnterSelectedMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4554997606013112949
 GameObject:
   m_ObjectHideFlags: 0
