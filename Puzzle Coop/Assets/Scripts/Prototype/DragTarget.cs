@@ -8,6 +8,8 @@ using UnityEngine;
 /// </summary>
 public class DragTarget : MonoBehaviour
 {
+	public ClickManager clickManager;
+
 	public LayerMask m_DragLayers;
 	public Camera cam;
 
@@ -29,6 +31,10 @@ public class DragTarget : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(0))
 		{
+			// Add Code that Check Go Signal from ClickManager
+			if (clickManager.CheckObjectIsBlocked())
+				return;
+
 			// Fetch the first collider.
 			// NOTE: We could do this for multiple colliders.
 			var collider = Physics2D.OverlapPoint(worldPos, m_DragLayers);
