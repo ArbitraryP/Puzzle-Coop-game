@@ -56,10 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Mirror\Tests\Common\FakeNetworkConnection.cs" />
     <Compile Include="Assets\Mirror\Tests\Common\ClientSceneTests_RegisterPrefabBase.cs" />
     <Compile Include="Assets\Mirror\Tests\Common\MemoryTransport.cs" />
     <Compile Include="Assets\Mirror\Tests\Common\ClientSceneTestsBase.cs" />
-    <Compile Include="Assets\Mirror\Tests\Common\FakeNetworkConnection.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Tests\Common\System.Threading.Tasks.Extensions.dll" />

@@ -58,19 +58,19 @@
   <ItemGroup>
     <Compile Include="Assets\Mirror\Cloud\Core\IUnityEqualCheck.cs" />
     <Compile Include="Assets\Mirror\Cloud\Core\Events.cs" />
-    <Compile Include="Assets\Mirror\Cloud\Core\IRequestCreator.cs" />
     <Compile Include="Assets\Mirror\Cloud\Core\JsonStructs.cs" />
     <Compile Include="Assets\Mirror\Cloud\Core\Extensions.cs" />
     <Compile Include="Assets\Mirror\Cloud\ListServer\ListServerJson.cs" />
     <Compile Include="Assets\Mirror\Cloud\ListServer\ListServerClientApi.cs" />
-    <Compile Include="Assets\Mirror\Cloud\Core\BaseApi.cs" />
-    <Compile Include="Assets\Mirror\Cloud\Core\Logger.cs" />
     <Compile Include="Assets\Mirror\Cloud\ListServer\ListServerServerApi.cs" />
-    <Compile Include="Assets\Mirror\Cloud\Core\RequestCreator.cs" />
     <Compile Include="Assets\Mirror\Cloud\ListServer\ListServerBaseApi.cs" />
-    <Compile Include="Assets\Mirror\Cloud\ApiConnector.cs" />
     <Compile Include="Assets\Mirror\Cloud\ListServer\ListServer.cs" />
     <Compile Include="Assets\Mirror\Cloud\Core\ICoroutineRunner.cs" />
+    <Compile Include="Assets\Mirror\Cloud\Core\IRequestCreator.cs" />
+    <Compile Include="Assets\Mirror\Cloud\Core\BaseApi.cs" />
+    <Compile Include="Assets\Mirror\Cloud\Core\Logger.cs" />
+    <Compile Include="Assets\Mirror\Cloud\Core\RequestCreator.cs" />
+    <Compile Include="Assets\Mirror\Cloud\ApiConnector.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Cloud\Mirror.Cloud.asmdef" />
@@ -330,11 +330,11 @@
     <Reference Include="System.Threading.Tasks.Extensions">
       <HintPath>Assets\Mirror\Tests\Common\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.3.2\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Mdb">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

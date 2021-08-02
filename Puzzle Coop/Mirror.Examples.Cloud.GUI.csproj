@@ -56,12 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\InstantiateNetworkManager.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\QuitButtonHUD.cs" />
-    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\NetworkManagerListServer.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ServerListManager.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ApiUpdater.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ServerListUI.cs" />
+    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\InstantiateNetworkManager.cs" />
+    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\NetworkManagerListServer.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\QuickListServerDebug.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ServerListUIItem.cs" />
   </ItemGroup>
@@ -322,11 +322,11 @@
     <Reference Include="System.Threading.Tasks.Extensions">
       <HintPath>Assets\Mirror\Tests\Common\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.3.2\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Mdb">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

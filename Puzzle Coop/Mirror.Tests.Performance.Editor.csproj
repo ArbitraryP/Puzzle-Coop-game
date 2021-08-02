@@ -56,10 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mirror\Tests\Performance\Editor\FakeNetworkConnection.cs" />
     <Compile Include="Assets\Mirror\Tests\Performance\Editor\NetworkWriterPerformance.cs" />
     <Compile Include="Assets\Mirror\Tests\Performance\Editor\NetworkIdentityPerformance.cs" />
     <Compile Include="Assets\Mirror\Tests\Performance\Editor\NetworkIdentityPerformanceWithMultipleBehaviour.cs" />
+    <Compile Include="Assets\Mirror\Tests\Performance\Editor\FakeNetworkConnection.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Tests\Performance\Editor\Mirror.Tests.Performance.Editor.asmdef" />

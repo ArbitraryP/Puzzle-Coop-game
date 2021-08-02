@@ -56,34 +56,34 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mirror\Components\NetworkTransformChild.cs" />
     <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscoveryHUD.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkLobbyPlayer.cs" />
-    <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransformChild.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransformBase.cs" />
     <Compile Include="Assets\Mirror\Components\InterestManagement\SpatialHashing\Grid2D.cs" />
-    <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscoveryBase.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkOwnerChecker.cs" />
-    <Compile Include="Assets\Mirror\Components\Discovery\ServerRequest.cs" />
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransformBase.cs" />
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkLerpRigidbody.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkLobbyManager.cs" />
     <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscovery.cs" />
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransform.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Distance\DistanceInterestManagement.cs" />
     <Compile Include="Assets\Mirror\Components\Discovery\ServerResponse.cs" />
     <Compile Include="Assets\Mirror\Components\GUIConsole.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkProximityChecker.cs" />
     <Compile Include="Assets\Mirror\Components\AssemblyInfo.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkSceneChecker.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransform.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkRoomPlayer.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkPingDisplay.cs" />
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkRigidbody2D.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkMatchChecker.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkRoomManager.cs" />
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkRigidbody.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkAnimator.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkTransformChild.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkLobbyPlayer.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkTransformBase.cs" />
+    <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransformChild.cs" />
+    <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscoveryBase.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkOwnerChecker.cs" />
+    <Compile Include="Assets\Mirror\Components\Discovery\ServerRequest.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkLobbyManager.cs" />
+    <Compile Include="Assets\Mirror\Components\InterestManagement\Distance\DistanceInterestManagement.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkProximityChecker.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkSceneChecker.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkTransform.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkRoomPlayer.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkMatchChecker.cs" />
     <Compile Include="Assets\Mirror\Components\InterestManagement\SpatialHashing\SpatialHashingInterestManagement.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -343,11 +343,11 @@
     <Reference Include="System.Threading.Tasks.Extensions">
       <HintPath>Assets\Mirror\Tests\Common\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.3.2\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Mdb">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>

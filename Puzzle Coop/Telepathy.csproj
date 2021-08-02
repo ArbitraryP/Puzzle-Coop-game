@@ -60,16 +60,16 @@
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Log.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\ConnectionState.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\NetworkStreamExtensions.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\ThreadExtensions.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Logger.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Common.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\MagnificentSendPipe.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Server.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Client.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Pool.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\ThreadExtensions.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Common.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\ThreadFunctions.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\EventType.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Utils.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\Pool.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\SafeQueue.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\Telepathy\Telepathy\MagnificentReceivePipe.cs" />
   </ItemGroup>
@@ -330,11 +330,11 @@
     <Reference Include="System.Threading.Tasks.Extensions">
       <HintPath>Assets\Mirror\Tests\Common\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="ICSharpCode.NRefactory">
       <HintPath>Library\PackageCache\com.unity.render-pipelines.core@10.3.2\Editor\ShaderGenerator\ICSharpCode.NRefactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Mdb">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
