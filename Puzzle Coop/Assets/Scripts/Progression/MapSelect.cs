@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
+using System.IO;
 
 namespace TangentNodes.Network
 {
@@ -170,9 +171,11 @@ namespace TangentNodes.Network
         {
             if (selectedMap.Scene == "")
                 return;
-            
-            Room.ServerChangeScene(selectedMap.Scene);
-            Debug.Log("Change Scene to " + selectedMap.Scene);
+
+            string newScene = Path.GetFileNameWithoutExtension(selectedMap.Scene).ToString();
+            Room.ServerChangeScene(newScene);
+
+            Debug.Log("Change Scene to " + newScene);
         }
 
     }

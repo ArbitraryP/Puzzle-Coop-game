@@ -33,6 +33,8 @@ namespace TangentNodes.Network
         
         private MapHandler mapHandler;
         */
+        [SerializeField] private GameObject buttonTestNetworkPrefab = null;
+        
 
         public static event Action OnClientConnected;
         public static event Action OnClientDisconnected;
@@ -209,6 +211,7 @@ namespace TangentNodes.Network
         
         public override void OnServerSceneChanged(string sceneName)
         {
+            
             if (sceneName.StartsWith("Scene_Map"))
             {
                 /*
@@ -230,6 +233,15 @@ namespace TangentNodes.Network
                         NetworkServer.Spawn(mapSelectPrefabInstance, player.connectionToClient);
                     }
                 }
+
+                if (sceneName == "Scene_Map_00_Tutorial")
+                {
+                    GameObject buttonTestNetwork = Instantiate(buttonTestNetworkPrefab);
+                    NetworkServer.Spawn(buttonTestNetwork);
+
+                    Debug.Log("ButtonTestNetwork Spawnedd");
+                }
+
             }
 
 

@@ -475,6 +475,7 @@ MonoBehaviour:
   disconnectPanelPrefab: {fileID: 4145042958976832351, guid: 02f156d37197d504abeaa1a9dbdeee03, type: 3}
   gamePlayerPrefab: {fileID: 3962575222662550940, guid: 7e119970cafe92b4e941bfdedc303196, type: 3}
   mapSelectPrefab: {fileID: 4554997605169069631, guid: 9a6ce91b38b8a0b41961f52caaec1e32, type: 3}
+  buttonTestNetworkPrefab: {fileID: 5172945175634021649, guid: 83e1e67127d95ef44a7d860f3d45aca8, type: 3}
 --- !u!4 &1495594496
 Transform:
   m_ObjectHideFlags: 0

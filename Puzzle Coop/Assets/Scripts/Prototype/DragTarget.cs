@@ -29,6 +29,8 @@ public class DragTarget : MonoBehaviour
 		// Calculate the world position for the mouse.
 		var worldPos = cam.ScreenToWorldPoint(Input.mousePosition);
 
+		Plug plug;
+
 		if (Input.GetMouseButtonDown(0))
 		{
 			// Add Code that Check Go Signal from ClickManager
@@ -46,6 +48,12 @@ public class DragTarget : MonoBehaviour
 			if (!body)
 				return;
 
+			// Notify if Plug is selected
+			plug = collider.GetComponent<Plug>();
+			if (plug)
+				plug.IsHoldingPlug = true;
+
+
 			// Add a target joint to the Rigidbody2D GameObject.
 			m_TargetJoint = body.gameObject.AddComponent<TargetJoint2D>();
 			m_TargetJoint.dampingRatio = m_Damping;
@@ -56,6 +64,11 @@ public class DragTarget : MonoBehaviour
 		}
 		else if (Input.GetMouseButtonUp(0))
 		{
+			plug = m_TargetJoint?.GetComponent<Plug>();
+			if (plug)
+				plug.IsHoldingPlug = false;
+				
+
 			Destroy(m_TargetJoint);
 			m_TargetJoint = null;
 			return;

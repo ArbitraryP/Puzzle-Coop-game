@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Progression\Achievement.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Progression\MapSelect.cs" />
+    <Compile Include="Assets\Scripts\Prototype\VelvetRopeBridge.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
@@ -115,7 +116,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Prototype\VelvetRopeBridge.cs" />
+    <Compile Include="Assets\Scripts\Progression\00 Tutorial\Plug.cs" />
+    <Compile Include="Assets\Scripts\Prototype\ButtonNetTest.cs" />
+    <Compile Include="Assets\Scripts\Prototype\ButtonNetTestLocal.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
