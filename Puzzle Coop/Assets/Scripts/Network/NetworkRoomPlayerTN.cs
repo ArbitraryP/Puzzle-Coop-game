@@ -18,6 +18,7 @@ namespace TangentNodes.Network
         [SyncVar(hook = nameof(HandleReadyStatusChanged))]
         public bool IsReady = false;
 
+        public SyncList<int> completedMaps = new SyncList<int>();
         public SyncList<int> unlockedMaps = new SyncList<int>();
         public SyncList<int> unlockedAchievements = new SyncList<int>();
 
@@ -60,9 +61,15 @@ namespace TangentNodes.Network
                 // Add code to save first if not empty or has newer data
 
                 CmdClearPlayerProgress();
+
+                foreach (int i in playerProgress.completedMaps)
+                {
+                    CmdAddPlayerCompletedMapsProgress(i);
+                }
+
                 foreach (int i in playerProgress.unlockedMaps)
                 {
-                    CmdAddPlayerMapProgress(i);                    
+                    CmdAddPlayerUnlockedMapsProgress(i);                    
                 }
                 
                 foreach (int i in playerProgress.unlockedAchievements)
@@ -145,7 +152,10 @@ namespace TangentNodes.Network
         }
 
         [Command]
-        private void CmdAddPlayerMapProgress(int index) => unlockedMaps.Add(index);
+        private void CmdAddPlayerCompletedMapsProgress(int index) => completedMaps.Add(index);
+
+        [Command]
+        private void CmdAddPlayerUnlockedMapsProgress(int index) => unlockedMaps.Add(index);
 
         [Command]
         private void CmdAddPlayerAchievementProgress(int index) => unlockedAchievements.Add(index);

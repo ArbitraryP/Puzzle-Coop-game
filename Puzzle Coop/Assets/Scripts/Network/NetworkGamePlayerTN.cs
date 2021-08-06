@@ -11,6 +11,7 @@ namespace TangentNodes.Network
         [SyncVar]
         public string displayName = "Loading...";
 
+        public SyncList<int> completedMaps = new SyncList<int>();
         public SyncList<int> unlockedMaps = new SyncList<int>();
         public SyncList<int> unlockedAchievements = new SyncList<int>();
 
@@ -51,6 +52,19 @@ namespace TangentNodes.Network
         public void SetDisplayName(string displayName)
         {
             this.displayName = displayName;
+        }
+
+        public void AddCompletedMap(int mapIndex)
+        {
+            if (completedMaps.Contains(mapIndex)) return;
+            completedMaps.Add(mapIndex);
+            
+        }
+
+        public void AddUnlockMap(int mapIndex)
+        {
+            if (unlockedMaps.Contains(mapIndex)) return;
+            unlockedMaps.Add(mapIndex);
         }
 
     }

@@ -110,9 +110,10 @@ namespace TangentNodes.Network
                     
                     // Will enable the maps if prerequisites of unlocked maps are met
                     MapIdentity mapButton = mapButtons.Find(i => i.map.Index == unlockedMapIndex);
+                    List<int> listOfCompletedMaps = new List<int>(player.completedMaps);
                     List<int> listOfUnlockedMaps = new List<int>(player.unlockedMaps);
 
-                    mapButton.SetMapAsSelectable(mapButton.map.IsPrerequisiteMet(listOfUnlockedMaps));
+                    mapButton.SetMapAsSelectable(mapButton.map.IsPrerequisiteMet(listOfCompletedMaps, listOfUnlockedMaps));
 
                 }
             }
@@ -173,6 +174,7 @@ namespace TangentNodes.Network
                 return;
 
             string newScene = Path.GetFileNameWithoutExtension(selectedMap.Scene).ToString();
+            Room.currentMap = selectedMap;
             Room.ServerChangeScene(newScene);
 
             Debug.Log("Change Scene to " + newScene);

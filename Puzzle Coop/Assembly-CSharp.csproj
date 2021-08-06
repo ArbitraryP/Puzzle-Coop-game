@@ -102,6 +102,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Controls\IClickable.cs" />
     <Compile Include="Assets\Scripts\Prototype\VelvetRopeTest.cs" />
+    <Compile Include="Assets\Scripts\Progression\00 Tutorial\Plug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -116,9 +117,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\00 Tutorial\Plug.cs" />
-    <Compile Include="Assets\Scripts\Prototype\ButtonNetTest.cs" />
-    <Compile Include="Assets\Scripts\Prototype\ButtonNetTestLocal.cs" />
+    <Compile Include="Assets\Scripts\Progression\00 Tutorial\MapObjectManager_L.cs" />
+    <Compile Include="Assets\Scripts\Prototype\ButtonTest.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

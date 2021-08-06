@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   prerequisite: []
+  unlocks:
+  - {fileID: 11400000, guid: 6b38d26dfa510d442bd73939afc5a60a, type: 2}
+  - {fileID: 11400000, guid: 7cc44a0a19a238841a119894faa5c2e8, type: 2}
+  - {fileID: 11400000, guid: 0bcd9d19ba23a694a86536837699b032, type: 2}
+  - {fileID: 11400000, guid: 1452d590238bc9647ba2a8a9c811332f, type: 2}
   displayName: Initialization
   difficulty: 1
   achievments:

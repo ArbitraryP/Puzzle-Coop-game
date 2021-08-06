@@ -14,6 +14,7 @@ public class Map : ScriptableObject
     }
 
     public List<Map> prerequisite;
+    public List<Map> unlocks;
 
     public string displayName;
 
@@ -24,13 +25,19 @@ public class Map : ScriptableObject
     [Scene]
     public string Scene;
 
-    public bool IsPrerequisiteMet(List<int> unlockedMaps)
+    public bool IsPrerequisiteMet(List<int> completedMaps, List<int> unlockedMaps)
     {
-        if (prerequisite.Count <= 0 || prerequisite == null) { return true; }
+        if (prerequisite.Count <= 0 || prerequisite == null)
+            return true;
+
+        if (!unlockedMaps.Contains(Index))
+            return false;
 
         foreach (Map prereqMap in prerequisite)
         {
-            if (!unlockedMaps.Contains(prereqMap.Index)) { return false; }
+            if (!completedMaps.Contains(prereqMap.Index) ||
+                !unlockedMaps.Contains(prereqMap.Index))
+                return false;
         }
 
         return true;

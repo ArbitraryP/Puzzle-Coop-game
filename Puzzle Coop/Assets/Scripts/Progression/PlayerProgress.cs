@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerProgress : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerProgress : MonoBehaviour
     public string playerName;
     public int playerSteamId; // adjust this based on steamID datatype
 
+    public List<int> completedMaps;
     public List<int> unlockedMaps;
     public List<int> unlockedAchievements;
 
@@ -28,13 +30,19 @@ public class PlayerProgress : MonoBehaviour
 
 
         // Test Code to Generate Random Numbers
+        completedMaps.Add(0);
         unlockedMaps.Add(0);
         unlockedAchievements.Add(0);
         for (int i = 0; i < 3; i++)
         {
+            completedMaps.Add(Random.Range(1, 10));
             unlockedMaps.Add(Random.Range(1, 10));
             unlockedAchievements.Add(Random.Range(1, 10));
         }
+
+        completedMaps = completedMaps.Distinct().ToList();
+        unlockedMaps = unlockedMaps.Distinct().ToList();
+        unlockedAchievements = unlockedAchievements.Distinct().ToList();
 
         // Add code that cleanses duplication
     }

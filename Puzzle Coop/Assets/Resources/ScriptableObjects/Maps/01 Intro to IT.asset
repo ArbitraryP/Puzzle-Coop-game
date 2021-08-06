@@ -15,6 +15,7 @@ MonoBehaviour:
   index: 1
   prerequisite:
   - {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
+  unlocks: []
   displayName: Introduction to IT
   difficulty: 1
   achievments: []

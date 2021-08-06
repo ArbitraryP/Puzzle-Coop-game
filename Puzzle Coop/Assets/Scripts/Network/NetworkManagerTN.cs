@@ -27,13 +27,14 @@ namespace TangentNodes.Network
         [Header("Game")]
         [SerializeField] private NetworkGamePlayerTN gamePlayerPrefab = null;
         [SerializeField] private MapSelect mapSelectPrefab = null;
+        [SerializeField] private MapObjectManager_S objectManagerPrefab = null;
         /*
         [SerializeField] private GameObject playerSpawnSystem = null;
         [SerializeField] private GameObject roundSystem = null;
         
         private MapHandler mapHandler;
         */
-        [SerializeField] private GameObject buttonTestNetworkPrefab = null;
+        
         
 
         public static event Action OnClientConnected;
@@ -45,7 +46,11 @@ namespace TangentNodes.Network
         
         public List<NetworkRoomPlayerTN> RoomPlayers { get; } = new List<NetworkRoomPlayerTN>();
         public List<NetworkGamePlayerTN> GamePlayers { get; } = new List<NetworkGamePlayerTN>();
-        
+
+        [Header("In Game")]
+        public Map currentMap = null;
+
+        private void ClearCurrentMap() => currentMap = null;
 
         public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
 
@@ -137,6 +142,7 @@ namespace TangentNodes.Network
 
             RoomPlayers.Clear();
             //GamePlayers.Clear();
+            ClearCurrentMap();
 
             base.OnStopServer();
 
@@ -190,14 +196,15 @@ namespace TangentNodes.Network
                     gameplayerInstance.SetDisplayName(RoomPlayers[i].displayName);
                     gameplayerInstance.isLeader = RoomPlayers[i].isLeader;
 
-                    foreach(int index in RoomPlayers[i].unlockedMaps)
-                    {
+                    foreach (int index in RoomPlayers[i].completedMaps)
+                        gameplayerInstance.completedMaps.Add(index);
+                    
+                    foreach (int index in RoomPlayers[i].unlockedMaps)
                         gameplayerInstance.unlockedMaps.Add(index);
-                    }
+                    
                     foreach (int index in RoomPlayers[i].unlockedAchievements)
-                    {
                         gameplayerInstance.unlockedAchievements.Add(index);
-                    }
+                    
 
                     NetworkServer.Destroy(conn.identity.gameObject);
 
@@ -224,22 +231,31 @@ namespace TangentNodes.Network
 
                 if (sceneName == "Scene_Map_Select")
                 {
-                    // Spawns a Map UI when loaded owned by leader
-
+                    ClearCurrentMap();
                     foreach (NetworkGamePlayerTN player in GamePlayers)
                     {
+
+                        // Spawn MapObjectManager_S for each players
+                        /*
+                        GameObject objectManagerInstance = Instantiate(objectManagerPrefab.gameObject);
+                        NetworkServer.Spawn(objectManagerInstance, player.connectionToClient);
+                        */
+
+
+                        // Spawns a Map UI when loaded owned by leader
                         if (!player.isLeader) { continue; }
                         GameObject mapSelectPrefabInstance = Instantiate(mapSelectPrefab.gameObject);
                         NetworkServer.Spawn(mapSelectPrefabInstance, player.connectionToClient);
+
+
                     }
                 }
 
                 if (sceneName == "Scene_Map_00_Tutorial")
                 {
-                    GameObject buttonTestNetwork = Instantiate(buttonTestNetworkPrefab);
-                    NetworkServer.Spawn(buttonTestNetwork);
-
-                    Debug.Log("ButtonTestNetwork Spawnedd");
+                    // Spawn Object Manager for players but not here
+                    GameObject objectManagerInstance = Instantiate(objectManagerPrefab.gameObject);
+                    NetworkServer.Spawn(objectManagerInstance);
                 }
 
             }
@@ -253,6 +269,7 @@ namespace TangentNodes.Network
 
             OnServerReadied?.Invoke(conn);
         }
+
         
     }
 }

@@ -32,21 +32,7 @@ public class CameraControl : MonoBehaviour
     private void Awake()
     {
         CheckNavigatableFloors();
-
-        int camIndex = 0;
-        if (numberOfExtraFloors >= 2)
-            camIndex = 1;
-
-        if (isHostPlayer)
-        {
-            mainCamera.transform.position = camPoints_P1[camIndex].position;
-            targetPosition = camPoints_P1[camIndex].position;
-        }
-        else
-        {
-            mainCamera.transform.position = camPoints_P2[camIndex].position;
-            targetPosition = camPoints_P2[camIndex].position;
-        }
+        ResetCamera();
     }
 
     private void Update()
@@ -60,6 +46,24 @@ public class CameraControl : MonoBehaviour
                 smoothPanFactor * Time.fixedDeltaTime);
 
             mainCamera.transform.position = new Vector3(smoothPosition.x, smoothPosition.y, -10f);
+        }
+    }
+
+    public void ResetCamera()
+    {
+        int camIndex = 0;
+        if (numberOfExtraFloors >= 2)
+            camIndex = 1;
+
+        if (isHostPlayer)
+        {
+            mainCamera.transform.position = camPoints_P1[camIndex].position;
+            targetPosition = camPoints_P1[camIndex].position;
+        }
+        else
+        {
+            mainCamera.transform.position = camPoints_P2[camIndex].position;
+            targetPosition = camPoints_P2[camIndex].position;
         }
     }
 

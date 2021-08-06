@@ -15,6 +15,9 @@ MonoBehaviour:
   index: 3
   prerequisite:
   - {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
+  unlocks:
+  - {fileID: 11400000, guid: 76fedb94ad1748a4cbca72664d5dade1, type: 2}
+  - {fileID: 11400000, guid: f0bfa0ee277134140b03489e910120d7, type: 2}
   displayName: Miscons Convo A
   difficulty: 2
   achievments: []

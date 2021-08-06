@@ -16,6 +16,8 @@ MonoBehaviour:
   prerequisite:
   - {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
   - {fileID: 11400000, guid: 7cc44a0a19a238841a119894faa5c2e8, type: 2}
+  unlocks:
+  - {fileID: 11400000, guid: 1ae01cc1e97c64f499b8665933ad328f, type: 2}
   displayName: Misused Terms B
   difficulty: 1
   achievments: []

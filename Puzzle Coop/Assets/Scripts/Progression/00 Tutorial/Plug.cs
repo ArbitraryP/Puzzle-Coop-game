@@ -49,7 +49,13 @@ public class Plug : MonoBehaviour
         transform.position = outletSlot.position;
         transform.rotation = Quaternion.identity;
 
-
+        MapObjectManager_L localObjectManager = FindObjectOfType<MapObjectManager_L>();
+        if (!localObjectManager)
+        {
+            Debug.Log("Local Map Object Manager Missing!");
+            return;
+        }
+        localObjectManager.serverObjectManager.CmdM00_PowerOn();
     }
 
 
