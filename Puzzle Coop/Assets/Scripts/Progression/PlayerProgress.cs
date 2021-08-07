@@ -30,21 +30,38 @@ public class PlayerProgress : MonoBehaviour
 
 
         // Test Code to Generate Random Numbers
-        completedMaps.Add(0);
         unlockedMaps.Add(0);
-        unlockedAchievements.Add(0);
         for (int i = 0; i < 3; i++)
         {
-            completedMaps.Add(Random.Range(1, 10));
-            unlockedMaps.Add(Random.Range(1, 10));
-            unlockedAchievements.Add(Random.Range(1, 10));
+            //completedMaps.Add(Random.Range(1, 10));
+            //unlockedMaps.Add(Random.Range(1, 10));
+            //unlockedAchievements.Add(Random.Range(1, 10));
         }
 
+        CleanDuplicates();
+
+
+        // Add code that cleanses duplication
+    
+    }
+
+    public void SendPlayerProgress(
+        List<int> cMaps,
+        List<int> uMaps,
+        List<int> uAchievements)
+    {
+        completedMaps.AddRange(cMaps);
+        unlockedMaps.AddRange(uMaps);
+        unlockedAchievements.AddRange(uAchievements);
+        
+        CleanDuplicates();
+    }
+
+    public void CleanDuplicates()
+    {
         completedMaps = completedMaps.Distinct().ToList();
         unlockedMaps = unlockedMaps.Distinct().ToList();
         unlockedAchievements = unlockedAchievements.Distinct().ToList();
-
-        // Add code that cleanses duplication
     }
 
     // Add Code here where it loads Progress from file

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -46,6 +47,15 @@ namespace TangentNodes.Network
         public override void OnStopClient()
         {
             Room.GamePlayers.Remove(this);
+
+            if (!hasAuthority) return;
+            PlayerProgress localPlayerProgress = FindObjectOfType<PlayerProgress>();
+
+            localPlayerProgress?.SendPlayerProgress(
+                new List<int>(completedMaps),
+                new List<int>(unlockedMaps),
+                new List<int>(unlockedAchievements));
+
         }
 
         [Server]

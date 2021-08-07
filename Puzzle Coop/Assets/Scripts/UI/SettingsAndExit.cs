@@ -17,7 +17,15 @@ public class SettingsAndExit : MonoBehaviour
     [SerializeField] private TMP_Text textDescription = null;
     [SerializeField] private GameObject panelQuitConfirm = null;
 
-    
+    private NetworkManagerTN room;
+    private NetworkManagerTN Room
+    {
+        get
+        {
+            if (room != null) { return room; }
+            return room = NetworkManager.singleton as NetworkManagerTN;
+        }
+    }
 
     private static SettingsAndExit instance;
 
@@ -66,30 +74,62 @@ public class SettingsAndExit : MonoBehaviour
         // If Identity not null means it is InGame
         if (myPlayerIdentity)
         {
+            // If is Server, return to Map Select
+
+            if (myPlayerIdentity.isServer &&
+                SceneManager.GetActiveScene().name.StartsWith("Scene_Map") &&
+                SceneManager.GetActiveScene().name != "Scene_Map_Select")
+            {
+
+                textDescription.text = "Are you sure you want to\nRETURN to Map Hub?";
+                return;
+            }
+
             textDescription.text = "Are you sure you want to\nRETURN to Main Menu?";
+            return;
         }
-        else
-        {
-            textDescription.text = "Are you sure you want to\nQUIT the Game?";
-        }
+        
+        textDescription.text = "Are you sure you want to\nQUIT the Game?";
+        
     }
 
     public void OnClickQuitYes()
     {
-        // If Identity not null means it is InGame
-        if (myPlayerIdentity)
+        //Do some Autosaving first
+
+        // If Identity is null means it is not InGame
+        if (!myPlayerIdentity)
         {
-            if (myPlayerIdentity.isServer) { networkManager.StopHost(); }
-            else if (myPlayerIdentity.isClient)
-            {
-                networkManager.StopClient();
-                SceneManager.LoadScene("Scene_Lobby");
-            }
-        }
-        else
-        {
-            //Do some Autosaving first
             Application.Quit();
+            return;
         }
+
+        if (!myPlayerIdentity.isServer)
+        {
+            networkManager.StopClient();
+            SceneManager.LoadScene("Scene_Lobby");
+            return;
+        }
+
+        if (myPlayerIdentity.isServer &&
+            SceneManager.GetActiveScene().name.StartsWith("Scene_Map") &&
+            SceneManager.GetActiveScene().name != "Scene_Map_Select")
+        {
+            Room.ServerChangeScene("Scene_Map_Select");
+            return;
+        }
+
+        networkManager.StopHost();
+
+        
+
+        
+
+
+
+
+        
+
+
     }
 }

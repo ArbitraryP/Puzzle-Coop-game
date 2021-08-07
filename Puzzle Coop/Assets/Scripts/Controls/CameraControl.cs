@@ -14,8 +14,8 @@ public class CameraControl : MonoBehaviour
     public int currentFloor = 1;
 
     [Header("Buttons")]
-    [SerializeField] private Button button_up = null;
-    [SerializeField] private Button button_down = null;
+    public Button button_up = null;
+    public Button button_down = null;
 
     [Header("Camera")]
     [SerializeField] private Camera mainCamera = null;
