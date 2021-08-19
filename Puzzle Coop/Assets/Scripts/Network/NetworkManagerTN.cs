@@ -28,14 +28,15 @@ namespace TangentNodes.Network
         [SerializeField] private NetworkGamePlayerTN gamePlayerPrefab = null;
         [SerializeField] private MapSelect mapSelectPrefab = null;
         [SerializeField] private MapObjectManager_S objectManagerPrefab = null;
+        [SerializeField] private QuestionsManager questionsManagerPrefab = null;
         /*
         [SerializeField] private GameObject playerSpawnSystem = null;
         [SerializeField] private GameObject roundSystem = null;
         
         private MapHandler mapHandler;
         */
-        
-        
+
+
 
         public static event Action OnClientConnected;
         public static event Action OnClientDisconnected;
@@ -250,12 +251,18 @@ namespace TangentNodes.Network
 
                     }
                 }
-
-                if (sceneName == "Scene_Map_00_Tutorial")
+                else
                 {
-                    // Spawn Object Manager for players but not here
+                    // Spawn Object Manager for server
                     GameObject objectManagerInstance = Instantiate(objectManagerPrefab.gameObject);
                     NetworkServer.Spawn(objectManagerInstance);
+                }
+
+                if (sceneName == "Scene_Map_02_Misused")
+                {
+                    // Spawn Question Manager
+                    GameObject questionManagerInstance = Instantiate(questionsManagerPrefab.gameObject);
+                    NetworkServer.Spawn(questionManagerInstance);
                 }
 
             }

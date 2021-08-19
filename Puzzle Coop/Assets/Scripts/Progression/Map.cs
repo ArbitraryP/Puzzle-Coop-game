@@ -39,7 +39,7 @@ public class Map : ScriptableObject
                 !unlockedMaps.Contains(prereqMap.Index))
                 return false;
         }
-
+        
         return true;
     }
 }

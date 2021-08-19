@@ -291,6 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: 
   playerSteamId: 0
+  completedMaps: 
   unlockedMaps: 
   unlockedAchievements: 
 --- !u!4 &1092412258
@@ -476,6 +477,8 @@ MonoBehaviour:
   gamePlayerPrefab: {fileID: 3962575222662550940, guid: 7e119970cafe92b4e941bfdedc303196, type: 3}
   mapSelectPrefab: {fileID: 4554997605169069631, guid: 9a6ce91b38b8a0b41961f52caaec1e32, type: 3}
   objectManagerPrefab: {fileID: 1389564324323045749, guid: d90bed7236a424344b73dab9e8f69d0f, type: 3}
+  questionsManagerPrefab: {fileID: 5226346762807882059, guid: 0263a108fbfd3914db274e8b7095909c, type: 3}
+  currentMap: {fileID: 0}
 --- !u!4 &1495594496
 Transform:
   m_ObjectHideFlags: 0

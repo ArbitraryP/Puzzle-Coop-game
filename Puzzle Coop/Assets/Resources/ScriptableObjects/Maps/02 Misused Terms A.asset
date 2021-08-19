@@ -20,4 +20,4 @@ MonoBehaviour:
   displayName: Misused Terms A
   difficulty: 2
   achievments: []
-  Scene: 
+  Scene: Assets/Scenes/Scene_Map_02_Misused.unity

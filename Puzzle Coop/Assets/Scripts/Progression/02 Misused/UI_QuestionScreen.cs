@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using TangentNodes.Network;
+using Mirror;
 
 public class UI_QuestionScreen : MonoBehaviour
 {
@@ -12,22 +14,52 @@ public class UI_QuestionScreen : MonoBehaviour
     [SerializeField] private Image questionImage = null;
     [SerializeField] private Image progressBar = null;
 
-    // Declare a variable that holds the current question
+    
 
-    private int[] answers;
-
+    private int[] shuffledChoicesIndex;
     public bool testFormat = true;
+    private Question currentQuestion;
+
+    private NetworkManagerTN room;
+    private NetworkManagerTN Room
+    {
+        get
+        {
+            if (room != null) { return room; }
+            return room = NetworkManager.singleton as NetworkManagerTN;
+        }
+    }
+
 
     // This method will be called to setup a question
     // Two parameters: Question, bool_true Question/Answer
-    public void SetUpQuestion()
+    public void SetUpQuestion(Question question, bool isDefaultFormat, int[] arrangement)
     {
-
         // loads answers to answers and shuffles it
+        shuffledChoicesIndex = arrangement;
+        currentQuestion = question;
+
+        foreach(NetworkGamePlayerTN player in Room.GamePlayers)
+        {
+            Debug.Log("Player Authority: " + player.hasAuthority);
+            if (!player.hasAuthority) { continue; }
+            Debug.Log("Player Leader: " + player.isLeader);
+            if (player.isLeader)
+            {
+                SetQuestionFormat(isDefaultFormat);
+            }
+            else
+            {
+                SetQuestionFormat(!isDefaultFormat);
+            }
+        }
+        
     }
+
 
     public void SetQuestionFormat(bool isDefault)
     {
+        Debug.Log("Is Default Format: " + isDefault);
         if (isDefault)
         {
             buttonTexts[0].text = "A";
@@ -38,28 +70,26 @@ public class UI_QuestionScreen : MonoBehaviour
             foreach (Button button in buttons)
                 button.interactable = true;
 
-            questionText.text = "...";
-            questionImage.color = Color.black;
+            questionText.text = currentQuestion.text;
+            questionImage.color = Color.white;
         }
         else
         {
-            foreach(TMP_Text buttonText in buttonTexts)
-                buttonText.text = "Answer";
-            foreach (Button button in buttons)
-                button.interactable = false;
+            for (int i = 0; i < buttons.Length; i++)
+            {
+                buttonTexts[i].text = currentQuestion.choices[shuffledChoicesIndex[i]];
+                buttons[i].interactable = false;
+            }
 
-            questionText.text = "This is the Question";
-            questionImage.color = Color.white;
+            questionText.text = "...";
+            questionImage.color = Color.black;
+            
         }
     }
 
-
-    private void Update()
+    public void SetProgressBar(float progressAmount)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            testFormat = !testFormat;
-            SetQuestionFormat(testFormat);
-        }
+        progressBar.fillAmount = progressAmount;
     }
+
 }

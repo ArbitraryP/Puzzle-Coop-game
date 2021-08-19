@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShuffleIntArray
+public static class ShuffleIntArray
 {
-    public static void Shuffe(int[] array)
+    public static int[] Shuffe(int[] array)
     {
         int length = array.Length;
         System.Random rng = new System.Random();
@@ -13,6 +13,8 @@ public class ShuffleIntArray
         {
             Swap(array, i, i + rng.Next(length - i));
         }
+
+        return array;
     }
 
     private static void Swap(int[] array, int a, int b)

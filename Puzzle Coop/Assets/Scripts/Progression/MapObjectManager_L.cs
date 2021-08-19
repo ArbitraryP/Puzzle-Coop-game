@@ -61,7 +61,14 @@ public class MapObjectManager_L : MonoBehaviour
 
     #endregion
 
+    #region 02 Misused
 
+    public void M02_QuestionCompleted()
+    {
+        exitDoors[0].isUnlocked = true;
+    }
+
+    #endregion
 
 
 }

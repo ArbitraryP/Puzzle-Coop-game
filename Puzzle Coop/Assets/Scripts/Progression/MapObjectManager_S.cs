@@ -4,6 +4,7 @@ using UnityEngine;
 using Mirror;
 using TangentNodes.Network;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 /// <summary>
 /// This object is owned by players through network
@@ -17,6 +18,7 @@ public class MapObjectManager_S : NetworkBehaviour
 
 
     [SerializeField] private MapObjectManager_L localObjectManager = null;
+    [SerializeField] private QuestionsManager questionsManager = null;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -34,13 +36,36 @@ public class MapObjectManager_S : NetworkBehaviour
 
     public override void OnStartServer()
     { 
-        NetworkManagerTN.OnServerReadied += InitializePlayers;
+        NetworkManagerTN.OnServerReadied += InitializeScene;
     }
 
     private void OnDestroy() =>
-        NetworkManagerTN.OnServerReadied -= InitializePlayers;
+        NetworkManagerTN.OnServerReadied -= InitializeScene;
 
-    private void InitializePlayers(NetworkConnection conn) => RpcInitializePlayers();
+    [Server]
+    private void InitializeScene(NetworkConnection conn)
+    {
+        if(SceneManager.GetActiveScene().name == "Scene_Map_02_Misused")
+        {
+            questionsManager = FindObjectOfType<QuestionsManager>();
+            questionsManager.InitializeQuestions(Room.currentMap.Index);
+        }
+        RpcInitializePlayers();
+
+        // Check if Players are ready at the scene
+        CheckToStartMap();
+
+    }
+
+    [Server]
+    private void CheckToStartMap()
+    {
+        if (Room.GamePlayers.Count(x => x.connectionToClient.isReady) != Room.GamePlayers.Count) { return; }
+
+        // Add Code that Closes or Stops the "Waiting for Other Player" loading screen or smth
+
+        questionsManager?.ResetQuestions(); // Code that starts question if it is Map02 etc.
+    }
 
     [ClientRpc]
     private void RpcInitializePlayers()
@@ -55,6 +80,8 @@ public class MapObjectManager_S : NetworkBehaviour
         localObjectManager.InitializePlayer();
         localObjectManager.serverObjectManager = this;
     }
+
+
 
     [Command(requiresAuthority = false)]
     public void CmdExitDoor(int playerNum)
