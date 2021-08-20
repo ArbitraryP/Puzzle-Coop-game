@@ -12,8 +12,8 @@ public class QuestionsManager : NetworkBehaviour
     [SerializeField] private UI_QuestionScreen questionScreen = null;
     [SerializeField] private bool isDefaultFormat = true;
 
-    private int currentScore = 0;
-    private int maxScore = 1;
+    public int currentScore = 0;
+    public int maxScore = 1;
 
     private Question currentQuestion = null;
 
@@ -42,16 +42,19 @@ public class QuestionsManager : NetworkBehaviour
     {
         currentScore = 0;
         maxScore = questionSet.Questions.Count;
-        remainingQuestions.AddRange(questionSet.Questions);
 
+        remainingQuestions.Clear();
+        remainingQuestions.AddRange(questionSet.Questions);
         NextQuestion();
     }
 
     [Server]
     private void NextQuestion()
     {
+        if (remainingQuestions.Count <= 0) return;
+
         int randomIndex = Random.Range(0, remainingQuestions.Count - 1);
-        float progressAmount = currentScore / maxScore;
+        float progressAmount = (float)currentScore / (float)maxScore;
         int[] shuffledAnswersOrder = ShuffleIntArray.Shuffe( new int[] { 0, 1, 2, 3 } );
 
         currentQuestion = remainingQuestions[randomIndex];
@@ -76,7 +79,14 @@ public class QuestionsManager : NetworkBehaviour
     [Command(requiresAuthority = false)]
     public void CmdSelectAnswer()
     {
+        //Temp Code just testing to move questions
+        
+        currentScore++;
 
+        if (remainingQuestions.Count <= 0)
+            ResetQuestions();
+        else
+            NextQuestion();
     }
 
 }

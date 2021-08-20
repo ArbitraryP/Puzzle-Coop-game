@@ -1935,7 +1935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 432195435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1451262734}
+        m_TargetAssemblyTypeName: UI_QuestionScreen, Assembly-CSharp
+        m_MethodName: OnClickChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &432195435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3162,7 +3174,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 883785767}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1451262734}
+        m_TargetAssemblyTypeName: UI_QuestionScreen, Assembly-CSharp
+        m_MethodName: OnClickChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &883785767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4510,7 +4534,6 @@ MonoBehaviour:
   questionText: {fileID: 536889957}
   questionImage: {fileID: 1483549840}
   progressBar: {fileID: 1587883266}
-  imageSet: {fileID: 11400000, guid: fcf8778a5cc1bd64c80c76f1f484372b, type: 2}
   testFormat: 1
 --- !u!1 &1483549838
 GameObject:
@@ -5007,7 +5030,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1511680987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1451262734}
+        m_TargetAssemblyTypeName: UI_QuestionScreen, Assembly-CSharp
+        m_MethodName: OnClickChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1511680987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6976,7 +7011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1888006918}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1451262734}
+        m_TargetAssemblyTypeName: UI_QuestionScreen, Assembly-CSharp
+        m_MethodName: OnClickChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1888006918
 MonoBehaviour:
   m_ObjectHideFlags: 0

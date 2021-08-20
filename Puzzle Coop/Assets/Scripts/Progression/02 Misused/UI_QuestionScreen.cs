@@ -97,7 +97,7 @@ public class UI_QuestionScreen : MonoBehaviour
     {
         QuestionsManager questionsManager = FindObjectOfType<QuestionsManager>();
         if (!questionsManager) return;
-
+        questionsManager.CmdSelectAnswer();
 
     }
 }
