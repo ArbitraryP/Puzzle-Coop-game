@@ -15,7 +15,7 @@ public class QuestionsManager : NetworkBehaviour
     private int currentScore = 0;
     private int maxScore = 1;
 
-    
+    private Question currentQuestion = null;
 
     private void Awake()
     {
@@ -50,11 +50,13 @@ public class QuestionsManager : NetworkBehaviour
     [Server]
     private void NextQuestion()
     {
-                int randomIndex = Random.Range(0, remainingQuestions.Count - 1);
+        int randomIndex = Random.Range(0, remainingQuestions.Count - 1);
         float progressAmount = currentScore / maxScore;
         int[] shuffledAnswersOrder = ShuffleIntArray.Shuffe( new int[] { 0, 1, 2, 3 } );
-                
-        RpcSetUpQuestion(remainingQuestions[randomIndex], isDefaultFormat, progressAmount, shuffledAnswersOrder);
+
+        currentQuestion = remainingQuestions[randomIndex];
+
+        RpcSetUpQuestion(currentQuestion.name, isDefaultFormat, progressAmount, shuffledAnswersOrder);
 
         isDefaultFormat = !isDefaultFormat;
         remainingQuestions.RemoveAt(randomIndex);
@@ -62,14 +64,19 @@ public class QuestionsManager : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void RpcSetUpQuestion(Question question, bool defaultFormat,  float progressAmount, int[] arrangement)
+    private void RpcSetUpQuestion(string questionName, bool defaultFormat,  float progressAmount, int[] arrangement)
     {
-        questionScreen.SetUpQuestion(question, defaultFormat, arrangement);
+        questionScreen.SetUpQuestion(questionName, defaultFormat, arrangement);
         questionScreen.SetProgressBar(progressAmount);
 
 
     }
 
 
+    [Command(requiresAuthority = false)]
+    public void CmdSelectAnswer()
+    {
+
+    }
 
 }

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5acd8cd4363db66428c633c09e7b9722, type: 3}
   m_Name: 02_Incognito
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: a63b50f088983094792a7ac250804681, type: 3}
   text: Incognito surfing does all these, except...
   choices:
-  - Surf Anonymously
-  - Don't save browsing history
+  - Surf anonymously
+  - Don't save history
   - Don't store cookies
   - Don't hide IP address
   answerIndex: 0

@@ -14,7 +14,6 @@ public class UI_QuestionScreen : MonoBehaviour
     [SerializeField] private Image questionImage = null;
     [SerializeField] private Image progressBar = null;
 
-    
 
     private int[] shuffledChoicesIndex;
     public bool testFormat = true;
@@ -33,17 +32,15 @@ public class UI_QuestionScreen : MonoBehaviour
 
     // This method will be called to setup a question
     // Two parameters: Question, bool_true Question/Answer
-    public void SetUpQuestion(Question question, bool isDefaultFormat, int[] arrangement)
+    public void SetUpQuestion(string questionName, bool isDefaultFormat, int[] arrangement)
     {
         // loads answers to answers and shuffles it
         shuffledChoicesIndex = arrangement;
-        currentQuestion = question;
+        currentQuestion = Resources.Load<Question>("ScriptableObjects/Questions/" + questionName);
 
-        foreach(NetworkGamePlayerTN player in Room.GamePlayers)
+        foreach (NetworkGamePlayerTN player in Room.GamePlayers)
         {
-            Debug.Log("Player Authority: " + player.hasAuthority);
             if (!player.hasAuthority) { continue; }
-            Debug.Log("Player Leader: " + player.isLeader);
             if (player.isLeader)
             {
                 SetQuestionFormat(isDefaultFormat);
@@ -71,6 +68,7 @@ public class UI_QuestionScreen : MonoBehaviour
                 button.interactable = true;
 
             questionText.text = currentQuestion.text;
+            questionImage.sprite = currentQuestion.image;
             questionImage.color = Color.white;
         }
         else
@@ -81,9 +79,11 @@ public class UI_QuestionScreen : MonoBehaviour
                 buttons[i].interactable = false;
             }
 
+
             questionText.text = "...";
+            questionImage.sprite = null;
             questionImage.color = Color.black;
-            
+
         }
     }
 
@@ -92,4 +92,12 @@ public class UI_QuestionScreen : MonoBehaviour
         progressBar.fillAmount = progressAmount;
     }
 
+
+    public void OnClickChoice(int buttonIndex)
+    {
+        QuestionsManager questionsManager = FindObjectOfType<QuestionsManager>();
+        if (!questionsManager) return;
+
+
+    }
 }
