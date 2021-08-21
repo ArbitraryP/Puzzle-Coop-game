@@ -13,7 +13,9 @@ public class UI_QuestionScreen : MonoBehaviour
     [SerializeField] private TMP_Text questionText = null;
     [SerializeField] private Image questionImage = null;
     [SerializeField] private Image progressBar = null;
+    [SerializeField] private GameObject quizCompleteImage = null;
 
+    [SerializeField] private MapObjectManager_L localObjectManager = null;
 
     private int[] shuffledChoicesIndex;
     public bool testFormat = true;
@@ -56,7 +58,6 @@ public class UI_QuestionScreen : MonoBehaviour
 
     public void SetQuestionFormat(bool isDefault)
     {
-        Debug.Log("Is Default Format: " + isDefault);
         if (isDefault)
         {
             buttonTexts[0].text = "A";
@@ -97,7 +98,14 @@ public class UI_QuestionScreen : MonoBehaviour
     {
         QuestionsManager questionsManager = FindObjectOfType<QuestionsManager>();
         if (!questionsManager) return;
-        questionsManager.CmdSelectAnswer();
+        
+        
+        questionsManager.CmdSelectAnswer(shuffledChoicesIndex[buttonIndex]);
 
+    }
+
+    public void ShowQuizCompleted()
+    {
+        quizCompleteImage.SetActive(true);
     }
 }

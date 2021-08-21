@@ -12,10 +12,13 @@ public class QuestionsManager : NetworkBehaviour
     [SerializeField] private UI_QuestionScreen questionScreen = null;
     [SerializeField] private bool isDefaultFormat = true;
 
-    public int currentScore = 0;
-    public int maxScore = 1;
+    public MapObjectManager_S serverObjectManager = null;
+
+    private int currentScore = 0;
+    private int maxScore = 1;
 
     private Question currentQuestion = null;
+
 
     private void Awake()
     {
@@ -77,16 +80,35 @@ public class QuestionsManager : NetworkBehaviour
 
 
     [Command(requiresAuthority = false)]
-    public void CmdSelectAnswer()
+    public void CmdSelectAnswer(int answerIndex)
     {
-        //Temp Code just testing to move questions
         
-        currentScore++;
-
-        if (remainingQuestions.Count <= 0)
-            ResetQuestions();
-        else
+        if (currentQuestion.answerIndex == answerIndex)
+        {
+            currentScore++;
+            // Play Correct Answer sound
+            if(currentScore == maxScore)
+            {
+                serverObjectManager.RpcM02_QuizCompleted();
+                RpcShowQuizComplete();
+            }
+                
+                       
             NextQuestion();
+        }
+        else
+        {
+            // Play Wrong Answer sound
+            ResetQuestions();
+        }
+        
+    }
+
+    [ClientRpc]
+    private void RpcShowQuizComplete()
+    {
+        questionScreen.ShowQuizCompleted();
+        questionScreen.SetProgressBar(1);
     }
 
 }

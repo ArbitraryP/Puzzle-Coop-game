@@ -4260,8 +4260,8 @@ MonoBehaviour:
   - {fileID: 1696286036}
   cameraControl: {fileID: 1733465798801091833}
   passCodeScreen: {fileID: 549128626}
-  darkFilter_00: {fileID: 1571954039}
-  darkFilter_01: {fileID: 0}
+  darkFilter: {fileID: 1571954039}
+  sampleObject: {fileID: 0}
 --- !u!1 &893579686
 GameObject:
   m_ObjectHideFlags: 0

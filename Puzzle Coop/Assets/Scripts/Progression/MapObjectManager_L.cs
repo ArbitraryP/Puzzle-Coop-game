@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using TangentNodes.Network;
+using System;
 
 public class MapObjectManager_L : MonoBehaviour
 {
@@ -13,10 +14,10 @@ public class MapObjectManager_L : MonoBehaviour
 
     [Header("00 Tutorial Map")]
     [SerializeField] private GameObject passCodeScreen = null;
-    [SerializeField] private GameObject darkFilter_00 = null;
+    [SerializeField] private GameObject darkFilter = null;
 
     [Header("01 Intro to IT")]
-    [SerializeField] private GameObject darkFilter_01 = null;
+    [SerializeField] private GameObject sampleObject = null;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -38,35 +39,33 @@ public class MapObjectManager_L : MonoBehaviour
         }
     }
 
+    public void UnlockDoors()
+    {
+        foreach(ExitDoor door in exitDoors)
+        {
+            if (!door) continue;
+            door.gameObject.SetActive(true);
+            door.isUnlocked = true;
+        }
+
+        // Play unlocked door sound and Show doors unlock text
+    }
+
     #region 00 Tutorial
-    
+
     public void M00_PowerOnAction()
     {
-        darkFilter_00.SetActive(false);
+        darkFilter.SetActive(false);
         passCodeScreen.SetActive(true);
-        exitDoors[0].gameObject.SetActive(true);
-        exitDoors[1].gameObject.SetActive(true);
 
         // Play sound. Show text
     }
 
-    public void M00_PassCodeAction()
-    {
-        exitDoors[0].isUnlocked = true;
-        exitDoors[1].isUnlocked = true;
-
-        // Play sound correct. Show text
-
-    }
 
     #endregion
 
     #region 02 Misused
 
-    public void M02_QuestionCompleted()
-    {
-        exitDoors[0].isUnlocked = true;
-    }
 
     #endregion
 

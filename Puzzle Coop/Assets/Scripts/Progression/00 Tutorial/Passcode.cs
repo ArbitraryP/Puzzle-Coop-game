@@ -48,7 +48,9 @@ public class Passcode : MonoBehaviour
                 return;
             }
 
-            localObjectManager.serverObjectManager.CmdM00_PassCodeOn();
+            // Play sound correct code
+
+            localObjectManager.serverObjectManager.CmdUnlockDoors();
 
             
         }

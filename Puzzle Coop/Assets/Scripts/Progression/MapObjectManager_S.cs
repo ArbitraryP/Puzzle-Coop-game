@@ -39,8 +39,11 @@ public class MapObjectManager_S : NetworkBehaviour
         NetworkManagerTN.OnServerReadied += InitializeScene;
     }
 
-    private void OnDestroy() =>
+    private void OnDestroy()
+    {
         NetworkManagerTN.OnServerReadied -= InitializeScene;
+    }
+        
 
     [Server]
     private void InitializeScene(NetworkConnection conn)
@@ -48,7 +51,11 @@ public class MapObjectManager_S : NetworkBehaviour
         if(SceneManager.GetActiveScene().name == "Scene_Map_02_Misused")
         {
             questionsManager = FindObjectOfType<QuestionsManager>();
-            questionsManager.InitializeQuestions(Room.currentMap.Index);
+            if (questionsManager)
+            {
+                questionsManager.serverObjectManager = this;
+                questionsManager.InitializeQuestions(Room.currentMap.Index);
+            }
         }
         RpcInitializePlayers();
 
@@ -114,6 +121,14 @@ public class MapObjectManager_S : NetworkBehaviour
         }
     }
 
+    [Command(requiresAuthority = false)]
+    public void CmdUnlockDoors() => RpcUnlockDoors();
+
+    [ClientRpc]
+    private void RpcUnlockDoors() => localObjectManager.UnlockDoors();
+
+
+
     #region 00 Tutorial
 
     [Command(requiresAuthority = false)]
@@ -123,15 +138,14 @@ public class MapObjectManager_S : NetworkBehaviour
     private void RpcM00_PowerOn() => localObjectManager.M00_PowerOnAction();
 
 
-    [Command(requiresAuthority = false)]
-    public void CmdM00_PassCodeOn() => RpcM00_PassCodeOn();
-
-    [ClientRpc]
-    private void RpcM00_PassCodeOn() => localObjectManager.M00_PassCodeAction();
-
     #endregion
 
+    #region 02 Misused Terms
 
+    [ClientRpc]
+    public void RpcM02_QuizCompleted() => localObjectManager.UnlockDoors();
+
+    #endregion
 
 
 }
