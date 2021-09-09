@@ -17,7 +17,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
   - {fileID: 11400000, guid: 7cc44a0a19a238841a119894faa5c2e8, type: 2}
   - {fileID: 11400000, guid: b4e33b228a101c3498668c4c5ffbb073, type: 2}
+  unlocks: []
   displayName: Misused Terms C
   difficulty: 4
   achievments: []
-  Scene: 
+  Scene: Assets/Scenes/Scene_Map_02_Misused.unity

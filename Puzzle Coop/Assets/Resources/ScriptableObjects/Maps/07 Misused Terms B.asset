@@ -21,4 +21,4 @@ MonoBehaviour:
   displayName: Misused Terms B
   difficulty: 1
   achievments: []
-  Scene: 
+  Scene: Assets/Scenes/Scene_Map_02_Misused.unity
