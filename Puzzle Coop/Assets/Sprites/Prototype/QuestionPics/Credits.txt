@@ -23,6 +23,36 @@ URL
 https://zvelo.com/wp-content/uploads/2018/11/anatomy-of-a-full-path-url-hostname-tld-path-protocol.jpg
 
 
+Internet
+
+https://cdn.mos.cms.futurecdn.net/DhVoDnJB2phbcLLix7fjPG.jpg
+
+
+
+Malware
+
+https://images.idgesg.net/images/article/2018/02/security_risk_assessment_analysis_vulnerability_danger_thinkstock_902893076-100750007-large.jpg?auto=webp
+
+
+VPN
+
+https://cdn.dnaindia.com/sites/default/files/styles/full/public/2021/09/01/993880-vpn-services-pixabay.jpg
+
+
+WIFI
+
+https://thejournal.com/-/media/EDU/CampusTechnology/2020-images/20200430wifi.jpg
+
+WWW
+
+https://cdn.mos.cms.futurecdn.net/2gVbEEkFcKhTStZYb4k9yD-1200-80.jpg
+
+
+
+
+
+
+
 
 
 
