@@ -64,3 +64,5 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   localObjectManager: {fileID: 0}
+  mapCompleteMsgPrefab: {fileID: 2449463361182286917, guid: 0cb8750a3bae37f41bd019041fb4ab5f, type: 3}
+  questionsManager: {fileID: 0}

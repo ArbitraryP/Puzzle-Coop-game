@@ -6,7 +6,7 @@ public class ExitDoor : MonoBehaviour, IClickable
 {
     private MapObjectManager_L localObjectManager = null;
 
-    public int playerNumber = 0;
+    public int playerNumber = 0; //used to determine whose ready or not. Not Used rn
     public bool isUnlocked = false;
     
     
@@ -26,7 +26,7 @@ public class ExitDoor : MonoBehaviour, IClickable
             return;
         }
 
-        localObjectManager.serverObjectManager.CmdExitDoor(playerNumber);
+        FindObjectOfType<MapCompleteMessage>()?.ShowMessage(true);
         gameObject.SetActive(false);
         Debug.Log("Level Completed for this player");
 

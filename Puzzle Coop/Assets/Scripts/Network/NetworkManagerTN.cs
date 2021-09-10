@@ -29,6 +29,7 @@ namespace TangentNodes.Network
         [SerializeField] private MapSelect mapSelectPrefab = null;
         [SerializeField] private MapObjectManager_S objectManagerPrefab = null;
         [SerializeField] private QuestionsManager questionsManagerPrefab = null;
+        [SerializeField] private MapCompleteMessage mapCompleteMsgPrefab = null;
         /*
         [SerializeField] private GameObject playerSpawnSystem = null;
         [SerializeField] private GameObject roundSystem = null;
@@ -48,8 +49,14 @@ namespace TangentNodes.Network
 
         [Header("In Game")]
         public Map currentMap = null;
+        public bool isCurrentMapCompleted = false;
 
-        private void ClearCurrentMap() => currentMap = null;
+
+        public void ClearCurrentMap()
+        {
+            currentMap = null;
+            isCurrentMapCompleted = false;
+        }
 
         public override void OnStartServer() => spawnPrefabs = Resources.LoadAll<GameObject>("SpawnablePrefabs").ToList();
 
@@ -230,22 +237,14 @@ namespace TangentNodes.Network
 
                 if (sceneName == "Scene_Map_Select")
                 {
-                    ClearCurrentMap();
+                    
+
                     foreach (NetworkGamePlayerTN player in GamePlayers)
                     {
-
-                        // Spawn MapObjectManager_S for each players
-                        /*
-                        GameObject objectManagerInstance = Instantiate(objectManagerPrefab.gameObject);
-                        NetworkServer.Spawn(objectManagerInstance, player.connectionToClient);
-                        */
-
-
                         // Spawns a Map UI when loaded owned by leader
                         if (!player.isLeader) { continue; }
                         GameObject mapSelectPrefabInstance = Instantiate(mapSelectPrefab.gameObject);
                         NetworkServer.Spawn(mapSelectPrefabInstance, player.connectionToClient);
-
 
                     }
                 }
@@ -254,6 +253,12 @@ namespace TangentNodes.Network
                     // Spawn Object Manager for server
                     GameObject objectManagerInstance = Instantiate(objectManagerPrefab.gameObject);
                     NetworkServer.Spawn(objectManagerInstance);
+
+
+                    GameObject mapCompleteMsgInstance = Instantiate(mapCompleteMsgPrefab.gameObject);
+                    NetworkServer.Spawn(mapCompleteMsgInstance);
+
+                    mapCompleteMsgInstance.GetComponent<MapCompleteMessage>()?.SetUpMapMessage(currentMap.name);
                 }
 
                 if (sceneName == "Scene_Map_02_Misused")

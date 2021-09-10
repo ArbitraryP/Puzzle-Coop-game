@@ -89,6 +89,10 @@ public class MapObjectManager_S : NetworkBehaviour
     }
 
 
+    [Command(requiresAuthority = false)]
+    public void CmdSpawnMapCompleteMsg()
+    {
+    }
 
     [Command(requiresAuthority = false)]
     public void CmdExitDoor(int playerNum)
@@ -115,6 +119,7 @@ public class MapObjectManager_S : NetworkBehaviour
                 // Invoke Achievement if ever there is
             }
 
+            Room.isCurrentMapCompleted = true;
             Room.ServerChangeScene("Scene_Map_Select");
 
 

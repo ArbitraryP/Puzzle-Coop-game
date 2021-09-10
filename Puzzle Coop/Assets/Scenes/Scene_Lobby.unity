@@ -478,7 +478,9 @@ MonoBehaviour:
   mapSelectPrefab: {fileID: 4554997605169069631, guid: 9a6ce91b38b8a0b41961f52caaec1e32, type: 3}
   objectManagerPrefab: {fileID: 1389564324323045749, guid: d90bed7236a424344b73dab9e8f69d0f, type: 3}
   questionsManagerPrefab: {fileID: 5226346762807882059, guid: 0263a108fbfd3914db274e8b7095909c, type: 3}
+  mapCompleteMsgPrefab: {fileID: 2449463361182286917, guid: 0cb8750a3bae37f41bd019041fb4ab5f, type: 3}
   currentMap: {fileID: 0}
+  isCurrentMapCompleted: 0
 --- !u!4 &1495594496
 Transform:
   m_ObjectHideFlags: 0
