@@ -105,6 +105,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Prototype\SteamTest.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\Question.cs" />
+    <Compile Include="Assets\Scripts\UI\MapCompleteMessage.cs" />
     <Compile Include="Assets\Scripts\Progression\PlayerData.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\QuestionSet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
@@ -128,7 +129,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\UI\MapCompleteMessage.cs" />
+    <Compile Include="Assets\Scripts\Prototype\IpAddressChecker.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
