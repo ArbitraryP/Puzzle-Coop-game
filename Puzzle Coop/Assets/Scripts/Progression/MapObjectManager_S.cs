@@ -145,6 +145,22 @@ public class MapObjectManager_S : NetworkBehaviour
 
     #endregion
 
+    #region 01 Intro To IT
+
+    [Command(requiresAuthority = false)]
+    public void CmdM01_PowerOn() => RpcM01_PowerOn();
+
+    [ClientRpc]
+    private void RpcM01_PowerOn() => localObjectManager.M01_PowerOnAction();
+
+
+
+    [ClientRpc]
+    public void CmdM01_BreakerOn() => localObjectManager.UnlockDoors();
+
+    #endregion
+
+
     #region 02 Misused Terms
 
     [ClientRpc]

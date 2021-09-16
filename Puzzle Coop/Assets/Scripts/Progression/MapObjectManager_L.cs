@@ -17,7 +17,7 @@ public class MapObjectManager_L : MonoBehaviour
     [SerializeField] private GameObject darkFilter = null;
 
     [Header("01 Intro to IT")]
-    [SerializeField] private GameObject sampleObject = null;
+    [SerializeField] private BreakerButton[] breakerButtons = null;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -64,8 +64,33 @@ public class MapObjectManager_L : MonoBehaviour
 
     #endregion
 
-    #region 02 Misused
 
+
+    #region 01 IntroToIT
+
+    public bool M01_IsCombinationCorrect()
+    {
+        foreach (BreakerButton button in breakerButtons)
+        {
+            if (!button.isSelectedCorrect())
+            {
+                //Play wrong sound
+                return false;
+            }
+        }
+
+
+        serverObjectManager.CmdM01_PowerOn();
+        return true;
+
+    }
+
+    public void M01_PowerOnAction()
+    {
+        darkFilter.SetActive(false);
+
+        // Play sound. Show text
+    }
 
     #endregion
 
