@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_Map_00_Tutorial.unity
     guid: 7be53b22a02184945a6dfcba1e04c9e2
   - enabled: 1
+    path: Assets/Scenes/Scene_Map_01_IntroToIT.unity
+    guid: 30081cf8caa10c3469236d60df214b9e
+  - enabled: 1
     path: Assets/Scenes/Scene_Map_02_Misused.unity
     guid: 07b55c1b1031f8e438f737430a319d7f
   - enabled: 0

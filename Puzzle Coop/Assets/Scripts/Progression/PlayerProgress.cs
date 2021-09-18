@@ -34,6 +34,7 @@ public class PlayerProgress : MonoBehaviour
         completedMaps.Add(0);
         completedMaps.Add(2);
         completedMaps.Add(7);
+        unlockedMaps.Add(1);
         unlockedMaps.Add(2);
         unlockedMaps.Add(7);
         unlockedMaps.Add(8);

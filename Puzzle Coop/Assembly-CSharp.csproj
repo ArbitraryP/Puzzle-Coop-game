@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\UI\SettingsAndExit.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\UI_QuestionScreen.cs" />
+    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\NodesMove.cs" />
     <Compile Include="Assets\Scripts\Controls\ClickManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Scripts\Progression\02 Misused\ShuffleIntArray.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BreakerSwitch.cs" />
     <Compile Include="Assets\Scripts\Progression\00 Tutorial\Passcode.cs" />
     <Compile Include="Assets\Scripts\Progression\WelcomeNote.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Assets\Scripts\Progression\00 Tutorial\Plug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BreakerButton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Prototype\DragTarget.cs" />
     <Compile Include="Assets\Scripts\Progression\MapObjectManager_S.cs" />
@@ -130,8 +133,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BreakerButton.cs" />
-    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BreakerSwitch.cs" />
+    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\NodesSlot.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

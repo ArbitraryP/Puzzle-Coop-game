@@ -60,8 +60,8 @@
     <Compile Include="Assets\Mirror\Tests\Editor\NetworkClientTests.cs" />
     <Compile Include="Assets\Mirror\Tests\Editor\ClientSceneTests_RegisterPrefab.cs" />
     <Compile Include="Assets\Mirror\Tests\Editor\OverloadMethodTest.cs" />
-    <Compile Include="Assets\Mirror\Tests\Editor\NetworkWriterCollectionTest.cs" />
     <Compile Include="Assets\Mirror\Tests\Editor\Weaver\WeaverTargetRpcTests.cs" />
+    <Compile Include="Assets\Mirror\Tests\Editor\NetworkWriterCollectionTest.cs" />
     <Compile Include="Assets\Mirror\Tests\Editor\SyncListClassTest.cs" />
     <Compile Include="Assets\Mirror\Tests\Editor\InterestManagementTests_Distance.cs" />
     <Compile Include="Assets\Mirror\Tests\Editor\NetworkLoopTests.cs" />

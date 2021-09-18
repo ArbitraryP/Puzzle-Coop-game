@@ -19,4 +19,4 @@ MonoBehaviour:
   displayName: Introduction to IT
   difficulty: 1
   achievments: []
-  Scene: 
+  Scene: Assets/Scenes/Scene_Map_01_IntroToIT.unity

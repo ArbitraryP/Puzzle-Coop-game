@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using TangentNodes.Network;
-using System;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class MapObjectManager_L : MonoBehaviour
 {
@@ -18,6 +16,8 @@ public class MapObjectManager_L : MonoBehaviour
 
     [Header("01 Intro to IT")]
     [SerializeField] private BreakerButton[] breakerButtons = null;
+    [SerializeField] private NodesMove[] nodes = null;
+    [SerializeField] private Light2D lightGlow = null;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -88,8 +88,25 @@ public class MapObjectManager_L : MonoBehaviour
     public void M01_PowerOnAction()
     {
         darkFilter.SetActive(false);
+        foreach (NodesMove node in nodes)
+            node.isEnabled = true;
 
         // Play sound. Show text
+    }
+
+    public void M01_OnNodeInserted()
+    {
+        foreach (NodesMove node in nodes)
+        {
+            if (!node.isInCorrectSlot)
+                return;
+        }
+
+        foreach (NodesMove node in nodes)
+            node.isEnabled = false;
+
+        serverObjectManager.CmdUnlockDoors();
+        lightGlow.color = Color.green;
     }
 
     #endregion
