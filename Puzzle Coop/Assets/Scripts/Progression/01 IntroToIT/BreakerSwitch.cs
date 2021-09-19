@@ -21,7 +21,7 @@ public class BreakerSwitch : MonoBehaviour, IClickable
         targetPosition = ObjectRef_Off.position;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         // Move Handle where theres new coordinates
         if (Vector2.Distance(BreakerHandle.position, targetPosition) > 0.01)
