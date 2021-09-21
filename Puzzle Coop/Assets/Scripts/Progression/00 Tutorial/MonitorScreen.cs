@@ -1,13 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-public class MonitorScreen : MonoBehaviour, IClickable
+
+public class MonitorScreen : MonoBehaviour
 {
     [SerializeField] private GameObject panelPasscode = null;
     [SerializeField] private GameObject[] buttonsUpDown = null;
+    [SerializeField] private Button monitorButton = null;
+    [SerializeField] private TMP_Text monitorText = null;
 
-    public void Click()
+    public void Completed()
+    {
+        monitorButton.interactable = false;
+        monitorText.text = "Door Unlocked.";
+    }
+
+    public void OnClick()
     {
         panelPasscode.SetActive(true);
         foreach (GameObject button in buttonsUpDown)

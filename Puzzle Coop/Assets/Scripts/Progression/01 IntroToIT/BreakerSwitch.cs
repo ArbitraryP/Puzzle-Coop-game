@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BreakerSwitch : MonoBehaviour, IClickable
 {
@@ -6,6 +7,7 @@ public class BreakerSwitch : MonoBehaviour, IClickable
     [SerializeField] private Transform BreakerHandle = null;
     [SerializeField] private Transform ObjectRef_On = null;
     [SerializeField] private Transform ObjectRef_Off = null;
+    [SerializeField] private Button[] breakerButtons = null;
 
     [Range(0.1f, 10f)]
     public float smoothPanFactor;
@@ -43,7 +45,7 @@ public class BreakerSwitch : MonoBehaviour, IClickable
                 isCorrectCombination();
         }
 
-        
+        LockButtons();
 
     }
 
@@ -69,6 +71,17 @@ public class BreakerSwitch : MonoBehaviour, IClickable
 
         targetSwitchState = changeToOn;
         isHandleFullySwitched = false;
+    }
+
+    private void LockButtons()
+    {
+        if (targetSwitchState || isSwitchedOn)
+            foreach (Button breakerButton in breakerButtons)
+                breakerButton.interactable = false;
+
+        else
+            foreach (Button breakerButton in breakerButtons)
+                breakerButton.interactable = true;
     }
 
     public void Click()

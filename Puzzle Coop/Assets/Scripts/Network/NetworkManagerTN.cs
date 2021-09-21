@@ -131,12 +131,18 @@ namespace TangentNodes.Network
                 NotifyPlayersOfReadyState();
 
                 //OnServerDisconnected?.Invoke(conn);
-                
+
                 // Write some code here for AutoSaving Progress
 
-                // Since there's only 1 joining. Immediately show Disconnected Client Message.
-                DisconnectPanel disconnectPanel = Instantiate(disconnectPanelPrefab);
-                disconnectPanel.ChangeTextToLostClient();
+
+                if (RoomPlayers.Count < 2 && SceneManager.GetActiveScene().name != menuScene) 
+                {
+                    // Check if partner really left. Not by a 3rd player disconnecting and is not in Lobby
+                    // Since there's only 1 joining. Immediately show Disconnected Client Message.
+                    DisconnectPanel disconnectPanel = Instantiate(disconnectPanelPrefab);
+                    disconnectPanel.ChangeTextToLostClient();
+
+                }
             }
 
             base.OnServerDisconnect(conn);

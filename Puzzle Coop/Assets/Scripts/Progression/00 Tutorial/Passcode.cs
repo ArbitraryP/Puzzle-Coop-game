@@ -10,7 +10,7 @@ public class Passcode : MonoBehaviour
     [SerializeField] private TMP_InputField inputField = null;
     [SerializeField] private Button closeButton = null;
     [SerializeField] private string correctCode = "0831";
-    
+    [SerializeField] private MonitorScreen monitorScreen = null;
 
     public void OnClickInput(string character)
     {
@@ -50,6 +50,7 @@ public class Passcode : MonoBehaviour
 
             // Play sound correct code
 
+            monitorScreen.Completed();
             localObjectManager.serverObjectManager.CmdUnlockDoors();
 
             
