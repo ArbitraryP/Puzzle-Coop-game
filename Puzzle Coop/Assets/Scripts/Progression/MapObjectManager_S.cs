@@ -57,6 +57,10 @@ public class MapObjectManager_S : NetworkBehaviour
                 questionsManager.InitializeQuestions(Room.currentMap.Index);
             }
         }
+        if (SceneManager.GetActiveScene().name == "Scene_Map_03_MisConvo")
+            RpcM03_InitializeSentences(Room.currentMap.Index);
+        
+
         RpcInitializePlayers();
 
         // Check if Players are ready at the scene
@@ -165,6 +169,16 @@ public class MapObjectManager_S : NetworkBehaviour
 
     [ClientRpc]
     public void RpcM02_QuizCompleted() => localObjectManager.UnlockDoors();
+
+    #endregion
+
+
+    #region 03 Miscon Convo
+
+    [ClientRpc]
+    private void RpcM03_InitializeSentences(int currentMapIndex) =>
+        FindObjectOfType<UI_Receiver>()?.InitializeSentences(currentMapIndex);
+    
 
     #endregion
 

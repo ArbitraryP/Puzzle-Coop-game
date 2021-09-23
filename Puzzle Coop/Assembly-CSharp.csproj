@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\Prototype\VelvetRopeTest.cs" />
     <Compile Include="Assets\Scripts\Progression\00 Tutorial\Plug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\PageSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BreakerButton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -134,7 +135,10 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\PageSystem.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\Sentence.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\SentenceSet.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\ShuffleString.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
