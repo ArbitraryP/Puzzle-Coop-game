@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 03_Sentence 1
   m_EditorClassIdentifier: 
   location: 0.082
-  firstText: Si Dumdum ay naglalakad sa may kanto...
-  secondText: ...nang nadaanan niya ang All Day store
+  firstText: There was a time that my friend asked me to...
+  secondText: "...help him hack his girlfriend\u2019s Facebook account."

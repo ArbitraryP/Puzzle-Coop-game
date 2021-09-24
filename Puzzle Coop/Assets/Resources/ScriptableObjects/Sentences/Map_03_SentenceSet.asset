@@ -21,3 +21,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 93c0008598038a0498a07392855e29ce, type: 2}
   - {fileID: 11400000, guid: d3731f43f4cd0ed43aa78c844afe2494, type: 2}
   associateMap: {fileID: 11400000, guid: 0bcd9d19ba23a694a86536837699b032, type: 2}
+  showCalendarHideClock: 1
+  correctMonth: 3
+  correctDate: 22
+  correctHour: 6
+  correctMinutes: 0
+  correctMeridiemAM: 0

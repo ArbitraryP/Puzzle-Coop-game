@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3dacdcee14fe1748ba3a8327f55029e, type: 3}
+  m_Name: Map_06_SentenceSet
+  m_EditorClassIdentifier: 
+  sentences:
+  - {fileID: 11400000, guid: 6e39f2d5cbf2ede44abf186f75516c79, type: 2}
+  - {fileID: 11400000, guid: d6223119d075eb8438322639b2a0c6f9, type: 2}
+  - {fileID: 11400000, guid: 18d92b7f88d742d449345bef23ed3b21, type: 2}
+  - {fileID: 11400000, guid: 52d00f5a36b87174f81320739e9e752c, type: 2}
+  - {fileID: 11400000, guid: 8782c066c6080ad4bb735de198368fbf, type: 2}
+  - {fileID: 11400000, guid: 859052de3221e1e46a93c8f0864a2d1c, type: 2}
+  - {fileID: 11400000, guid: 87148c013e2eb2744abedbff8115bb48, type: 2}
+  associateMap: {fileID: 11400000, guid: 76fedb94ad1748a4cbca72664d5dade1, type: 2}
+  showCalendarHideClock: 0
+  correctMonth: 1
+  correctDate: 31
+  correctHour: 11
+  correctMinutes: 11
+  correctMeridiemAM: 0

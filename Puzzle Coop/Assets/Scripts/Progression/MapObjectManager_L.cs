@@ -19,6 +19,14 @@ public class MapObjectManager_L : MonoBehaviour
     [SerializeField] private NodesMove[] nodes = null;
     [SerializeField] private Light2D lightGlow = null;
 
+    [Header("03 Miscons Convo")]
+    [SerializeField] private UI_Receiver receiver = null;
+    [SerializeField] private UI_Calendar calendar = null;
+    [SerializeField] private UI_Clock clock = null;
+    [SerializeField] private SentenceSet sentenceSet = null;
+    private bool isCalendarCompleted = false;
+    private bool isClockCompleted = false;
+
     private NetworkManagerTN room;
     private NetworkManagerTN Room
     {
@@ -107,6 +115,70 @@ public class MapObjectManager_L : MonoBehaviour
 
         serverObjectManager.CmdUnlockDoors();
         lightGlow.color = Color.green;
+    }
+
+    #endregion
+
+
+
+    #region 03 Miscons Convo
+
+    public void M03_InitializeClockCalendarReceiver(int currentMapIndex)
+    {
+        var AllSets = Resources.LoadAll<SentenceSet>("ScriptableObjects/Sentences");
+
+        foreach (var set in AllSets)
+        {
+            if (set.AssociateMap.Index != currentMapIndex) continue;
+            sentenceSet = set;
+
+            // Loads the Sentences to the Receiver
+            receiver.InitializeSentences(sentenceSet);
+
+            // Setup the Correct Solution of Clock and Calendar
+            calendar.SetSolution(sentenceSet.CorrectMonth, sentenceSet.CorrectDate);
+            clock.SetSolution(sentenceSet.CorrectHour, sentenceSet.CorrectMinutes, sentenceSet.CorrectMeridiemAM);
+
+            // Either Show Calendar or Clock to Either player based on Sentence Set
+            if (cameraControl.isHostPlayer)
+            {
+                calendar.iconButton.gameObject.SetActive(sentenceSet.ShowCalendarHideClock);
+                clock.iconButton.gameObject.SetActive(!sentenceSet.ShowCalendarHideClock);
+            }
+            else
+            {
+                calendar.iconButton.gameObject.SetActive(!sentenceSet.ShowCalendarHideClock);
+                clock.iconButton.gameObject.SetActive(sentenceSet.ShowCalendarHideClock);
+            }
+            
+
+            break;
+        }
+
+    }
+
+    public void M03_OnCalendarCompleted()
+    {
+        calendar.calendarLight.color = Color.green;
+        isCalendarCompleted = true;
+
+        // play sound
+        M03_CheckIfAllPuzzlesCompleted();
+    }
+
+    public void M03_OnClockCompleted()
+    {
+        clock.clockLight.color = Color.green;
+        isClockCompleted = true;
+
+        // play sound
+        M03_CheckIfAllPuzzlesCompleted();
+    }
+
+    private void M03_CheckIfAllPuzzlesCompleted()
+    {
+        if (isClockCompleted && isCalendarCompleted)
+            UnlockDoors();
     }
 
     #endregion

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: 03_Sentence 5
   m_EditorClassIdentifier: 
   location: 0.76
-  firstText: Nagustuhan ng magkakatropa ang ginawa nila...
-  secondText: ...kaya naman bumili naman sila ng Chicharon ni Mang Juan
+  firstText: "I replied \u201CJust to make it clear, bro. I know that I am an IT
+    student but I am not..."
+  secondText: "...specialized in all fields of my course.\u201D"

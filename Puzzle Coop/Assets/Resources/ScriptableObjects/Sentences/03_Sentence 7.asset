@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: 03_Sentence 7
   m_EditorClassIdentifier: 
   location: 1
-  firstText: Tuwang tuwa ang magkakatropa ngunit kinalaunan...
-  secondText: ...kinailangan nilang umuwi dahil kumulo ang kanilan tyan.
+  firstText: "I replied, \u201CDon\u2019t worry, bro! I will be home by 6 pm. I might
+    be able to help you..."
+  secondText: "...with your problem in a different way. I\u2019ll talk to you later,
+    mate!\u201D"

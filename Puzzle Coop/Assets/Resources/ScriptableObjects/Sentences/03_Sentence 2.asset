@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 03_Sentence 2
   m_EditorClassIdentifier: 
   location: 0.2
-  firstText: Pumasok siya sa All Day...
-  secondText: ...at bumili ng tsokolate
+  firstText: "I asked him, \u201CWhy do you want me..."
+  secondText: "...to hack his girlfriend\u2019s account?\u201D"

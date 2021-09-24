@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
-  m_Name: 03_Sentence 4
+  m_Name: 06_Sentence 6
   m_EditorClassIdentifier: 
-  location: 0.531
-  firstText: "I said \u201COk? But why did you ask for my help. I mean I am not into
-    hacking, bro.\u201D He..."
-  secondText: ...said that I am an IT student that knows all the field of technology.
+  location: 0.404
+  firstText: Habang kinakain ang tsokolate...
+  secondText: ...dumating ang mga tropa niya.

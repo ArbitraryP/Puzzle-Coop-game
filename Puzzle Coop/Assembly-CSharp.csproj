@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Progression\Map.cs" />
     <Compile Include="Assets\Scripts\Progression\MapObjectManager_L.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\SentenceSet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Prototype\TestCameraMovement.cs" />
     <Compile Include="Assets\Scripts\Network\NetworkManagerTN.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\Network\MainMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\Sentence.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\QuestionsManager.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\NodesSlot.cs" />
@@ -107,6 +109,7 @@
     <Compile Include="Assets\Scripts\Progression\ExitDoor.cs" />
     <Compile Include="Assets\Scripts\Network\JoinLobbyMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\ShuffleString.cs" />
     <Compile Include="Assets\Scripts\Prototype\SteamTest.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\Question.cs" />
     <Compile Include="Assets\Scripts\UI\MapCompleteMessage.cs" />
@@ -133,12 +136,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\QuestionSerializer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\03 MisConvo\Sentence.cs" />
-    <Compile Include="Assets\Scripts\Progression\03 MisConvo\SentenceSet.cs" />
-    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
-    <Compile Include="Assets\Scripts\Progression\03 MisConvo\ShuffleString.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Calendar.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Clock.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

@@ -30,16 +30,10 @@ public class UI_Receiver : MonoBehaviour
         }
     }
 
-    public void InitializeSentences(int currentMapIndex)
+    public void InitializeSentences(SentenceSet set)
     {
-        var AllSets = Resources.LoadAll<SentenceSet>("ScriptableObjects/Sentences");
-
-        foreach (var set in AllSets)
-        {
-            if (set.AssociateMap.Index != currentMapIndex) continue;
-            sentenceSet = set;
-        }
-
+        sentenceSet = set;
+        
         foreach (NetworkGamePlayerTN player in Room.GamePlayers)
         {
             if (!player.hasAuthority) { continue; }
