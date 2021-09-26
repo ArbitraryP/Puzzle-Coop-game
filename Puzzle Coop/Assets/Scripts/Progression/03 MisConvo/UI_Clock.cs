@@ -37,10 +37,10 @@ public class UI_Clock : MonoBehaviour
     {
         // Generate Random Starting value (may start with correct value)
 
-        selectedHour = Random.Range(1, 12);
-        selectedMin10 = Random.Range(0, 5);
-        selectedMin1 = Random.Range(0, 9);
-        selectedMeridiemAM = Random.Range(0, 1) == 1;
+        selectedHour = Random.Range(1, 13);
+        selectedMin10 = Random.Range(0, 6);
+        selectedMin1 = Random.Range(0, 10);
+        selectedMeridiemAM = Random.Range(0, 2) == 1;
 
         hourText.text = selectedHour.ToString();
         min10Text.text = selectedMin10.ToString();

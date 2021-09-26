@@ -55,7 +55,7 @@ public class QuestionsManager : NetworkBehaviour
     {
         if (remainingQuestions.Count <= 0) return;
 
-        int randomIndex = Random.Range(0, remainingQuestions.Count - 1);
+        int randomIndex = Random.Range(0, remainingQuestions.Count);
         float progressAmount = (float)currentScore / (float)maxScore;
         int[] shuffledAnswersOrder = ShuffleIntArray.Shuffe( new int[] { 0, 1, 2, 3 } );
 

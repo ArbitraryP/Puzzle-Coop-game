@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
   m_Name: 06_Sentence 2
   m_EditorClassIdentifier: 
-  location: 1
-  firstText: Tuwang tuwa ang magkakatropa ngunit kinalaunan...
-  secondText: ...kinailangan nilang umuwi dahil kumulo ang kanilan tyan.
+  location: 0.116
+  firstText: At that time, I was still studying at a University taking up...
+  secondText: ...a degree of Bachelor of Science in Information Technology

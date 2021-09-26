@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
   m_Name: 06_Sentence 7
   m_EditorClassIdentifier: 
-  location: 0.2
-  firstText: Pumasok siya sa All Day...
-  secondText: ...at bumili ng tsokolate
+  location: 0.944
+  firstText: "But I told them that I couldn\u2019t since I am an IT student and repairing
+    appliances like fridges are not part of my field of study. Seeing..."
+  secondText: ...it, I know for the fact that it was beyond my capabilities and called
+    for a professional repairman instead.

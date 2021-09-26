@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
   m_Name: 06_Sentence 5
   m_EditorClassIdentifier: 
-  location: 0.531
-  firstText: May dalang Coke and mga tropa niya...
-  secondText: ...at dalidalng inaya na isawsaw ang tsokolate sa coke.
+  location: 0.624
+  firstText: The restaurant ran smoothly with a kind manager and hardworking coworkers
+    doing great customer service. At...
+  secondText: ...exactly 27 minutes before midday one of my coworkers called me because
+    of an emergency.

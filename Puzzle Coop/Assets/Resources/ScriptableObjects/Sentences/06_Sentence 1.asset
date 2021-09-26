@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
   m_Name: 06_Sentence 1
   m_EditorClassIdentifier: 
-  location: 0.082
-  firstText: Si Dumdum ay naglalakad sa may kanto...
-  secondText: ...nang nadaanan niya ang All Day store
+  location: 0.028
+  firstText: By the start of the year's 2nd quarter was when I started...
+  secondText: ...working in a small restaurant as a part time waiter.

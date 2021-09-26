@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
   m_Name: 06_Sentence 4
   m_EditorClassIdentifier: 
-  location: 0.76
-  firstText: Nagustuhan ng magkakatropa ang ginawa nila...
-  secondText: ...kaya naman bumili naman sila ng Chicharon ni Mang Juan
+  location: 0.419
+  firstText: After 59 days since the day I have been hired, I received my very first...
+  secondText: ...paycheck in exchange for my hard work and dedication.

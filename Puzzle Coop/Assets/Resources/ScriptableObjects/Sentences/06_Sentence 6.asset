@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
   m_Name: 06_Sentence 6
   m_EditorClassIdentifier: 
-  location: 0.404
-  firstText: Habang kinakain ang tsokolate...
-  secondText: ...dumating ang mga tropa niya.
+  location: 0.823
+  firstText: One of the fridges got broken and needed to be repaired immediately
+    due to the fast-spoiling ingredients...
+  secondText: ...stored. My coworkers asked me if I could fix it as an IT graduate
+    myself.

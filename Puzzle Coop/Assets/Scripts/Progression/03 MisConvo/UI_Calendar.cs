@@ -28,10 +28,10 @@ public class UI_Calendar : MonoBehaviour
     {
         // Generate Random Starting value (may start with correct value)
 
-        selectedMonth = Random.Range(1,12);
+        selectedMonth = Random.Range(1,13);
         monthText.text = months[selectedMonth - 1];
 
-        selectedDate = Random.Range(1, 31);
+        selectedDate = Random.Range(1, 32);
         foreach (Button button in dateButtons)
             button.interactable = true;
 

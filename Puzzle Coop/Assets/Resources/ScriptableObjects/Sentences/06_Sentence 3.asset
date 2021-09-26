@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
   m_Name: 06_Sentence 3
   m_EditorClassIdentifier: 
-  location: 0.89
-  firstText: Sa pagkakataong ito, sinawsaw nila ang Mang Juan...
-  secondText: ...sa Ice Cream shake na binili rin nila.
+  location: 0.262
+  firstText: At that time, I needed money to support my needs in order...
+  secondText: ...to finish the course, since I had no one else to rely on.

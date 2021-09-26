@@ -4345,6 +4345,10 @@ MonoBehaviour:
   breakerButtons: []
   nodes: []
   lightGlow: {fileID: 0}
+  receiver: {fileID: 0}
+  calendar: {fileID: 0}
+  clock: {fileID: 0}
+  sentenceSet: {fileID: 0}
 --- !u!1 &893579686
 GameObject:
   m_ObjectHideFlags: 0
@@ -5906,7 +5910,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_text
-      value: 0 * 3 *
+      value: 0 _ 3 _
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396341563934309870, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1396341564942411085, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -9507,6 +9515,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1057880343}
     m_Modifications:
+    - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
+      propertyPath: m_text
+      value: _ 8 _ 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1396341564942411085, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
