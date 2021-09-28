@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\SentenceSet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\Scripts\Prototype\TestCameraMovement.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Calendar.cs" />
     <Compile Include="Assets\Scripts\Network\NetworkManagerTN.cs" />
     <Compile Include="Assets\Scripts\Network\PlayerNameInput.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\ShuffleIntArray.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\Scripts\Progression\Achievement.cs" />
+    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Clock.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\AnswerButton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\Scripts\Progression\MapSelect.cs" />
@@ -139,8 +141,8 @@
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Calendar.cs" />
-    <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Clock.cs" />
+    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\Career.cs" />
+    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\CareerSet.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
