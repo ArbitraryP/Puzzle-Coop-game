@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11508dfba03e38346a0bea36d8f82116, type: 3}
   m_Name: 04_NetworkAdministrator
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 96614b7fc0edbc3489ab107292a0a31b, type: 3}
   careerName: Network Administrator
   code: 04000000020000000100000001000000

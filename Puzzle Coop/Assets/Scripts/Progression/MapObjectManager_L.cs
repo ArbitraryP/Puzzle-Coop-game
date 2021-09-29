@@ -27,6 +27,10 @@ public class MapObjectManager_L : MonoBehaviour
     private bool isCalendarCompleted = false;
     private bool isClockCompleted = false;
 
+    [Header("04 Career Gallery")]
+    [SerializeField] private Gallery gallery = null;
+    
+
     private NetworkManagerTN room;
     private NetworkManagerTN Room
     {

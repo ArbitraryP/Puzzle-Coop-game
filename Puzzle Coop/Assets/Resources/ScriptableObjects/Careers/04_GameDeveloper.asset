@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11508dfba03e38346a0bea36d8f82116, type: 3}
   m_Name: 04_GameDeveloper
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 1da88247b6f272d4499ba989ac693586, type: 3}
   careerName: Game Developer
   code: 09000000090000000000000002000000

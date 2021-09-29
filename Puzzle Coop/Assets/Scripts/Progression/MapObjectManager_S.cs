@@ -63,7 +63,23 @@ public class MapObjectManager_S : NetworkBehaviour
         if (SceneManager.GetActiveScene().name == "Scene_Map_03_MisConvo")
             RpcM03_InitializeSentences(Room.currentMap.Index);
 
-        
+        if (SceneManager.GetActiveScene().name == "Scene_Map_04_CareerGallery")
+        {
+            int lightRNG = Random.Range(0, 3);
+            int careerRNG = 0;
+
+            // Will load CareerSet equivalent to current Map and set Max of RNG, selects 1st otherwise.
+            var careerSet = Resources.LoadAll<CareerSet>("ScriptableObjects/CareerSets");
+            foreach (var set in careerSet)
+            {
+                if (set.AssociateMap.Index != Room.currentMap.Index) continue;
+                careerRNG = Random.Range(0, set.Careers.Count);
+            }
+
+
+            // call RPC to initialize these values
+        }
+
 
         // Check if Players are ready at the scene
         CheckToStartMap();
