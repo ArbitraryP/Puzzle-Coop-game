@@ -11,7 +11,7 @@ public class PhotoFrame : MonoBehaviour
     [SerializeField] private TMP_Text[] textCode = null;
     [SerializeField] private Button[] buttonCodes = null;
     [SerializeField] private Image image = null;
-    [SerializeField] private Light2D ticketLight = null;
+    [SerializeField] private Light2D ticket2DLight = null;
     [SerializeField] private GameObject ticket = null;
 
     [Header("Data")]
@@ -42,7 +42,7 @@ public class PhotoFrame : MonoBehaviour
         }
 
         ticket.SetActive(true);
-        ticketLight.color = Color.green;
+        ticket2DLight.color = Color.green;
         // play ticket release correct sound 
 
         foreach (Button button in buttonCodes)

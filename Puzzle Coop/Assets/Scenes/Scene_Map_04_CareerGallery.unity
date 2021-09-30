@@ -2955,7 +2955,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 496589249}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1963263823}
+        m_TargetAssemblyTypeName: NavBreaker, Assembly-CSharp
+        m_MethodName: OnClickButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: l
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &496589249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6770,7 +6782,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1153439724}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1963263823}
+        m_TargetAssemblyTypeName: NavBreaker, Assembly-CSharp
+        m_MethodName: OnClickButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: u
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1153439724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7163,7 +7187,7 @@ MonoBehaviour:
   - {fileID: 1459589748}
   - {fileID: 551813336}
   image: {fileID: 1471931583}
-  ticketLight: {fileID: 2092852095}
+  ticket2DLight: {fileID: 0}
   ticket: {fileID: 396135479}
   careerSolution: {fileID: 0}
   code: 00000000000000000000000000000000
@@ -11139,7 +11163,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1670460001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1963263823}
+        m_TargetAssemblyTypeName: NavBreaker, Assembly-CSharp
+        m_MethodName: OnClickButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: r
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1670460001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11260,7 +11296,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1695959572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1963263823}
+        m_TargetAssemblyTypeName: NavBreaker, Assembly-CSharp
+        m_MethodName: OnClickButton
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: d
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1695959572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11654,7 +11702,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1759657209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1963263823}
+        m_TargetAssemblyTypeName: NavBreaker, Assembly-CSharp
+        m_MethodName: OnClickButtonDelete
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: x
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1759657209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13177,6 +13237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1963263822}
+  - component: {fileID: 1963263823}
   m_Layer: 0
   m_Name: NavBreaker
   m_TagString: Untagged
@@ -13199,6 +13260,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1963263823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963263821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c797013cdf790c42adfc4f84f0e71d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 1153439723}
+  - {fileID: 496589248}
+  - {fileID: 1759657208}
+  - {fileID: 1670460000}
+  - {fileID: 1695959571}
+  textDisplay: {fileID: 743696483}
+  lightObject: {fileID: 1379126280}
+  light2DLight: {fileID: 1287841975}
+  lightSprites:
+  - {fileID: 21300000, guid: 25c79b43f4e67004b8cb89977622cf0d, type: 3}
+  - {fileID: 21300000, guid: 987b589e3e7c9934c8c15b4976f7491f, type: 3}
+  - {fileID: 21300000, guid: b9733427181d817408c5b2dceb87ba09, type: 3}
+  lightSolution:
+  - urrud
+  - llruu
+  - ududl
+  currentInput: 
+  correctIndex: 0
 --- !u!1 &1966184057
 GameObject:
   m_ObjectHideFlags: 0
@@ -14438,7 +14530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1733465798809573582, guid: 198603d8f058d88468e32a3f38453136, type: 3}
       propertyPath: isHostPlayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 198603d8f058d88468e32a3f38453136, type: 3}

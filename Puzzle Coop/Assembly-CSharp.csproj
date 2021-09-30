@@ -67,6 +67,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Progression\Map.cs" />
     <Compile Include="Assets\Scripts\Progression\MapObjectManager_L.cs" />
+    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\PhotoFrame.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\SentenceSet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\Sentence.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\Gallery.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\QuestionsManager.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\NodesSlot.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
@@ -127,6 +129,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\PageSystem.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\CareerPanel.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BreakerButton.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Scripts\Prototype\DragTarget.cs" />
@@ -143,9 +146,7 @@
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\CareerPanel.cs" />
-    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\Gallery.cs" />
-    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\PhotoFrame.cs" />
+    <Compile Include="Assets\Scripts\Progression\04 CareerGallery\NavBreaker.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

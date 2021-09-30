@@ -209,4 +209,16 @@ public class MapObjectManager_S : NetworkBehaviour
     #endregion
 
 
+    #region 04 Career Gallery
+
+    [ClientRpc] 
+    private void RpcM04_InitializeCareerAndLight(int correctLightIndex, int correctCareerIndex)
+    {
+        // Calls localObjectManager to setup these data to PhotoFrame and NavBreaker
+    }
+
+
+    #endregion
+
+
 }

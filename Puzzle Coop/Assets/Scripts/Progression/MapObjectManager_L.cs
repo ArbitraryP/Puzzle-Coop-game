@@ -29,7 +29,8 @@ public class MapObjectManager_L : MonoBehaviour
 
     [Header("04 Career Gallery")]
     [SerializeField] private Gallery gallery = null;
-    
+    [SerializeField] private PhotoFrame photoFrame = null;
+    [SerializeField] private NavBreaker navBreaker = null;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
