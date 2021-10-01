@@ -17,15 +17,19 @@ public class NavBreaker : MonoBehaviour
     [SerializeField] private Sprite[] lightSprites = null;
     [SerializeField] private string[] lightSolution = null;
 
+    [Header("Door Solution")]
+    [SerializeField] private string doorSolution = null;
+    [SerializeField] private Light2D door2DLight = null;
+
     [Header("Data")]
     [SerializeField] private string currentInput = null;
-    [SerializeField] private int correctIndex = 0;
+    [SerializeField] private int correctLightIndex = 0;
+    [SerializeField] private bool enableDoorSolution = false;
 
-    public void SetupLightSolution(int correctLight)
+    public void SetLightSolution(int correctLight)
     {
-        correctIndex = correctLight;
+        correctLightIndex = correctLight;
         lightObject.sprite = lightSprites[correctLight];
-
     }
 
     public void OnClickButtonDelete()
@@ -54,16 +58,34 @@ public class NavBreaker : MonoBehaviour
 
     private void CheckIfCorrect()
     {
-        if (currentInput != lightSolution[correctIndex])
-            return;
 
-        foreach(Button button in buttons)
-            button.interactable = false;
-        
-        light2DLight.color = Color.green;
-        // call Server to Open Lights
-        // Play sound
-        
+        if (CheckLightSolution())
+        {
+            light2DLight.color = Color.green;
+            FindObjectOfType<MapObjectManager_S>()?.CmdM04_LightCompleted();
+            enableDoorSolution = true;
+            OnClickButtonDelete();
+            // Play breaker unlock sound
+            return;
+        }
+
+
+        if (CheckDoorSolution())
+        {
+            door2DLight.color = Color.green;
+            foreach (Button button in buttons)
+                button.interactable = false;
+            FindObjectOfType<MapObjectManager_S>()?.CmdUnlockDoors();
+            // Play breaker unlock sound
+        }
+
     }
+
+    private bool CheckLightSolution() =>
+        currentInput == lightSolution[correctLightIndex] && !enableDoorSolution;
+
+    private bool CheckDoorSolution() =>    
+        currentInput == doorSolution && enableDoorSolution;
+                     
 
 }

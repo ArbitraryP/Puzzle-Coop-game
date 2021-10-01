@@ -31,7 +31,9 @@ public class PlayerProgress : MonoBehaviour
         unlockedMaps.Add(0);
         // Test Code to Generate Random Numbers
         completedMaps.Add(0);
+        completedMaps.Add(3);
         unlockedMaps.Add(3);
+        unlockedMaps.Add(4);
 
         /*
         completedMaps.Add(2);

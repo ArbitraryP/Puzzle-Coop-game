@@ -14,7 +14,7 @@ public class Gallery : MonoBehaviour
     [SerializeField] private List<CareerPanel> careerPanels = null;
 
 
-    private bool showCode = true;
+    private bool showCode = false;
     public bool ShowCode
     {
         get => showCode;
@@ -26,7 +26,6 @@ public class Gallery : MonoBehaviour
                 careerPanel.SetShowCode(value);
         }
     }
-
 
     private void Start()
     {
@@ -45,7 +44,7 @@ public class Gallery : MonoBehaviour
             shuffledCareers.RemoveAt(randomIndex);
         }
 
-
+        ShowCode = false;
     }
 
 

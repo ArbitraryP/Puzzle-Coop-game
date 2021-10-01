@@ -66,17 +66,10 @@ public class MapObjectManager_S : NetworkBehaviour
         if (SceneManager.GetActiveScene().name == "Scene_Map_04_CareerGallery")
         {
             int lightRNG = Random.Range(0, 3);
-            int careerRNG = 0;
-
-            // Will load CareerSet equivalent to current Map and set Max of RNG, selects 1st otherwise.
-            var careerSet = Resources.LoadAll<CareerSet>("ScriptableObjects/CareerSets");
-            foreach (var set in careerSet)
-            {
-                if (set.AssociateMap.Index != Room.currentMap.Index) continue;
-                careerRNG = Random.Range(0, set.Careers.Count);
-            }
+            int careerRNG = Random.Range(0, 7); //Change this based on Max count of Careers. If needed
 
 
+            RpcM04_InitializeCareerAndLight(lightRNG, careerRNG);
             // call RPC to initialize these values
         }
 
@@ -214,8 +207,15 @@ public class MapObjectManager_S : NetworkBehaviour
     [ClientRpc] 
     private void RpcM04_InitializeCareerAndLight(int correctLightIndex, int correctCareerIndex)
     {
-        // Calls localObjectManager to setup these data to PhotoFrame and NavBreaker
+        localObjectManager.M04_SetupPuzzles(correctLightIndex, correctCareerIndex);
     }
+
+    [Command(requiresAuthority = false)]
+    public void CmdM04_LightCompleted() => RpcM04_LightCompleted();
+
+    [ClientRpc]
+    private void RpcM04_LightCompleted() => localObjectManager.M04_PowerOnAction();
+
 
 
     #endregion

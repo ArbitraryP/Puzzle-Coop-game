@@ -189,4 +189,24 @@ public class MapObjectManager_L : MonoBehaviour
     #endregion
 
 
+
+    #region 04 Career Gallery
+
+    public void M04_SetupPuzzles(int navBreakerIndex, int careerIndex)
+    {
+        photoFrame.SetCareerSolution(careerIndex);
+        navBreaker.SetLightSolution(navBreakerIndex);
+    }
+
+    public void M04_PowerOnAction()
+    {
+        darkFilter.SetActive(false);
+        gallery.ShowCode = true;
+        photoFrame.codeEnabled = true;
+        // Play sound. Show text
+    }
+
+    #endregion
+
+
 }

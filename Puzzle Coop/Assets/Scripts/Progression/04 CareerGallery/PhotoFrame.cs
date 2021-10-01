@@ -16,10 +16,26 @@ public class PhotoFrame : MonoBehaviour
 
     [Header("Data")]
     [SerializeField] private Career careerSolution = null;
+    [SerializeField] private CareerSet careerSet = null;
     [SerializeField] private int[] code = new int[4];
-    [SerializeField] private bool codeEnabled = false;
-    
+    public bool codeEnabled = false;
 
+    private void Start()
+    {
+        //NotSync to Network: No need. and Does not detect correct solution at the start: RNG safe.
+
+        for (int i = 0; i < code.Length; i++)
+        {
+            code[i] = Random.Range(0, 10);
+            textCode[i].text = code[i].ToString();
+        }
+    }
+
+    public void SetCareerSolution(int index)
+    {
+        careerSolution = careerSet.Careers[index];
+        image.sprite = careerSolution.image;
+    }
 
     public void ChangeCode(int index)
     {
