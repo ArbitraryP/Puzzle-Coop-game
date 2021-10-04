@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11508dfba03e38346a0bea36d8f82116, type: 3}
+  m_Name: 04_DataScientist
+  m_EditorClassIdentifier: 
+  image: {fileID: 21300000, guid: dff3d2ed63bb95b47a8f2ee3ceafcd28, type: 3}
+  careerName: Data Scientist
+  code: 01000000040000000700000004000000

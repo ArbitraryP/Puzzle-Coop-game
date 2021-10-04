@@ -48,7 +48,9 @@ public class MapObjectManager_S : NetworkBehaviour
     [Server]
     private void InitializeScene(NetworkConnection conn)
     {
-        if(SceneManager.GetActiveScene().name == "Scene_Map_02_Misused")
+        RpcInitializePlayers();
+
+        if (SceneManager.GetActiveScene().name == "Scene_Map_02_Misused")
         {
             questionsManager = FindObjectOfType<QuestionsManager>();
             if (questionsManager)
@@ -57,7 +59,20 @@ public class MapObjectManager_S : NetworkBehaviour
                 questionsManager.InitializeQuestions(Room.currentMap.Index);
             }
         }
-        RpcInitializePlayers();
+
+        if (SceneManager.GetActiveScene().name == "Scene_Map_03_MisConvo")
+            RpcM03_InitializeSentences(Room.currentMap.Index);
+
+        if (SceneManager.GetActiveScene().name == "Scene_Map_04_CareerGallery")
+        {
+            int lightRNG = Random.Range(0, 3);
+            int careerRNG = Random.Range(0, 7); //Change this based on Max count of Careers. If needed
+
+
+            RpcM04_InitializeCareerAndLight(lightRNG, careerRNG);
+            // call RPC to initialize these values
+        }
+
 
         // Check if Players are ready at the scene
         CheckToStartMap();
@@ -88,11 +103,6 @@ public class MapObjectManager_S : NetworkBehaviour
         localObjectManager.serverObjectManager = this;
     }
 
-
-    [Command(requiresAuthority = false)]
-    public void CmdSpawnMapCompleteMsg()
-    {
-    }
 
     [Command(requiresAuthority = false)]
     public void CmdExitDoor(int playerNum)
@@ -165,6 +175,48 @@ public class MapObjectManager_S : NetworkBehaviour
 
     [ClientRpc]
     public void RpcM02_QuizCompleted() => localObjectManager.UnlockDoors();
+
+    #endregion
+
+
+    #region 03 Miscon Convo
+
+    [ClientRpc]
+    private void RpcM03_InitializeSentences(int currentMapIndex) 
+    {
+        localObjectManager.M03_InitializeClockCalendarReceiver(currentMapIndex);
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdM03_CalendarCompleted() => RpcM03_CalendarCompleted();
+
+    [ClientRpc]
+    public void RpcM03_CalendarCompleted() => localObjectManager.M03_OnCalendarCompleted();
+
+    [Command(requiresAuthority = false)]
+    public void CmdM03_ClockCompleted() => RpcM03_ClockCompleted();
+
+    [ClientRpc]
+    public void RpcM03_ClockCompleted() => localObjectManager.M03_OnClockCompleted();
+
+    #endregion
+
+
+    #region 04 Career Gallery
+
+    [ClientRpc] 
+    private void RpcM04_InitializeCareerAndLight(int correctLightIndex, int correctCareerIndex)
+    {
+        localObjectManager.M04_SetupPuzzles(correctLightIndex, correctCareerIndex);
+    }
+
+    [Command(requiresAuthority = false)]
+    public void CmdM04_LightCompleted() => RpcM04_LightCompleted();
+
+    [ClientRpc]
+    private void RpcM04_LightCompleted() => localObjectManager.M04_PowerOnAction();
+
+
 
     #endregion
 

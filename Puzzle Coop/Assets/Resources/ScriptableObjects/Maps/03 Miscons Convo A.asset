@@ -21,4 +21,4 @@ MonoBehaviour:
   displayName: Miscons Convo A
   difficulty: 2
   achievments: []
-  Scene: 
+  Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity

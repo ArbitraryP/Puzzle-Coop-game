@@ -7,11 +7,11 @@ public static class ShuffleIntArray
     public static int[] Shuffe(int[] array)
     {
         int length = array.Length;
-        System.Random rng = new System.Random();
+        int rng = Random.Range(0, length - 1);
 
         for(int i = 0; i < length; i++)
         {
-            Swap(array, i, i + rng.Next(length - i));
+            Swap(array, i, rng);
         }
 
         return array;

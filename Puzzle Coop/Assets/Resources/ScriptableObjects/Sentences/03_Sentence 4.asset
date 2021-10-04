@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d577cd8b91073346a2d9d22f3e53739, type: 3}
+  m_Name: 03_Sentence 4
+  m_EditorClassIdentifier: 
+  location: 0.531
+  firstText: "I said \u201COk? But why did you ask for my help. I mean I am not into
+    hacking, bro.\u201D He..."
+  secondText: ...said that I am an IT student that knows all the field of technology.

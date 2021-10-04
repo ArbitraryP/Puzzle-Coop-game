@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fe32c6e58226642b2ff6ae1cd9a209, type: 3}
+  m_Name: Map_04_CareerSet
+  m_EditorClassIdentifier: 
+  careers:
+  - {fileID: 11400000, guid: 6b2710bf6e16dda4c91537ae53f500f5, type: 2}
+  - {fileID: 11400000, guid: eb7bf521ff821a14ab2f7cd8aa19d62f, type: 2}
+  - {fileID: 11400000, guid: d51a66abed4b0da42bf76b24b6b00b2a, type: 2}
+  - {fileID: 11400000, guid: af3e3a6b4bb665242ac4b98d28949f30, type: 2}
+  - {fileID: 11400000, guid: 1b8586ea59b9e1a428033af701d06c4d, type: 2}
+  - {fileID: 11400000, guid: 323545a46b428ed43b39f0c9e99ff562, type: 2}
+  - {fileID: 11400000, guid: e05b5a1fa0cc11846be52d58c29c8629, type: 2}
+  associateMap: {fileID: 11400000, guid: f0bfa0ee277134140b03489e910120d7, type: 2}
