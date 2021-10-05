@@ -24,8 +24,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_Map_03_MisConvo.unity
     guid: 2cb71d89c1b2ab14e9195b9a8fe263ab
   - enabled: 1
-    path: Assets/Scenes/Scene_Map_04_CareerGallery.unity
+    path: Assets/Scenes/Scene_Map_05_Analyze.unity
     guid: 160405c465db3d04b973c12bbc3c0ce5
+  - enabled: 1
+    path: Assets/Scenes/Scene_Map_04_CareerGallery.unity
+    guid: 37eeb28340671ce42a7b6db1703f2fe9
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
