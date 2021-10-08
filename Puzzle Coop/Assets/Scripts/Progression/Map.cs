@@ -20,6 +20,9 @@ public class Map : ScriptableObject
 
     [Range(1, 5)]
     public int difficulty;
+    [TextArea(8,15)]
+    public string description;
+
     public List<Achievement> achievments;
 
     [Scene]

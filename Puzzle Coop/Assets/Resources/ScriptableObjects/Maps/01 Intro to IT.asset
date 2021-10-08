@@ -17,6 +17,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
   unlocks: []
   displayName: Introduction to IT
-  difficulty: 1
+  difficulty: 3
+  description: Information, Technology. What's more into it? Why the town forbidden
+    anyone who talks about it. How come something that improves lives not accepted
+    here? Only one way to find out.
   achievments: []
   Scene: Assets/Scenes/Scene_Map_01_IntroToIT.unity

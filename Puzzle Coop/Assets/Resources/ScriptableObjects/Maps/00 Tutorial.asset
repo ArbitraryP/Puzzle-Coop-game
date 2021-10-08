@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1452d590238bc9647ba2a8a9c811332f, type: 2}
   displayName: Initialization
   difficulty: 1
+  description: The beginning of it all.
   achievments:
   - {fileID: 11400000, guid: 1049a95c7bfef7b43b0d65b962e22773, type: 2}
   Scene: Assets/Scenes/Scene_Map_00_Tutorial.unity

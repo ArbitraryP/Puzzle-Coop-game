@@ -18,6 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0bcd9d19ba23a694a86536837699b032, type: 2}
   unlocks: []
   displayName: Miscons Convo B
-  difficulty: 3
+  difficulty: 4
+  description: 
   achievments: []
   Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity

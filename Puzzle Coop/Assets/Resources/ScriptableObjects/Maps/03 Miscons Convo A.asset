@@ -20,5 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0bfa0ee277134140b03489e910120d7, type: 2}
   displayName: Miscons Convo A
   difficulty: 2
+  description: This the Misused Terms A Map
   achievments: []
   Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity

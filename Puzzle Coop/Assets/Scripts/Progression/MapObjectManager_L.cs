@@ -17,7 +17,8 @@ public class MapObjectManager_L : MonoBehaviour
     [Header("01 Intro to IT")]
     [SerializeField] private BreakerButton[] breakerButtons = null;
     [SerializeField] private NodesMove[] nodes = null;
-    [SerializeField] private Light2D lightGlow = null;
+    [SerializeField] private Light2D lightGlowNode = null;
+    [SerializeField] private Light2D lightGlowBreaker = null;
 
     [Header("03 Miscons Convo")]
     [SerializeField] private UI_Receiver receiver = null;
@@ -104,6 +105,8 @@ public class MapObjectManager_L : MonoBehaviour
         foreach (NodesMove node in nodes)
             node.isEnabled = true;
 
+        lightGlowBreaker.color = Color.green;
+
         // Play sound. Show text
     }
 
@@ -119,7 +122,7 @@ public class MapObjectManager_L : MonoBehaviour
             node.isEnabled = false;
 
         serverObjectManager.CmdUnlockDoors();
-        lightGlow.color = Color.green;
+        lightGlowNode.color = Color.green;
     }
 
     #endregion

@@ -19,5 +19,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4e33b228a101c3498668c4c5ffbb073, type: 2}
   displayName: Misused Terms A
   difficulty: 2
+  description: This the Misused Terms A Map
   achievments: []
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity

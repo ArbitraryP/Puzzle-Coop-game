@@ -46,7 +46,11 @@ namespace TangentNodes.Network
             }
         }
 
-        
+        private void Start()
+        {
+            FindObjectOfType<SettingsAndExit>()?.DisplayHowTo();
+        }
+
         public override void OnStartAuthority()
         {
             // Removes the InputBlocker for Host who has Authority

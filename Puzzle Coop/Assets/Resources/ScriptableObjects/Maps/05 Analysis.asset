@@ -17,6 +17,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
   unlocks: []
   displayName: Analysis
-  difficulty: 4
+  difficulty: 1
+  description: 
   achievments: []
   Scene: Assets/Scenes/Scene_Map_05_Analyze.unity

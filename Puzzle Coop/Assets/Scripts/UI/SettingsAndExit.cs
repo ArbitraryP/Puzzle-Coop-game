@@ -16,6 +16,16 @@ public class SettingsAndExit : MonoBehaviour
     [SerializeField] private Toggle toggleFullScreen = null;
     [SerializeField] private TMP_Text textDescription = null;
     [SerializeField] private GameObject panelQuitConfirm = null;
+    [SerializeField] private GameObject panelHowTo = null;
+    [SerializeField] private GameObject panelSettings = null;
+    [SerializeField] private Toggle toggleHowTo = null;
+    [SerializeField] private Toggle toggleSettings = null;
+    [SerializeField] private Toggle toggleQuitConfirm = null;
+
+    [Header("How To Play")]
+    [SerializeField] private GameObject[] panelHowToPages = null;
+    [SerializeField] private int currentPage = 0;
+    [SerializeField] private bool isAlreadyOpened = false;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -67,9 +77,69 @@ public class SettingsAndExit : MonoBehaviour
 
     }
 
+
+    private void CloseOtherToggles(int toggleIndex)
+    {
+        // 0 - ToggleHowTo / 1 - ToggleSettings / 2 - ToggleQuitConfirm
+
+        switch (toggleIndex)
+        {
+            case 0:
+                toggleSettings.isOn = false;
+                toggleQuitConfirm.isOn = false;
+                break;
+
+            case 1:
+                toggleHowTo.isOn = false;
+                toggleQuitConfirm.isOn = false;
+                break;
+
+            case 2:
+                toggleSettings.isOn = false;
+                toggleHowTo.isOn = false;
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
+    public void DisplayHowTo()
+    {
+        if (isAlreadyOpened)
+            return;
+
+        toggleHowTo.isOn = true;
+        isAlreadyOpened = true;
+    }
+
+    public void OnToggleHowTo(bool value)
+    {
+        panelHowTo.SetActive(value);
+        if(value)
+            CloseOtherToggles(0);
+
+        foreach (GameObject panel in panelHowToPages)
+            panel.SetActive(false);
+
+        panelHowToPages[0].SetActive(true);
+
+    }
+
+    public void OnToggleSettings(bool value)
+    {
+        panelSettings.SetActive(value);
+        if (value) 
+            CloseOtherToggles(1);
+    }
+
+
     public void OnToggleQuit(bool isToggleOn)
     {
         panelQuitConfirm.SetActive(isToggleOn);
+        if (isToggleOn) 
+            CloseOtherToggles(2);
 
         // If Identity not null means it is InGame
         if (myPlayerIdentity)
@@ -121,15 +191,25 @@ public class SettingsAndExit : MonoBehaviour
 
         networkManager.StopHost();
 
-        
-
-        
-
-
-
-
-        
-
-
     }
+
+
+
+    // How To Play Page Navigation
+    public void OnClickHowToNext()
+    {
+        if (panelHowToPages == null)
+            return;
+
+        if (currentPage >= panelHowToPages.Length - 1)
+            toggleHowTo.isOn = false;
+
+        currentPage = currentPage >= panelHowToPages.Length - 1 ? 0 : currentPage + 1;
+        foreach (GameObject panel in panelHowToPages)
+            panel.SetActive(false);
+
+        panelHowToPages[currentPage].SetActive(true);
+    }
+   
+
 }
