@@ -23,7 +23,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76fedb94ad1748a4cbca72664d5dade1, type: 2}
   - {fileID: 11400000, guid: b4e33b228a101c3498668c4c5ffbb073, type: 2}
   - {fileID: 11400000, guid: 1ae01cc1e97c64f499b8665933ad328f, type: 2}
-  displayName: Final Level
+  unlocks: []
+  displayName: Terminal
   difficulty: 5
+  description: This the Final Map
   achievments: []
   Scene: 

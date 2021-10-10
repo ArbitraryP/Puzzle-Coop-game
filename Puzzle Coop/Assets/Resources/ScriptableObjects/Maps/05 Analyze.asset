@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc60ad9312b552944a024130a5ed2bc6, type: 3}
-  m_Name: 05 Analysis
+  m_Name: 05 Analyze
   m_EditorClassIdentifier: 
   index: 5
   prerequisite:
   - {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
   unlocks: []
-  displayName: Analysis
+  displayName: Analyze
   difficulty: 1
-  description: 
+  description: This the Analyze Map
   achievments: []
   Scene: Assets/Scenes/Scene_Map_05_Analyze.unity

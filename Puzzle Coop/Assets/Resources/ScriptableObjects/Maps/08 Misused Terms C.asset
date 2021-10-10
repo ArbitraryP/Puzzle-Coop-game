@@ -20,5 +20,6 @@ MonoBehaviour:
   unlocks: []
   displayName: Misused Terms C
   difficulty: 4
+  description: This the Misused Terms C Map
   achievments: []
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity

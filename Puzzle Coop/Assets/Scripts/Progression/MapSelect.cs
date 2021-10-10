@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Mirror;
 using System.IO;
+using TMPro;
 
 namespace TangentNodes.Network
 {
@@ -35,6 +36,13 @@ namespace TangentNodes.Network
 
         // Map Select
         public Map selectedMap;
+
+        [Header("Description UI")]
+        [SerializeField] private TMP_Text textMapName = null;
+        [SerializeField] private TMP_Text textDescription = null;
+        // Object Variable that holds Achievement to Display
+        // Object Variable that holds Difficulty to Display
+
 
         private NetworkManagerTN room;
         private NetworkManagerTN Room
@@ -147,6 +155,7 @@ namespace TangentNodes.Network
             isMapSelected = true;
             selectedMap = mapSet.Find(i => i.Index == mapIndex);
             RpcUpdateSelectMapStatus(targetPositionX, targetPositionY, isMapSelected);
+            RpcUpdateMapDescriptionDisplay(mapIndex);
         }
 
 
@@ -159,8 +168,6 @@ namespace TangentNodes.Network
                 new Vector3(targetPositionX, targetPositionY, -10f) + deviationAmount :
                 new Vector3(0, 0, -10f);
 
-            
-
             // Shows/Hides Description and Confirm Button
 
             canvasOverlay.SetActive(isMapSelected);
@@ -168,7 +175,20 @@ namespace TangentNodes.Network
             buttonCancel.SetActive(isMapSelected);
             buttonConfirm.SetActive(isMapSelected);
 
-            
+        }
+
+        [ClientRpc]
+        private void RpcUpdateMapDescriptionDisplay(int mapIndex)
+        {
+            // -- Insert Code That Changes value of text description/name
+            Map map = mapSet.Find(i => i.Index == mapIndex);
+
+            textDescription.text = map.description;
+            textMapName.text = map.displayName;
+
+            // -- Insert code that displays achievements
+            // -- Insert code that displays difficulty
+
         }
 
         [Command]
@@ -183,6 +203,8 @@ namespace TangentNodes.Network
 
             Debug.Log("Change Scene to " + newScene);
         }
+
+
 
     }
 }

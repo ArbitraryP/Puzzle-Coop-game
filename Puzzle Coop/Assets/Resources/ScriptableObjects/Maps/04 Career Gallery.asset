@@ -19,6 +19,6 @@ MonoBehaviour:
   unlocks: []
   displayName: Career Gallery
   difficulty: 5
-  description: 
+  description: This the Career Gallery Map
   achievments: []
   Scene: Assets/Scenes/Scene_Map_04_CareerGallery.unity
