@@ -1311,18 +1311,18 @@ PrefabInstance:
       value: '"a person with no direction will never go anywhere"
 
 
-        Up!
-        that''s Right always go Up.
+        Up! that''s
+        Right always go Up.
 
-        not because there are these types of
-        career specializations, means you can''t carve your own path.
+        not because there are these types of career
+        specializations, means you can''t carve your own path.
 
 
-        you
-        won''t get Left behind if you won''t let it.
+        you won''t
+        get Left behind if you won''t let it.
 
-        just remember to keep
-        your feet Down to the ground and you''ll know where to go.'
+        just remember to keep your
+        feet Down to the ground and you''ll know where to go.'
       objectReference: {fileID: 0}
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_fontSize
@@ -5732,7 +5732,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  lightGlow: {fileID: 0}
+  lightGlowNode: {fileID: 0}
+  lightGlowBreaker: {fileID: 0}
   receiver: {fileID: 0}
   calendar: {fileID: 0}
   clock: {fileID: 0}
@@ -9238,7 +9239,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 50
   m_Viewport: {fileID: 1472904251}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}

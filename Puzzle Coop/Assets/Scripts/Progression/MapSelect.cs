@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Mirror;
 using System.IO;
 using TMPro;
@@ -40,8 +41,17 @@ namespace TangentNodes.Network
         [Header("Description UI")]
         [SerializeField] private TMP_Text textMapName = null;
         [SerializeField] private TMP_Text textDescription = null;
-        // Object Variable that holds Achievement to Display
-        // Object Variable that holds Difficulty to Display
+
+        [Header("Difficulty UI")]
+        [SerializeField] private Image imageDifficultyPrefab = null;
+        [SerializeField] private Transform panelDifficultyParent = null;
+        [SerializeField] private List<Image> imageDifficulties = null;
+
+        [Header("Achievement List")]
+        [SerializeField] private Panel_Achievement panelAchievementPrefab = null;
+        [SerializeField] private Transform panelAchievementParent = null;
+        [SerializeField] private List<Panel_Achievement> panelAchievements = null;
+
 
 
         private NetworkManagerTN room;
@@ -54,10 +64,6 @@ namespace TangentNodes.Network
             }
         }
 
-        private void Start()
-        {
-            FindObjectOfType<SettingsAndExit>()?.DisplayHowTo();
-        }
 
         public override void OnStartAuthority()
         {
@@ -180,15 +186,34 @@ namespace TangentNodes.Network
         [ClientRpc]
         private void RpcUpdateMapDescriptionDisplay(int mapIndex)
         {
-            // -- Insert Code That Changes value of text description/name
+            // -- Code That Changes value of text description/name
             Map map = mapSet.Find(i => i.Index == mapIndex);
 
             textDescription.text = map.description;
             textMapName.text = map.displayName;
 
-            // -- Insert code that displays achievements
-            // -- Insert code that displays difficulty
+            // -- Code that displays difficulty
+            foreach(Image imageStar in imageDifficulties)
+                Destroy(imageStar.gameObject);
 
+            imageDifficulties.Clear();
+
+            for (int i = 1; i <= map.difficulty; i++)
+                imageDifficulties.Add( GameObject.Instantiate(imageDifficultyPrefab, panelDifficultyParent) );
+
+
+            // -- Ccode that displays achievements
+            foreach (Panel_Achievement panelAchievement in panelAchievements)
+                Destroy(panelAchievement.gameObject);
+
+            panelAchievements.Clear();
+
+            for (int i = 0; i < map.achievements.Count; i++)
+            {
+                var panelAchiv = GameObject.Instantiate(panelAchievementPrefab, panelAchievementParent);
+                panelAchiv.DisplayAchievement(map.achievements[i]);
+                panelAchievements.Add(panelAchiv);
+            }
         }
 
         [Command]

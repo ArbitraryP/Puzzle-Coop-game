@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d18a2ef6462b92b4993c73b39d7fe8da, type: 3}
-  m_Name: 00 Initialized
+  m_Name: 08 Misused C
   m_EditorClassIdentifier: 
-  index: 0
-  title: Initialized
-  description: Completed the Initialization map.
-  thumbnail: {fileID: 21300000, guid: 987b589e3e7c9934c8c15b4976f7491f, type: 3}
+  index: 8
+  title: Misused C
+  description: Completed the map of this title.
+  thumbnail: {fileID: 21300000, guid: 9f96f3f4ff6910345b95ac3073bd7cd9, type: 3}

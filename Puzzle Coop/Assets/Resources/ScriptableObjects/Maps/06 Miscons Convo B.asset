@@ -20,5 +20,7 @@ MonoBehaviour:
   displayName: Misconception B
   difficulty: 4
   description: This the Misconception B Map
-  achievments: []
+  achievements:
+  - {fileID: 11400000, guid: bbbcbd37f88c4f54cbffe8973a2ed9e7, type: 2}
+  - {fileID: 11400000, guid: 25236a021f8ed9644827666906de6e81, type: 2}
   Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TangentNodes.Network
@@ -11,6 +12,18 @@ namespace TangentNodes.Network
         [SerializeField] private GameObject achievementsPanel = null;
         [SerializeField] private GameObject creditsPanel = null;
         [SerializeField] private GameObject hostjoinPanel = null;
+
+        [Header("Achievements")]
+        [SerializeField] private Panel_Achievement panelAchievementPrefab = null;
+        [SerializeField] private Transform panelAchievementParent = null;
+        [SerializeField] private List<Achievement> achievements = null;
+        
+
+        private void Awake()
+        {
+            achievements = new List<Achievement>(Resources.LoadAll<Achievement>("ScriptableObjects/Achievements"));
+            DisplayAchievements();
+        }
 
         public void HostLobby()
         {
@@ -26,6 +39,15 @@ namespace TangentNodes.Network
         {
             landingPagePanel.SetActive(true);
             paneltoClose.SetActive(false);
+        }
+
+        private void DisplayAchievements()
+        {
+            for (int i = 0; i < achievements.Count; i++)
+            {
+                var panelAchiv = GameObject.Instantiate(panelAchievementPrefab, panelAchievementParent);
+                panelAchiv.DisplayAchievement(achievements[i]);
+            }
         }
 
     }

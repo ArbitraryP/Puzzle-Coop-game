@@ -23,7 +23,7 @@ public class Map : ScriptableObject
     [TextArea(8,15)]
     public string description;
 
-    public List<Achievement> achievments;
+    public List<Achievement> achievements;
 
     [Scene]
     public string Scene;
@@ -41,6 +41,8 @@ public class Map : ScriptableObject
             if (!completedMaps.Contains(prereqMap.Index) ||
                 !unlockedMaps.Contains(prereqMap.Index))
                 return false;
+            
+                
         }
         
         return true;

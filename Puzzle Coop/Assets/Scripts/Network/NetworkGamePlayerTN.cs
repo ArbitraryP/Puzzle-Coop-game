@@ -48,14 +48,7 @@ namespace TangentNodes.Network
         {
             Room.GamePlayers.Remove(this);
 
-            if (!hasAuthority) return;
-            PlayerProgress localPlayerProgress = FindObjectOfType<PlayerProgress>();
-
-            localPlayerProgress?.SendPlayerProgress(
-                new List<int>(completedMaps),
-                new List<int>(unlockedMaps),
-                new List<int>(unlockedAchievements));
-
+            SendPlayerData();
         }
 
         [Server]
@@ -64,6 +57,7 @@ namespace TangentNodes.Network
             this.displayName = displayName;
         }
 
+        [Server]
         public void AddCompletedMap(int mapIndex)
         {
             if (completedMaps.Contains(mapIndex)) return;
@@ -71,11 +65,52 @@ namespace TangentNodes.Network
             
         }
 
+        [Server]
         public void AddUnlockMap(int mapIndex)
         {
             if (unlockedMaps.Contains(mapIndex)) return;
             unlockedMaps.Add(mapIndex);
         }
+
+        [Server]
+        public void AddUnlockAchievement(int achievementIndex)
+        {
+            if (unlockedAchievements.Contains(achievementIndex)) return;
+            unlockedAchievements.Add(achievementIndex);
+        }
+
+        [Server]
+        public void ServerSendPlayerData()
+        {
+            SendPlayerData(
+                new List<int>(completedMaps).ToArray(),
+                new List<int>(unlockedMaps).ToArray(),
+                new List<int>(unlockedAchievements).ToArray());
+        }
+
+        [ClientRpc]
+        public void SendPlayerData(int[] completedMaps, int[] unlockedMaps, int[] unlockedAchievements)
+        {
+            if (!hasAuthority) return;
+            PlayerProgress localPlayerProgress = FindObjectOfType<PlayerProgress>();
+
+            localPlayerProgress?.SendPlayerProgress(
+                new List<int>(completedMaps),
+                new List<int>(unlockedMaps),
+                new List<int>(unlockedAchievements));
+        }
+
+        private void SendPlayerData()
+        {
+            if (!hasAuthority) return;
+            PlayerProgress localPlayerProgress = FindObjectOfType<PlayerProgress>();
+
+            localPlayerProgress?.SendPlayerProgress(
+                new List<int>(completedMaps),
+                new List<int>(unlockedMaps),
+                new List<int>(unlockedAchievements));
+        }
+
 
     }
 }

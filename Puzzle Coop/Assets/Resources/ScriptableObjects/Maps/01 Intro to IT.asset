@@ -21,5 +21,6 @@ MonoBehaviour:
   description: Information, Technology. What's more into it? Why the town forbidden
     anyone who talks about it. How come something that improves lives not accepted
     here? Only one way to find out.
-  achievments: []
+  achievements:
+  - {fileID: 11400000, guid: a24d3a405025b2e4db3d9bec1a549ecb, type: 2}
   Scene: Assets/Scenes/Scene_Map_01_IntroToIT.unity

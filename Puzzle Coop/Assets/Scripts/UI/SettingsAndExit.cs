@@ -56,8 +56,11 @@ public class SettingsAndExit : MonoBehaviour
         else { instance = this; }
 
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.activeSceneChanged += OnSceneChanged;
     }
 
+    private void OnDestroy() => SceneManager.activeSceneChanged -= OnSceneChanged;
 
     public void SetFullScreen(bool isFullScreen)
     {
@@ -105,13 +108,19 @@ public class SettingsAndExit : MonoBehaviour
 
     }
 
+    public void OnSceneChanged(Scene currentScene, Scene nextScene)
+    {
+        toggleHowTo.isOn = false;
+        if (nextScene.name == "Scene_Map_Select" && !isAlreadyOpened)
+        {
+            toggleHowTo.isOn = true;
+            isAlreadyOpened = true;
+        }
+    }
+
     public void DisplayHowTo()
     {
-        if (isAlreadyOpened)
-            return;
-
-        toggleHowTo.isOn = true;
-        isAlreadyOpened = true;
+        
     }
 
     public void OnToggleHowTo(bool value)

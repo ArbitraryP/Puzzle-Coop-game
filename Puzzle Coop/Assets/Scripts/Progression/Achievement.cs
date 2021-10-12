@@ -12,8 +12,10 @@ public class Achievement : ScriptableObject
         get { return index; }
     }
 
-    public new string name;
+    public string title;
     public string description;
-    public Sprite icon;
+    public Sprite thumbnail;
+
+
 
 }

@@ -125,7 +125,19 @@ public class MapObjectManager_S : NetworkBehaviour
 
                 foreach(Map mapsToUnlock in Room.currentMap.unlocks)
                     player.AddUnlockMap(mapsToUnlock.Index);
-                
+
+                // Unlocks Final Map if all completed
+                List<int> completedMaps = new List<int>(player.completedMaps);
+                if (completedMaps.Exists(i => i > 0 && i <= 8))
+                    player.AddUnlockMap(9);
+
+                // Unlocks Achievements
+                foreach (Achievement achievementToUnlock in Room.currentMap.achievements)
+                    player.AddUnlockAchievement(achievementToUnlock.Index);
+
+                // Sync Progress to Local PlayerProgress Object
+                player.ServerSendPlayerData();
+
                 // Invoke Achievement if ever there is
             }
 

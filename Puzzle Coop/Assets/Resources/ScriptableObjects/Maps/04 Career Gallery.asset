@@ -20,5 +20,6 @@ MonoBehaviour:
   displayName: Career Gallery
   difficulty: 5
   description: This the Career Gallery Map
-  achievments: []
+  achievements:
+  - {fileID: 11400000, guid: 01ec284119161ed46929b0a0ef621d82, type: 2}
   Scene: Assets/Scenes/Scene_Map_04_CareerGallery.unity

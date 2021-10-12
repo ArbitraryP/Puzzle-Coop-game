@@ -21,5 +21,7 @@ MonoBehaviour:
   displayName: Misused Terms C
   difficulty: 4
   description: This the Misused Terms C Map
-  achievments: []
+  achievements:
+  - {fileID: 11400000, guid: 49c31bd4d1cdfd1458331f47b0efdd02, type: 2}
+  - {fileID: 11400000, guid: 29f0a4eedaf7d2347ab432e8f8bfbc51, type: 2}
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity

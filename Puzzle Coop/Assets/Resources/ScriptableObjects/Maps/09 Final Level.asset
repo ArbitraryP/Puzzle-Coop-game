@@ -27,5 +27,6 @@ MonoBehaviour:
   displayName: Terminal
   difficulty: 5
   description: This the Final Map
-  achievments: []
+  achievements:
+  - {fileID: 11400000, guid: d253bc1f0905d9542925afcb715c41a7, type: 2}
   Scene: 
