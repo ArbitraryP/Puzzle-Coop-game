@@ -24,3 +24,17 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: 43bc1c12eee1a5e4e81364f8447227d1, type: 2}
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity
+  stringGeneral: "I was so proud when your Dad told me he wanted to study Graphic
+    Designing I was one hundred and one percent fully on board with his aspirations
+    he was a very artistic child and I know it would fit him perfectly. One day he
+    told me that he\u2019s going to buy a new System Unit so he can achieve better
+    performance, I told him why not upgrading his CPU instead it would be cheaper.
+    He replied, \u201CI though those two were the same?\u201D"
+  stringP1: "Hijo, life is like a puzzle it may look like it would fit perfectly
+    but it\u2019s just not the right piece. We may believe that the first thing we
+    learn or know would always be the right thing, but sometimes it\u2019s not and
+    it\u2019s fine we just have to keep on learning."
+  stringP2: "Hija, a lot of people believed that when you fixed a problem it\u2019s
+    just that \u201Ca problem solved\u201D we never stop and appreciate what we could
+    have learned in the process of fixing it or what may have caused it. Remember
+    all knowledge is good knowledge depends on how you\u2019ll use it."

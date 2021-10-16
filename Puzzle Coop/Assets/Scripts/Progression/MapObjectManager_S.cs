@@ -48,7 +48,7 @@ public class MapObjectManager_S : NetworkBehaviour
     [Server]
     private void InitializeScene(NetworkConnection conn)
     {
-        RpcInitializePlayers();
+        RpcInitializePlayers(Room.currentMap.name);
 
         if (SceneManager.GetActiveScene().name == "Scene_Map_02_Misused")
         {
@@ -90,7 +90,7 @@ public class MapObjectManager_S : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void RpcInitializePlayers()
+    private void RpcInitializePlayers(string mapName)
     {
 
         localObjectManager = FindObjectOfType<MapObjectManager_L>();
@@ -99,7 +99,7 @@ public class MapObjectManager_S : NetworkBehaviour
             Debug.Log("Local Map Object Manager Missing!");
             return;
         }
-        localObjectManager.InitializePlayer();
+        localObjectManager.InitializePlayer(mapName);
         localObjectManager.serverObjectManager = this;
     }
 

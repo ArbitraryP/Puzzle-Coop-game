@@ -25,3 +25,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 49c31bd4d1cdfd1458331f47b0efdd02, type: 2}
   - {fileID: 11400000, guid: 29f0a4eedaf7d2347ab432e8f8bfbc51, type: 2}
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity
+  stringGeneral: "Hijo Hija, remember when your puppy got lost? We decided to put
+    up missing posters. And I gave each of you five printed copies, you both said
+    that those copies weren\u2019t enough so I gave you the exact amount of money
+    to make another ten printed copies, you ran to the store and came back with the
+    ten copies and ten candies. Telling me that xerox was way cheaper than printed,
+    I was so proud of how smart both of you were."
+  stringP1: Hijo, do you believe that history repeats itself? You know this room
+    may look the same as the last two but it still differs. Like history, it may
+    repeat but it will always give us new more things to learn from.
+  stringP2: "Hija, you might ask \u201CIsn\u2019t this room and the past two rooms
+    look the same?\u201D But remember, bat is different from bat and bat. One flies,
+    the other hits a ball, and the last flutters."

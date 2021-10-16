@@ -24,3 +24,17 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: c76cf5ee468d8b946a7cbc80a3270150, type: 2}
   Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity
+  stringGeneral: "When I was twelve, I\u2019ve read a comic strip in a newspaper.
+    It was a conversation between a chef and another person in a supermarket, the
+    person asks \u201CCan you prepare a full course meal?\u201D the chef answered
+    \u201CNo\u201D. Surprised the person said \u201CWhat do you mean? You said you\u2019re
+    a chef, so why can\u2019t you prepare a full course meal then?\u201D The chef
+    replied \u201CYou see, I am a chef. I\u2019m a Pastry Chef, I make desserts and
+    pastries not appetizers nor main course meals.\u201D"
+  stringP1: "Hijo, isn\u2019t it fascinating how time changes everything how letters
+    in newspapers turned into noises in radios, and noises from radios turned into
+    visuals in TVs."
+  stringP2: Hija, remember the time you told me how different animals uses different
+    frequencies to either communicate or hunt food and that you were sad because
+    they cannot talk like us humans so we had to buy you an ice cream to cheer you
+    up.

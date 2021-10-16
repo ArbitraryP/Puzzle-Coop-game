@@ -9,6 +9,7 @@ public class MapObjectManager_L : MonoBehaviour
     public MapObjectManager_S serverObjectManager = null;
     [SerializeField] private ExitDoor[] exitDoors = null;
     [SerializeField] private CameraControl cameraControl = null;
+    [SerializeField] private WelcomeNote welcomeNote = null;
 
     [Header("00 Tutorial Map")]
     [SerializeField] private GameObject passCodeScreen = null;
@@ -43,13 +44,22 @@ public class MapObjectManager_L : MonoBehaviour
         }
     }
 
-    public void InitializePlayer()
+    public void InitializePlayer(string mapName)
     {
         foreach (NetworkGamePlayerTN player in Room.GamePlayers)
         {
             if (!player.hasAuthority) continue;
             cameraControl.isHostPlayer = player.isLeader;
             cameraControl.ResetCamera();
+
+            if (!welcomeNote)
+            {
+                Debug.LogWarning("Scene has no WelcomeNote assigned");
+                return;
+            }
+
+            welcomeNote.SetMap(mapName);
+            welcomeNote.SetText(player.isLeader);
         }
     }
 

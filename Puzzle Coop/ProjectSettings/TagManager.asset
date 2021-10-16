@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Outlet
+  - WelcomeNote
   layers:
   - Default
   - TransparentFX

@@ -24,3 +24,13 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: a24d3a405025b2e4db3d9bec1a549ecb, type: 2}
   Scene: Assets/Scenes/Scene_Map_01_IntroToIT.unity
+  stringGeneral: "I remember my first calculator it was an \u2018abacus\u2019, a
+    gift from my father when I was five then I have thought how a simple invention
+    can solve simple calculations. Now as time passed by, I've thought to myself
+    \"Were there any more inventions that can help make life easier\" and there was!"
+  stringP1: "Hijo, I hope you and your sister are the ones who\u2019s reading this,
+    do you know when I was your age, I use to love solving puzzles hidden in messages.
+    I\u2019ve always believed they lead up to something, but we\u2019ll never know. "
+  stringP2: "Hija, I hope you and your brother are the ones who\u2019s reading this,
+    I want to tell you that I\u2019ve always learned new things from books that I
+    have read. And that you just need to look for things that you want to learn about."

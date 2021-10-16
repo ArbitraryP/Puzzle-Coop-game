@@ -23,3 +23,15 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: 01ec284119161ed46929b0a0ef621d82, type: 2}
   Scene: Assets/Scenes/Scene_Map_04_CareerGallery.unity
+  stringGeneral: "After the incident I started building my secret lab where I moved
+    all my research and books relating to technology, there I continuously did my
+    own studies where I found that there are vast occupations an IT person can pursue.
+    That there are specific roles an IT person plays depending on what profession
+    they\u2019ll choose."
+  stringP1: "Hijo, they say that people are brought up by the society they live in
+    and one must fit to be truly accepted. That was the case for me, but it was suffocating
+    I wasn\u2019t able to freely do or show what truly made me happy."
+  stringP2: "Hija, in life there are a lot of directions and we must choose what
+    to pick or where to go. It may lead to some twist and turns and may even end
+    up on a dead end but as long as you\u2019re in a path you must always keep on
+    moving."

@@ -28,6 +28,18 @@ public class Map : ScriptableObject
     [Scene]
     public string Scene;
 
+    [Header("Welcome Note")]
+    [TextArea(8, 15)]
+    public string stringGeneral = null;
+
+    [TextArea(8, 15)]
+    public string stringP1 = null;
+
+    [TextArea(8, 15)]
+    public string stringP2 = null;
+
+
+
     public bool IsPrerequisiteMet(List<int> completedMaps, List<int> unlockedMaps)
     {
         if (prerequisite.Count <= 0 || prerequisite == null)

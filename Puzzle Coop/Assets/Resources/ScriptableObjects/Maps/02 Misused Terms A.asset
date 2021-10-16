@@ -23,3 +23,18 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: cb6ec193bf36be646b894676ca145fa8, type: 2}
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity
+  stringGeneral: "I was scanning some magazines the other day and I stumble upon
+    an article about keypad phones and got interested. It would be an easier way
+    to be connected with your father and I can also study the device, so I bought
+    one. I don\u2019t know much about it but it said to use a micro SD card so I
+    took the SD card from my DSLR camera thinking the two were the same, but when
+    I try putting it in it won\u2019t fit. I guess I still have a lot to learn after
+    all."
+  stringP1: "Hijo, there will be times that you and your sister will be in an argument.
+    That is also part of growing up and there is nothing wrong in it, but it will
+    only be considered wrong when you don\u2019t try communicating to one another,
+    it may take a few tries but I know both of you can fix it together."
+  stringP2: Hija, sometimes there will be a lot of choices but only one right answer.
+    You can try and choose for multiple times but if you yourself are unsure of it
+    there is nothing wrong if you ask for help. And I know for a fact that your brother
+    will always be there to help you.

@@ -22,3 +22,15 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: 9fa8afb8742d2d146b831a9fbb7e6e83, type: 2}
   Scene: Assets/Scenes/Scene_Map_05_Analyze.unity
+  stringGeneral: "I always told myself that I must always look further not because
+    it\u2019s correct doesn\u2019t mean there are no other acceptable answers beside
+    the first one. That I need to look deeper, for sometimes one needs to analyze
+    the situation to have a better understanding."
+  stringP1: "Hijo, it maybe my second-guessing or from the old age, but I really
+    hope you and your sister are the ones who\u2019s reading this. In both of your
+    hands I rest my life\u2019s work I entrust you both the information and knowledge
+    that I have accumulated my entire life."
+  stringP2: "Hija, it maybe my second-guessing or from the old age, but I really
+    hope you and your brother are the ones who\u2019s reading this. What aspirations
+    you and your brother may have for the future, know that there are no words to
+    express how proud I am for the both of you."
