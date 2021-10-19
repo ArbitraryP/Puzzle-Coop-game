@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Turing's Notes:</b>\n<size=35>I was so proud when your Dad told me
+  m_text: "<b>Jacquard's Notes:</b>\n<size=35>I was so proud when your Dad told me
     he wanted to study Graphic Designing I was one hundred and one percent fully
     on board with his aspirations he was a very artistic child and I know it would
     fit him perfectly. One day he told me that he\u2019s going to buy a new System
@@ -271,8 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d79a1e77cff2e04cbb447a39902fdf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textGeneral: {fileID: 0}
-  textPlayerSpecific: {fileID: 0}
   textAll: {fileID: 3913504166819121175}
   map: {fileID: 0}
 --- !u!114 &3144564354986433480

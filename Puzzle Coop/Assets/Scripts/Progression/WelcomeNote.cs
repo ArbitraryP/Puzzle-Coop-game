@@ -24,7 +24,7 @@ public class WelcomeNote : MonoBehaviour
 
         string stringPlayer = isHost ? map.stringP1 : map.stringP2;
         string stringGeneral = "<size=35>" + map.stringGeneral + "</size>";
-        textAll.text = "<b>Turing's Notes:</b>\n" + stringGeneral + "\n" + stringPlayer;
+        textAll.text = "<b>Jacquard's Notes:</b>\n" + stringGeneral + "\n" + stringPlayer;
     }
 
 

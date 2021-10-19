@@ -29,4 +29,7 @@ MonoBehaviour:
   description: This the Final Map
   achievements:
   - {fileID: 11400000, guid: d253bc1f0905d9542925afcb715c41a7, type: 2}
-  Scene: 
+  Scene: Assets/Scenes/Scene_Map_09_Final.unity
+  stringGeneral: 
+  stringP1: 
+  stringP2: 
