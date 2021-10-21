@@ -34,6 +34,10 @@ public class MapObjectManager_L : MonoBehaviour
     [SerializeField] private PhotoFrame photoFrame = null;
     [SerializeField] private NavBreaker navBreaker = null;
 
+    [Header("09 Terminal")]
+    [SerializeField] private GameObject hallwayOn = null;
+
+
     private NetworkManagerTN room;
     private NetworkManagerTN Room
     {
@@ -217,6 +221,17 @@ public class MapObjectManager_L : MonoBehaviour
         gallery.ShowCode = true;
         photoFrame.codeEnabled = true;
         // Play sound. Show text
+    }
+
+    #endregion
+
+
+
+    #region 09 Terminal
+
+    public void M09_UnlockHallway()
+    {
+        hallwayOn.SetActive(true);
     }
 
     #endregion

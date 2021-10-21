@@ -29,7 +29,9 @@ namespace TangentNodes.Network
         [SerializeField] private MapSelect mapSelectPrefab = null;
         [SerializeField] private MapObjectManager_S objectManagerPrefab = null;
         [SerializeField] private QuestionsManager questionsManagerPrefab = null;
+        [SerializeField] private TerminalManager terminalManagerPrefab = null;
         [SerializeField] private MapCompleteMessage mapCompleteMsgPrefab = null;
+
         /*
         [SerializeField] private GameObject playerSpawnSystem = null;
         [SerializeField] private GameObject roundSystem = null;
@@ -272,6 +274,13 @@ namespace TangentNodes.Network
                     // Spawn Question Manager
                     GameObject questionManagerInstance = Instantiate(questionsManagerPrefab.gameObject);
                     NetworkServer.Spawn(questionManagerInstance);
+                }
+
+                if (sceneName == "Scene_Map_09_Final")
+                {
+                    // Spawn Terminal Manager
+                    GameObject terminalManagerInstance = Instantiate(terminalManagerPrefab.gameObject);
+                    NetworkServer.Spawn(terminalManagerInstance);
                 }
 
             }

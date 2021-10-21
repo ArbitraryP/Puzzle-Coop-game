@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\UI\Panel_Achievement.cs" />
     <Compile Include="Assets\Scripts\Network\PlayerNameInput.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\ShuffleIntArray.cs" />
+    <Compile Include="Assets\Scripts\Progression\09 Final\TerminalManager.cs" />
     <Compile Include="Assets\Scripts\Progression\04 CareerGallery\NavBreaker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
@@ -120,6 +121,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\ShuffleString.cs" />
     <Compile Include="Assets\Scripts\Prototype\SteamTest.cs" />
+    <Compile Include="Assets\Scripts\Progression\09 Final\UI_TerminalScreen.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\Question.cs" />
     <Compile Include="Assets\Scripts\UI\MapCompleteMessage.cs" />
     <Compile Include="Assets\Scripts\Progression\PlayerData.cs" />
@@ -132,6 +134,7 @@
     <Compile Include="Assets\Scripts\Progression\00 Tutorial\Plug.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\PageSystem.cs" />
+    <Compile Include="Assets\Scripts\Progression\09 Final\TerminalMessage.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\Scripts\Progression\04 CareerGallery\CareerPanel.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BreakerButton.cs" />
@@ -142,6 +145,7 @@
     <Compile Include="Assets\Scripts\Network\NetworkRoomPlayerTN.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Scripts\Progression\09 Final\Hallway.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\Scripts\Prototype\ButtonTest.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
@@ -150,9 +154,7 @@
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\09 Final\UI_TerminalScreen.cs" />
-    <Compile Include="Assets\Scripts\Progression\09 Final\TerminalMessage.cs" />
-    <Compile Include="Assets\Scripts\Progression\09 Final\TerminalManager.cs" />
+    <Compile Include="Assets\Scripts\Progression\09 Final\FadeToBlackMapF.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

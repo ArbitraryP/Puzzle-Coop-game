@@ -49,6 +49,26 @@ public class CameraControl : MonoBehaviour
         }
     }
 
+    public void JumpToFloor(int floorNumber)
+    {
+        currentFloor = floorNumber;
+
+        if (floorNumber < 0 || floorNumber >= numberOfExtraFloors) return;
+
+        if (isHostPlayer)
+        {
+            mainCamera.transform.position = camPoints_P1[floorNumber].position;
+            targetPosition = camPoints_P1[floorNumber].position;
+        }
+        else
+        {
+            mainCamera.transform.position = camPoints_P2[floorNumber].position;
+            targetPosition = camPoints_P2[floorNumber].position;
+        }
+
+        CheckNavigatableFloors();
+    }
+
     public void ResetCamera()
     {
         int camIndex = 0;
@@ -65,6 +85,8 @@ public class CameraControl : MonoBehaviour
             mainCamera.transform.position = camPoints_P2[camIndex].position;
             targetPosition = camPoints_P2[camIndex].position;
         }
+
+        CheckNavigatableFloors();
     }
 
     public void OnClickButtonUp()

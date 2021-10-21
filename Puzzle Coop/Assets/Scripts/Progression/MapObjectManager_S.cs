@@ -19,6 +19,7 @@ public class MapObjectManager_S : NetworkBehaviour
 
     [SerializeField] private MapObjectManager_L localObjectManager = null;
     [SerializeField] private QuestionsManager questionsManager = null;
+    [SerializeField] private TerminalManager terminalManager = null;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -73,6 +74,16 @@ public class MapObjectManager_S : NetworkBehaviour
             // call RPC to initialize these values
         }
 
+        if (SceneManager.GetActiveScene().name == "Scene_Map_09_Final")
+        {
+            terminalManager = FindObjectOfType<TerminalManager>();
+            if (terminalManager)
+            {
+                terminalManager.serverObjectManager = this;
+                terminalManager.InitializeTerminal();
+            }
+        }
+
 
         // Check if Players are ready at the scene
         CheckToStartMap();
@@ -87,6 +98,7 @@ public class MapObjectManager_S : NetworkBehaviour
         // Add Code that Closes or Stops the "Waiting for Other Player" loading screen or smth
 
         questionsManager?.ResetQuestions(); // Code that starts question if it is Map02 etc.
+        terminalManager?.NextMessage();
     }
 
     [ClientRpc]
@@ -228,7 +240,19 @@ public class MapObjectManager_S : NetworkBehaviour
     [ClientRpc]
     private void RpcM04_LightCompleted() => localObjectManager.M04_PowerOnAction();
 
+    #endregion
 
+
+    #region 09 Terminal
+
+    [Server]
+    public void M09_UnlockHallway()
+    {
+        RpcM09_UnlockHallway();
+    }
+
+    [ClientRpc]
+    private void RpcM09_UnlockHallway() => localObjectManager.M09_UnlockHallway();
 
     #endregion
 
