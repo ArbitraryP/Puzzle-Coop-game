@@ -5923,6 +5923,8 @@ MonoBehaviour:
   gallery: {fileID: 0}
   photoFrame: {fileID: 0}
   navBreaker: {fileID: 0}
+  hallwayOn: {fileID: 0}
+  panelAfterVideo: {fileID: 0}
 --- !u!1 &916000855
 GameObject:
   m_ObjectHideFlags: 0
@@ -8831,7 +8833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1197617582}
-  selectionSet: 1b000000230000002f0000003700000043000000
+  selectionSet: 1b000000230000002f0000000c00000043000000620000000b0000002d000000370000000c000000
   correctIndex: 3
 --- !u!1 &1470474465
 GameObject:
@@ -12109,7 +12111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1639924519}
-  selectionSet: 0a00000008000000060000000400000002000000
+  selectionSet: 0a00000008000000060000000400000002000000050000000e0000003d0000003b00000006000000
   correctIndex: 3
 --- !u!1 &2029001151
 GameObject:
@@ -12608,7 +12610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 691030755}
-  selectionSet: 08000000090000000a0000000b0000000c000000
+  selectionSet: 08000000090000000a0000000b0000000c000000010000000200000006000000250000002c000000
   correctIndex: 2
 --- !u!1 &2056731015
 GameObject:

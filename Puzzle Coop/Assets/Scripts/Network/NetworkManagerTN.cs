@@ -1,5 +1,6 @@
 using Mirror;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -228,8 +229,25 @@ namespace TangentNodes.Network
             }
 
             base.ServerChangeScene(newSceneName);
+
+            // Runs Loading Screen When Server changes Scene
+            StartLoadingScreen();
         }
-        
+
+        // Runs Loading Screen When Client changes Scene
+        public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
+        {
+            StartLoadingScreen();
+        }
+
+
+        private void StartLoadingScreen()
+        {
+            FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(true);
+        }
+
+
+
         public override void OnServerSceneChanged(string sceneName)
         {
             

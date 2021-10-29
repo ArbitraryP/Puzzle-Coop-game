@@ -4244,7 +4244,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 597191916}
   m_OnClick:
     m_PersistentCalls:
@@ -6343,6 +6343,8 @@ MonoBehaviour:
   gallery: {fileID: 0}
   photoFrame: {fileID: 0}
   navBreaker: {fileID: 0}
+  hallwayOn: {fileID: 0}
+  panelAfterVideo: {fileID: 0}
 --- !u!4 &885396762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1733465800023168780, guid: 198603d8f058d88468e32a3f38453136, type: 3}

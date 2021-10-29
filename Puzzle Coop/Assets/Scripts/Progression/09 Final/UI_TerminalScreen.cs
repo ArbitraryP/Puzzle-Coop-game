@@ -8,6 +8,7 @@ using UnityEngine.Video;
 public class UI_TerminalScreen : MonoBehaviour
 {
     [Header("UI")]
+    [SerializeField] private MapObjectManager_L localObjectManager = null;
     [SerializeField] private TMP_Text textTerminalName = null;
     [SerializeField] private TMP_Text textMessage = null;
     [SerializeField] private TMP_Text textStatus = null;
@@ -15,6 +16,7 @@ public class UI_TerminalScreen : MonoBehaviour
     [SerializeField] private Image imageButton = null;
     [SerializeField] private Button buttonDownload = null;
     [SerializeField] private VideoPlayer videoPlayerCred = null;
+    
 
     [Header("Data")]
     [SerializeField] private int currentMessage = 1;
@@ -139,7 +141,7 @@ public class UI_TerminalScreen : MonoBehaviour
             partnerTerminal + ".";
 
         // Call Server Command to spawn BSOD Cutscene when both players clicked
-
+        
         TerminalManager terminalManager = FindObjectOfType<TerminalManager>();
         if (!terminalManager) return;
 
@@ -154,11 +156,12 @@ public class UI_TerminalScreen : MonoBehaviour
 
     public void StartRetry()
     {
-        Debug.Log("TERMINAL MAP COMPLETED! hehe");
+        localObjectManager.M09_HideUI();
         videoPlayerCred.enabled = true;
-        // Disable Floor Navigation
-        // Disable Quiting the game
+        videoPlayerCred.loopPointReached += localObjectManager.M09_OnVideoPlayerEnded;
+        
     }
+
 
     private void UpdateDownloadingProgress()
     {

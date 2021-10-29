@@ -99,7 +99,9 @@ public class MapObjectManager_S : NetworkBehaviour
 
         questionsManager?.ResetQuestions(); // Code that starts question if it is Map02 etc.
         terminalManager?.NextMessage();
+        
     }
+
 
     [ClientRpc]
     private void RpcInitializePlayers(string mapName)
@@ -117,7 +119,7 @@ public class MapObjectManager_S : NetworkBehaviour
 
 
     [Command(requiresAuthority = false)]
-    public void CmdExitDoor(int playerNum)
+    public void CmdExitDoor()
     {
         numberOfPlayersReadyToExit++;
         CheckReadyToExit();
@@ -146,6 +148,15 @@ public class MapObjectManager_S : NetworkBehaviour
                 // Unlocks Achievements
                 foreach (Achievement achievementToUnlock in Room.currentMap.achievements)
                     player.AddUnlockAchievement(achievementToUnlock.Index);
+
+                // Removes all Unlocked Maps IF Final Map is Finished
+                if(Room.currentMap.name == "09 Final Level")
+                {
+                    player.completedMaps.Clear();
+                    player.unlockedMaps.Clear();
+                    player.unlockedMaps.Add(0); // Adds Map S, the first map
+                }
+
 
                 // Sync Progress to Local PlayerProgress Object
                 player.ServerSendPlayerData();
