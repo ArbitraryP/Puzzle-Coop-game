@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(fileName = "New Map", menuName = "Progression/Map")]
 public class Map : ScriptableObject
@@ -27,6 +28,8 @@ public class Map : ScriptableObject
 
     [Scene]
     public string Scene;
+
+    public VideoClip cutsceneVideo = null;
 
     [Header("Welcome Note")]
     [TextArea(8, 15)]

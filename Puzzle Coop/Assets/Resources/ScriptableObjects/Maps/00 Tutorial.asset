@@ -25,6 +25,7 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: 1049a95c7bfef7b43b0d65b962e22773, type: 2}
   Scene: Assets/Scenes/Scene_Map_00_Tutorial.unity
+  cutsceneVideo: {fileID: 32900000, guid: 3615fb77b36ca9d40bcb8f275c3d760c, type: 3}
   stringGeneral: "<size=37><i>\u201CThose who can\u2019t change their minds can\u2019t
     change anything.\u201D</i>\nGO! YOU ARE NOT WELCOME HERE!\n<i>Though if you exceed
     this level, I will deem you worthy to whatever you may discover inside.</i></size>"

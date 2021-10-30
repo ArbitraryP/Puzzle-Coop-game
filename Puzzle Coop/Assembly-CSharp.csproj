@@ -109,6 +109,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\Network\NetworkGamePlayerTN.cs" />
+    <Compile Include="Assets\Scripts\Progression\09 Final\FadeToBlackMapF.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Progression\PlayerProgress.cs" />
     <Compile Include="Assets\Scripts\Progression\00 Tutorial\MonitorScreen.cs" />
@@ -154,7 +155,7 @@
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\09 Final\FadeToBlackMapF.cs" />
+    <Compile Include="Assets\Scripts\Progression\IntroCutscenePlayer.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

@@ -13,15 +13,27 @@ MonoBehaviour:
   m_Name: TerminalMessage
   m_EditorClassIdentifier: 
   messages:
-  - Message 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 6. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
+  - 'Message 1. We''re no strangers to coding
+
+    You know the syntax and so do
+    I...'
+  - 'Message 2. A full github commits what I''m thinking of
+
+    You wouldn''t get
+    this from any other repository...'
+  - 'Message 3. We''ve known each other for so long
+
+    Your CPU''s been overheating
+    but you''re too shy to say it...'
+  - 'Message 4. Inside we both know what''s been going on
+
+    We know the game and
+    we''re gonna play it...'
+  - 'Message 5. And if you ask me how IT works
+
+    Don''t tell me you''re too blind
+    to see...'
+  - 'Message 6. I just wanna tell you how IT works.
+
+    Gotta make you understand.
+    Never gonna give up coding...'

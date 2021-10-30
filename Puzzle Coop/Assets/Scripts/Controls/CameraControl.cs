@@ -21,7 +21,8 @@ public class CameraControl : MonoBehaviour
     [SerializeField] private Camera mainCamera = null;
     public Transform[] camPoints_P1;
     public Transform[] camPoints_P2;
-    
+
+    public Camera MainCamera => mainCamera;
 
     [Header("Camera Pan")]
     [Range(0.1f, 10f)]

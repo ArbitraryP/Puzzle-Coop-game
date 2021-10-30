@@ -5,7 +5,7 @@ public class BreakerButton : MonoBehaviour
 {
     [SerializeField] private TMP_Text buttonText = null;
     [SerializeField] private int[] selectionSet;
-    [SerializeField] private int correctIndex = 0;
+    [SerializeField] private int correctValue = 0;
     private int currentSelectedIndex = 0;
     
 
@@ -23,7 +23,7 @@ public class BreakerButton : MonoBehaviour
 
     public bool isSelectedCorrect()
     {
-        return currentSelectedIndex == correctIndex;
+        return selectionSet[currentSelectedIndex] == correctValue;
         // To see correct answer go the MapObjectManager_L
     }
 
