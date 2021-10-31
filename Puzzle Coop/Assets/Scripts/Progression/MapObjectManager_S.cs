@@ -34,7 +34,7 @@ public class MapObjectManager_S : NetworkBehaviour
     }
 
     private int numberOfPlayersReadyToExit = 0;
-
+    private int numberOfPlayersVoteSkip = 0;
 
     public override void OnStartServer()
     { 
@@ -136,8 +136,20 @@ public class MapObjectManager_S : NetworkBehaviour
         cutscenePlayer.PlayCutscene();
     }
 
+    [Command(requiresAuthority =false)]
+    public void CmdVoteSkipCutscene()
+    {
+        numberOfPlayersVoteSkip++;
+        if (numberOfPlayersVoteSkip >= 2)
+        {
+            RpcSkipCutscene();
+            numberOfPlayersVoteSkip = 0;
+        }
+    }
 
-
+    [ClientRpc]
+    private void RpcSkipCutscene() => cutscenePlayer.SkipCutscene();
+    
 
     #endregion
 
@@ -178,6 +190,7 @@ public class MapObjectManager_S : NetworkBehaviour
                     player.completedMaps.Clear();
                     player.unlockedMaps.Clear();
                     player.unlockedMaps.Add(0); // Adds Map S, the first map
+
                 }
 
 

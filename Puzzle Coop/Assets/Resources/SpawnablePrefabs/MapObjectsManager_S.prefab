@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMap: {fileID: 0}
   videoPlayer: {fileID: 3948083246789509820}
+  serverObjectManager: {fileID: 1389564324323045749}
 --- !u!1 &2271057246066496132
 GameObject:
   m_ObjectHideFlags: 0

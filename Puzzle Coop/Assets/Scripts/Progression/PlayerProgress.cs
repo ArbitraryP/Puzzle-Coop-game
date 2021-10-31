@@ -30,6 +30,7 @@ public class PlayerProgress : MonoBehaviour
 
         unlockedMaps.Add(0);
         // Test Code to Generate Random Numbers
+        /*
         completedMaps.Add(0);
         completedMaps.Add(1);
         completedMaps.Add(2);
@@ -47,7 +48,7 @@ public class PlayerProgress : MonoBehaviour
         unlockedMaps.Add(6);
         unlockedMaps.Add(7);
         unlockedMaps.Add(8);
-
+        
         /*
         completedMaps.Add(2);
         completedMaps.Add(7);
@@ -68,11 +69,19 @@ public class PlayerProgress : MonoBehaviour
     
     }
 
+
     public void SendPlayerProgress(
         List<int> cMaps,
         List<int> uMaps,
         List<int> uAchievements)
     {
+        completedMaps.Clear();
+        unlockedMaps.Clear();
+        unlockedAchievements.Clear();
+
+        // Always Add First Map
+        unlockedMaps.Add(0);
+
         completedMaps.AddRange(cMaps);
         unlockedMaps.AddRange(uMaps);
         unlockedAchievements.AddRange(uAchievements);

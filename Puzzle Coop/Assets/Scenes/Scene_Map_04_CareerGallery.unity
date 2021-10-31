@@ -1313,17 +1313,17 @@ PrefabInstance:
 
 
         Up! that''s
-        Right always go Up.
+        right always go up.
 
         not because there are these types of career
         specializations, means you can''t carve your own path.
 
 
         you won''t
-        get Left behind if you won''t let it.
+        get left behind if you won''t let it.
 
         just remember to keep your
-        feet Down to the ground and you''ll know where to go.'
+        feet down to the ground and you''ll know where to go.'
       objectReference: {fileID: 0}
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_fontSize
@@ -5082,18 +5082,18 @@ PrefabInstance:
       value: 'Nelson came yesterday,
 
 
-        With a cup of coffee and said,
+        with a cup of coffee and said,
 
 
-        Whenever
+        whenever
         it be on great prosperity, or
 
 
-        Even in a crisis, technology never
+        even in a crisis, technology never
         stop.
 
 
-        What do these initials mean?
+        what do these initials mean?
 
 '
       objectReference: {fileID: 0}
@@ -5810,6 +5810,8 @@ MonoBehaviour:
   gallery: {fileID: 396529840}
   photoFrame: {fileID: 1216438373}
   navBreaker: {fileID: 1963263823}
+  hallwayOn: {fileID: 0}
+  panelAfterVideo: {fileID: 0}
 --- !u!1 &932131330
 GameObject:
   m_ObjectHideFlags: 0
@@ -14484,19 +14486,19 @@ PrefabInstance:
       value: 'mr. North had left me this quote.
 
 
-        they are Right, i.t. cover
+        they are right, i.t. cover
         a large portion of technology
 
 
-        yet what''s not Right is that we
+        yet what''s not right is that we
         know everything.
 
 
-        technologies evolve fast, therefore we take Up
+        technologies evolve fast, therefore we take up
         specializations.
 
 
-        so don''t let that misconception let you Down.'
+        so don''t let that misconception let you down.'
       objectReference: {fileID: 0}
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_fontSize

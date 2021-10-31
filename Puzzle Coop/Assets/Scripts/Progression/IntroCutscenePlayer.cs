@@ -7,6 +7,9 @@ public class IntroCutscenePlayer : MonoBehaviour
 {
     [SerializeField] private Map currentMap = null;
     [SerializeField] private VideoPlayer videoPlayer = null;
+    [SerializeField] private MapObjectManager_S serverObjectManager = null;
+
+    private bool hasVotedSkip = false;
 
     private void Awake()
     {
@@ -20,9 +23,12 @@ public class IntroCutscenePlayer : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-            OnCutsceneEnded(videoPlayer);
-        
+        if (Input.GetKeyDown(KeyCode.Escape) && !hasVotedSkip)
+        {
+            serverObjectManager.CmdVoteSkipCutscene();
+            hasVotedSkip = true;
+        }
+                   
     }
 
     public void SetupCutscene(string mapName)
@@ -35,8 +41,7 @@ public class IntroCutscenePlayer : MonoBehaviour
         }
 
         videoPlayer.clip = currentMap.cutsceneVideo;
-        videoPlayer.targetCamera = FindObjectOfType<CameraControl>()?.MainCamera;
-
+        videoPlayer.Stop();
     }
 
     public void PlayCutscene()
@@ -55,8 +60,11 @@ public class IntroCutscenePlayer : MonoBehaviour
         FindObjectOfType<CameraControl>()?.EnableNavigation(false);
     }
 
+    public void SkipCutscene() => OnCutsceneEnded(videoPlayer);
+
     public void OnCutsceneEnded(VideoPlayer videoPlayer)
     {
+        videoPlayer.Stop();
         videoPlayer.enabled = false;
         gameObject.SetActive(false);
 
@@ -65,6 +73,7 @@ public class IntroCutscenePlayer : MonoBehaviour
         FindObjectOfType<SettingsAndExit>()?.EnableMenu(true);
         FindObjectOfType<CameraControl>()?.EnableNavigation(true);
 
+        hasVotedSkip = false;
     }
 
 

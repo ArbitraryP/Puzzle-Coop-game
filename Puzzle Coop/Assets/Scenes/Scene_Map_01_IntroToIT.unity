@@ -11320,8 +11320,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184.45508, y: 37}
-  m_SizeDelta: {x: 276.832, y: 555.061}
+  m_AnchoredPosition: {x: -181.09052, y: 37}
+  m_SizeDelta: {x: 283.5611, y: 555.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863437272
 MonoBehaviour:
@@ -11343,9 +11343,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<b>Cloud Computing</b>\nLorem ipsum dolor sit amet, consectetur adipiscing
-    elit, \n\n<b>Hardware-Software</b>\nLorem ipsum dolor sit amet, consectetur adipiscing
-    elit, sed do eius"
+  m_text: '<b>Cloud Computing</b>
+
+    <size=31>Utilizes server computers to provide
+    services through the internet.</size>
+
+
+    <b>Hardware-Software</b>
+
+    <size=31>These
+    are the physical components and the set of instructions that runs on computers.</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12801,14 +12808,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<b>Gaming</b>
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing
-    elit, sed do eius
+    <size=31>In tech, it refers to developing/playing games
+    using an electronic device like a computer.</size>
 
 
     <b>Internet of Things</b>
 
-    Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit, sed do eius'
+    <size=31>IoT
+    is the system of interconnected devices that serve to automate/record tasks like
+    phones, cars, cameras, etc.</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13191,14 +13199,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<b>E-commerce</b>
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing
-    elit, sed do eius
+    <size=31>Business model that buys/sells its products/services
+    through an electronic network, usually the internet.</size>
 
 
     <b>Social Media</b>
 
-    Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit, sed do eius'
+    <size=31>A
+    general term used to refer to websites/apps that focus on social interaction
+    and communication.</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
