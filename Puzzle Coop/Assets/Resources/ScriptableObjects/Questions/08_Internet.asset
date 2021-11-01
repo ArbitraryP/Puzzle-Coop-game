@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5acd8cd4363db66428c633c09e7b9722, type: 3}
-  m_Name: 08_URL
+  m_Name: 08_Internet
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 9cab31cfbd50725498cd980af6188364, type: 3}
-  text: Formal term for what is commonly refered as "Links"
+  image: {fileID: 21300000, guid: d5ca508db30a40748bc1802038d9b379, type: 3}
+  text: "Which is not true about \u201CInternet\u201D?"
   choices:
-  - Uniform Resource Locators (URL)
-  - Web Address Identifier (WAI)
-  - Online Access Link (OAL)
-  - Resource Address (RA)
-  answerIndex: 0
+  - 'It allows users to send & receive data '
+  - Connects computers across the world
+  - Invented in 1983
+  - Also spelled as Ethernet
+  answerIndex: 3

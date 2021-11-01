@@ -7523,6 +7523,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel_WelcomeNote
       objectReference: {fileID: 0}
+    - target: {fileID: 5647536549956026938, guid: 5031d65bc6fcc57499c36860b172c6b9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 79.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647536549956026938, guid: 5031d65bc6fcc57499c36860b172c6b9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15.800049
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5031d65bc6fcc57499c36860b172c6b9, type: 3}
 --- !u!224 &1223656276 stripped
@@ -15536,10 +15544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'This is an extra stickynote. Place anything here.
-
-    Meme Reference
-    or Easter Egg something.'
+  m_text: You might just be <color=#833>missing</color> the point.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
