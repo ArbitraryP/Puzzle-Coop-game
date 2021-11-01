@@ -14483,22 +14483,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_text
-      value: 'mr. North had left me this quote.
+      value: 'Mr. North has once told me,
 
 
-        they are right, i.t. cover
-        a large portion of technology
+        they are right, i.t. cover a
+        large portion of technology
 
 
-        yet what''s not right is that we
-        know everything.
+        yet what''s not right is that we know
+        everything.
 
 
-        technologies evolve fast, therefore we take up
-        specializations.
+        technologies evolve fast, therefore we take up specializations.
 
 
-        so don''t let that misconception let you down.'
+        so
+        don''t let that misconception let you down.'
       objectReference: {fileID: 0}
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_fontSize
