@@ -21,6 +21,8 @@ public class SettingsAndExit : MonoBehaviour
     [SerializeField] private Toggle toggleHowTo = null;
     [SerializeField] private Toggle toggleSettings = null;
     [SerializeField] private Toggle toggleQuitConfirm = null;
+    [SerializeField] private Slider sliderSFX = null;
+    [SerializeField] private Slider sliderBGM = null;
 
     [Header("How To Play")]
     [SerializeField] private GameObject[] panelHowToPages = null;
@@ -29,6 +31,10 @@ public class SettingsAndExit : MonoBehaviour
 
     [Header("Loading Screen")]
     [SerializeField] private GameObject panelLoadingScreen = null;
+
+    [Header("Sound Volume")]
+    [SerializeField] private AudioManager audioManager = null;
+
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -63,6 +69,7 @@ public class SettingsAndExit : MonoBehaviour
         SceneManager.activeSceneChanged += OnSceneChanged;
     }
 
+
     private void OnDestroy() => SceneManager.activeSceneChanged -= OnSceneChanged;
 
     public void SetFullScreen(bool isFullScreen)
@@ -70,17 +77,11 @@ public class SettingsAndExit : MonoBehaviour
         //Screen.fullScreen = isFullScreen;
        
         if (isFullScreen)
-        {
             Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
         
-        }
         else
-        {
             Screen.SetResolution(1024, 576, false);
             
-        }
-           
-
     }
 
 
@@ -230,6 +231,24 @@ public class SettingsAndExit : MonoBehaviour
     {
         panelLoadingScreen.SetActive(state);
         EnableMenu(!state);
+    }
+
+
+    public void ChangeVolumeBGM(float value)
+    {
+        audioManager.masterVolumeBGM = value;
+    }
+
+    public void ChangeVolumeSFX(float value)
+    {
+        audioManager.masterVolumeSFX = value;
+    }
+
+    // Code to call when loading the volume settings from save
+    public void SetVolume(float volumeBGM = 1f, float volumeSFX = 1f)
+    {
+        sliderBGM.value = volumeBGM;
+        sliderSFX.value = volumeSFX;
     }
 
 }

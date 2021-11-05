@@ -1732,7 +1732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color=#00000066>...&**2^@$^#</color> with 9...
+  m_text: '<color=#00000066>...********</color> with 9...
 
     ...the number 63.'
   m_isRightToLeft: 0

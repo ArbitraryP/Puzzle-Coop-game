@@ -33,6 +33,10 @@ public class IntroCutscenePlayer : MonoBehaviour
 
     public void SetupCutscene(string mapName)
     {
+        // Set the AudioSource of Cutscene Video to the provided AudioSource from AudioManager
+        videoPlayer.SetTargetAudioSource(0, FindObjectOfType<AudioManager>()?.GetCutsceneAudioSource());
+
+
         currentMap = Resources.Load<Map>("ScriptableObjects/Maps/" + mapName);
         if (!currentMap)
         {

@@ -90,6 +90,9 @@ namespace TangentNodes.Network
             base.OnClientDisconnect(conn);
             OnClientDisconnected?.Invoke();
 
+            // Close Loading Screen
+            FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(false);
+
             // Show Disconnected Panel
             Instantiate(disconnectPanelPrefab);
         }
@@ -145,6 +148,9 @@ namespace TangentNodes.Network
                     DisconnectPanel disconnectPanel = Instantiate(disconnectPanelPrefab);
                     disconnectPanel.ChangeTextToLostClient();
 
+                    // Close Loading Screen
+                    FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(false);
+
                 }
             }
 
@@ -160,6 +166,8 @@ namespace TangentNodes.Network
             ClearCurrentMap();
 
             base.OnStopServer();
+
+
 
             SceneManager.LoadScene("Scene_Lobby");
             Debug.Log("Server Stopped, Scene Changed");
