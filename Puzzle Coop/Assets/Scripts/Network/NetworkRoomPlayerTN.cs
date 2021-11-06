@@ -179,6 +179,11 @@ namespace TangentNodes.Network
             Debug.Log("Game Started");
             Room.StartGame();
         }
+
+        public void PlayUIButtonClick()
+        {
+            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
+        }
     }
 }
 

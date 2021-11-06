@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sound {
 
 	public string name;
-	public AudioManager.SoundNames id;
+	public string id;
 
 	public AudioClip clip;
 	public bool isBGM = false;

@@ -18,6 +18,7 @@ public class MonitorScreen : MonoBehaviour
 
     public void OnClick()
     {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
         panelPasscode.SetActive(true);
         foreach (GameObject button in buttonsUpDown)
             button.SetActive(false);

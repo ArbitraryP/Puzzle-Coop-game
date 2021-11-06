@@ -60,6 +60,7 @@ public class IntroCutscenePlayer : MonoBehaviour
         videoPlayer.enabled = true;
         gameObject.SetActive(true);
 
+        FindObjectOfType<AudioManager>()?.StopAllBGM();
         FindObjectOfType<SettingsAndExit>()?.EnableMenu(false);
         FindObjectOfType<CameraControl>()?.EnableNavigation(false);
     }
@@ -74,6 +75,7 @@ public class IntroCutscenePlayer : MonoBehaviour
 
         // Or set this after Fade to Black
 
+        FindObjectOfType<AudioManager>()?.ReplayBGM();
         FindObjectOfType<SettingsAndExit>()?.EnableMenu(true);
         FindObjectOfType<CameraControl>()?.EnableNavigation(true);
 

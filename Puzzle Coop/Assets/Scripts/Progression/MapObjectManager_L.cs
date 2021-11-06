@@ -88,6 +88,7 @@ public class MapObjectManager_L : MonoBehaviour
         passCodeScreen.SetActive(true);
 
         // Play sound. Show text
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_PlugIn);
     }
 
 
@@ -104,6 +105,7 @@ public class MapObjectManager_L : MonoBehaviour
             if (!button.isSelectedCorrect())
             {
                 //Play wrong sound
+                FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_WrongCode);
                 return false;
             }
         }
@@ -123,6 +125,7 @@ public class MapObjectManager_L : MonoBehaviour
         lightGlowBreaker.color = Color.green;
 
         // Play sound. Show text
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M01_LeverOn);
     }
 
     public void M01_OnNodeInserted()

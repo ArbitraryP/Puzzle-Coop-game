@@ -98,6 +98,7 @@ public class CameraControl : MonoBehaviour
 
     public void OnClickButtonUp()
     {
+        PlayUIStairSteps();
         if (currentFloor >= numberOfExtraFloors)
             return;
 
@@ -114,6 +115,7 @@ public class CameraControl : MonoBehaviour
 
     public void OnClickButtonDown()
     {
+        PlayUIStairSteps();
         if (currentFloor <= 0)
             return;
 
@@ -139,5 +141,10 @@ public class CameraControl : MonoBehaviour
         else if (currentFloor >= numberOfExtraFloors)
             button_up.interactable = false;
 
+    }
+
+    public void PlayUIStairSteps()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_StairSteps);
     }
 }

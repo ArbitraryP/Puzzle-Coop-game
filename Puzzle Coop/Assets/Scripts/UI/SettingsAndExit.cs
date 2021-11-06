@@ -6,6 +6,7 @@ using TangentNodes.Network;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Mirror;
+using System;
 
 public class SettingsAndExit : MonoBehaviour
 {
@@ -75,7 +76,7 @@ public class SettingsAndExit : MonoBehaviour
     public void SetFullScreen(bool isFullScreen)
     {
         //Screen.fullScreen = isFullScreen;
-       
+
         if (isFullScreen)
             Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
         
@@ -131,6 +132,7 @@ public class SettingsAndExit : MonoBehaviour
 
     public void OnToggleHowTo(bool value)
     {
+        PlayUIClickSound();
         panelHowTo.SetActive(value);
         if(value)
             CloseOtherToggles(0);
@@ -144,6 +146,7 @@ public class SettingsAndExit : MonoBehaviour
 
     public void OnToggleSettings(bool value)
     {
+        PlayUIClickSound();
         panelSettings.SetActive(value);
         if (value) 
             CloseOtherToggles(1);
@@ -152,6 +155,7 @@ public class SettingsAndExit : MonoBehaviour
 
     public void OnToggleQuit(bool isToggleOn)
     {
+        PlayUIClickSound();
         panelQuitConfirm.SetActive(isToggleOn);
         if (isToggleOn) 
             CloseOtherToggles(2);
@@ -249,6 +253,15 @@ public class SettingsAndExit : MonoBehaviour
     {
         sliderBGM.value = volumeBGM;
         sliderSFX.value = volumeSFX;
+    }
+
+    // Code to call to play UI Button Click Sound
+    public void PlayUIClickSound()
+    {
+        // This will catch the exception since Fullscreen toggle will change before AudioManager would initialize
+        try { FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick); }
+        catch(NullReferenceException e) { } 
+
     }
 
 }

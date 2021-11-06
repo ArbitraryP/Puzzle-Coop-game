@@ -119,6 +119,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Progression\ExitDoor.cs" />
     <Compile Include="Assets\Scripts\Network\JoinLobbyMenu.cs" />
+    <Compile Include="Assets\Scripts\Sounds\AudioManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\ShuffleString.cs" />
     <Compile Include="Assets\Scripts\Prototype\SteamTest.cs" />
@@ -155,9 +156,8 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
     <Compile Include="Assets\Scripts\Sounds\Sound.cs" />
-    <Compile Include="Assets\Scripts\Sounds\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

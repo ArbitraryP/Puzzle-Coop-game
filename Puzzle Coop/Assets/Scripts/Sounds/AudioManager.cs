@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
 		SFX_MAP_AccessGrant,
 		SFX_MAP_DoorUnlocked,
 		SFX_MAP_DoorOpened,
+		SFX_MAP_DoorLockInteract,
 		SFX_MAP_StairSteps,
 		SFX_MAP_Paper,
 		SFX_MAP_KeyTone,
@@ -33,6 +34,7 @@ public class AudioManager : MonoBehaviour
 		SFX_M00_CorrectCode,
 		SFX_M00_PlugIn,
 		SFX_M00_PlugOut,
+		SFX_M00_PlugCollide,
 		SFX_M00_WrongCode,
 
 		SFX_M01_BookClose,
@@ -53,6 +55,7 @@ public class AudioManager : MonoBehaviour
 		SFX_M09_LightsOn,
 
 		BGM_MAP_Ambient,
+		BGM_SEL_Ambient,
 		BGM_MainMenu,
 
 		CUTSCENE_AudioSource
@@ -98,16 +101,24 @@ public class AudioManager : MonoBehaviour
 
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+		ReplayBGM();
+	}
+
+	public void ReplayBGM()
+    {
+		Scene scene = SceneManager.GetActiveScene();
+
 		StopAllBGM();
 		if (scene.name == "Scene_Lobby")
 			PlayNonRepeat(SoundNames.BGM_MainMenu);
-		
-		else if(scene.name.StartsWith("Scene_Map_") && scene.name != "Scene_Map_Select")
+
+		else if (scene.name == "Scene_Map_Select")
+			PlayNonRepeat(SoundNames.BGM_SEL_Ambient);
+
+		else if (scene.name.StartsWith("Scene_Map_") && scene.name != "Scene_Map_Select")
 			PlayNonRepeat(SoundNames.BGM_MAP_Ambient);
+	}
 
-
-		
-    }
 
 	// Will only be used if there is something to be called manually with no code
 	public void Play(string name)
@@ -156,7 +167,7 @@ public class AudioManager : MonoBehaviour
 
 	public Sound FindSound(SoundNames name)
 	{
-		Sound s = Array.Find(sounds, sound => sound.id == name);
+		Sound s = Array.Find(sounds, sound => sound.id == name.ToString());
 		if (s == null)
 		{
 			Debug.LogWarning("Sound: " + name + " not found!");
@@ -178,6 +189,8 @@ public class AudioManager : MonoBehaviour
 	public AudioSource GetCutsceneAudioSource()
     {
 		Sound s = FindSound(SoundNames.CUTSCENE_AudioSource);
+		if (s == null)
+			return null;
 		return s.source;
 	}
 
