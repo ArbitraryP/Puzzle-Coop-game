@@ -45,14 +45,22 @@ public class AudioManager : MonoBehaviour
 		SFX_M01_NodePickUp,
 		SFX_M01_NodeDrop,
 
+		SFX_M02_QuizButton,
 		SFX_M02_Complete,
 		SFX_M02_CorrectAnswer,
 		SFX_M02_IncorrectAnswer,
 
 		SFX_M03_RadioStatic,
+		SFX_M03_CalendarClockButtonClick,
+		SFX_M03_CalendarClockInteract,
+		SFX_M03_CalendarClockCorrect,
+
+		SFX_M04_TicketDispense,
 
 		SFX_M09_TerminalTyping,
-		SFX_M09_LightsOn,
+		SFX_M09_TerminalError,
+		SFX_M09_HallwayLightsOn,
+		SFX_M09_HallwayEnter,
 
 		BGM_MAP_Ambient,
 		BGM_SEL_Ambient,
@@ -102,6 +110,7 @@ public class AudioManager : MonoBehaviour
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 		ReplayBGM();
+		StopAllLoopingSFX();
 	}
 
 	public void ReplayBGM()
@@ -120,7 +129,7 @@ public class AudioManager : MonoBehaviour
 	}
 
 
-	// Will only be used if there is something to be called manually with no code
+	// Will only be used if there is something to be called manually without using enum
 	public void Play(string name)
 	{
 		SoundNames find;
@@ -140,14 +149,23 @@ public class AudioManager : MonoBehaviour
 		s.source.Play();
 	}
 
-	public void PlayNonRepeat(SoundNames name)
+	/// <summary>
+	/// A 2nd Play method to not play the audio if it is already played
+	/// This method will be used if the audioclip should not be played multiple times simultaneously
+	/// </summary>
+	/// <param name="name">The id of the Sound</param>
+	/// <param name="dynamicVolume">This will play the sound with a volume of 0 to 1f</param>
+	public void PlayNonRepeat(SoundNames name, float dynamicVolume = 1f)
 	{
-		// A 2nd Play method to not play the audio if it is already played
-		// This method will be used if the audioclip should not be played multiple times simultaneously
 
 		Sound s = FindSound(name);
-		if (s == null || s.source.isPlaying) { return; }
+		if (s == null) return;
+
+		// Change Dynamic Volume Factor first before readjusting volume.
+		s.dynamicVolumeFactor = dynamicVolume;
 		ApplySoundSettings();
+
+		if (s.source.isPlaying) return;
 		s.source.Play();
 
 	}
@@ -165,6 +183,12 @@ public class AudioManager : MonoBehaviour
 			s.source.Stop();
     }
 
+	public void StopAllLoopingSFX()
+	{
+		foreach (Sound s in Array.FindAll<Sound>(sounds, sound => !sound.isBGM && sound.loop))
+			s.source.Stop();
+	}
+
 	public Sound FindSound(SoundNames name)
 	{
 		Sound s = Array.Find(sounds, sound => sound.id == name.ToString());
@@ -180,9 +204,9 @@ public class AudioManager : MonoBehaviour
 		foreach (Sound s in sounds)
 		{
 			if (s.isBGM)
-				s.source.volume = s.volume * masterVolumeBGM;
+				s.source.volume = s.volume * s.dynamicVolumeFactor * masterVolumeBGM;
 			else
-				s.source.volume = s.volume * masterVolumeSFX;
+				s.source.volume = s.volume * s.dynamicVolumeFactor * masterVolumeSFX;
 		}
 	}
 

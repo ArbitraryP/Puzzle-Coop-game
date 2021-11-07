@@ -57,7 +57,8 @@ public class UI_Clock : MonoBehaviour
 
     public void OnClickClockButton(string buttonName)
     {
-        if(buttonName.ToLower() == "hour")
+        PlaySoundButtonClick();
+        if (buttonName.ToLower() == "hour")
         {
             selectedHour = selectedHour >= 12 ? 1 : selectedHour + 1;
             hourText.text = selectedHour.ToString();
@@ -96,4 +97,8 @@ public class UI_Clock : MonoBehaviour
         }
     }
 
+    public void PlaySoundButtonClick()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M03_CalendarClockButtonClick);
+    }
 }

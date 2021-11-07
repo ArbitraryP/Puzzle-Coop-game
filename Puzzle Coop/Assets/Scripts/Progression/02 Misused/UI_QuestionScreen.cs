@@ -96,6 +96,7 @@ public class UI_QuestionScreen : MonoBehaviour
 
     public void OnClickChoice(int buttonIndex)
     {
+        PlayAnswerButtonClick();
         QuestionsManager questionsManager = FindObjectOfType<QuestionsManager>();
         if (!questionsManager) return;
         
@@ -107,5 +108,10 @@ public class UI_QuestionScreen : MonoBehaviour
     public void ShowQuizCompleted()
     {
         quizCompleteImage.SetActive(true);
+    }
+
+    public void PlayAnswerButtonClick()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M02_QuizButton);
     }
 }

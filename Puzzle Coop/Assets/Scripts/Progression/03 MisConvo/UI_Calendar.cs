@@ -63,6 +63,7 @@ public class UI_Calendar : MonoBehaviour
 
     public void OnClickMonthButton()
     {
+        PlaySoundButtonClick();
         selectedMonth = selectedMonth >= 12 ? 1 : selectedMonth + 1;
         monthText.text = months[selectedMonth-1];
         CheckIfSelectedCorrect();
@@ -70,12 +71,18 @@ public class UI_Calendar : MonoBehaviour
 
     public void OnClickDateButton(int date)
     {
-        foreach(Button button in dateButtons)
+        PlaySoundButtonClick();
+        foreach (Button button in dateButtons)
             button.interactable = true;
 
         dateButtons[date - 1].interactable = false;
         selectedDate = date;
         CheckIfSelectedCorrect();
+    }
+
+    public void PlaySoundButtonClick()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M03_CalendarClockButtonClick);
     }
 
 }

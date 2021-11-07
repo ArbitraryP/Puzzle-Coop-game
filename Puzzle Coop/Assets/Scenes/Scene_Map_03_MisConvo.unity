@@ -459,6 +459,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341563843198869}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_M03_CalendarClockInteract
 --- !u!1 &75592027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2145,6 +2146,7 @@ MonoBehaviour:
   panelTarget: {fileID: 951382640}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_M03_CalendarClockInteract
 --- !u!1 &373140569
 GameObject:
   m_ObjectHideFlags: 0
@@ -13354,6 +13356,8 @@ MonoBehaviour:
   detectionRange: 0.035
   visibleThreshold: 0.015
   minimumAlpha: 0.15
+  detectionVolume: 0.5
+  muteThreshold: 0.15
 --- !u!1 &1613582502
 GameObject:
   m_ObjectHideFlags: 0
@@ -17246,6 +17250,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1395744587}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &2036705192
 SpriteRenderer:
   m_ObjectHideFlags: 0
