@@ -48,7 +48,7 @@ MonoBehaviour:
   sounds:
   - name: BGM Map Ambient
     id: BGM_MAP_Ambient
-    clip: {fileID: 8300000, guid: 3730d757d8c05c4498f42e3954f0b4d4, type: 3}
+    clip: {fileID: 8300000, guid: 6e133282430c75d41805eb0d1640867d, type: 3}
     isBGM: 1
     volume: 1
     dynamicVolumeFactor: 1
@@ -58,9 +58,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BGM Map Select Ambient
     id: BGM_SEL_Ambient
-    clip: {fileID: 8300000, guid: 3730d757d8c05c4498f42e3954f0b4d4, type: 3}
+    clip: {fileID: 0}
     isBGM: 1
-    volume: 1
+    volume: 0.3
     dynamicVolumeFactor: 1
     pitch: 1
     loop: 1
@@ -68,9 +68,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BGM Main Menu
     id: BGM_MainMenu
-    clip: {fileID: 8300000, guid: f8a9251f2732bb440accb0c93cdfe8bf, type: 3}
+    clip: {fileID: 8300000, guid: afad22bedf130bb41a3e8811d55e51ae, type: 3}
     isBGM: 1
-    volume: 1
+    volume: 0.6
     dynamicVolumeFactor: 1
     pitch: 1
     loop: 1
@@ -88,7 +88,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Menu Button Click
     id: SFX_GEN_MenuButtonClick
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: e4cdf8f89bb1e534489de554cfec253a, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -98,7 +98,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Menu Button Hover
     id: SFX_GEN_MouseHover
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 0}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -108,7 +108,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Menu Map Selected
     id: SFX_GEN_MapSelected
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 6222f0d795ace584ebcbf6b3ade77926, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -118,7 +118,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map Access Grant
     id: SFX_MAP_AccessGrant
-    clip: {fileID: 8300000, guid: a428f81611c047943923e448f2df065d, type: 3}
+    clip: {fileID: 8300000, guid: 5a08f555070940f4b9a2977e760bfc69, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -178,7 +178,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MapS Key Tone
     id: SFX_MAP_KeyTone
-    clip: {fileID: 8300000, guid: ef614652824bc384d9d382a03d970ba9, type: 3}
+    clip: {fileID: 8300000, guid: 5367b0816c431884da23091c90d1f52c, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -188,7 +188,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MapS Correct Code
     id: SFX_M00_CorrectCode
-    clip: {fileID: 8300000, guid: 655fab75f1d14c044bf396ce5829a947, type: 3}
+    clip: {fileID: 8300000, guid: eb4f43ae7659b114d90265fde5076bf4, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -198,7 +198,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MapS Plug In
     id: SFX_M00_PlugIn
-    clip: {fileID: 8300000, guid: 1c712fa3f0806f14f8f2a726afc8290f, type: 3}
+    clip: {fileID: 8300000, guid: 7be474c2fd7f5e041827a4da6d392380, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MapS Plug Collide
     id: SFX_M00_PlugCollide
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 0}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -228,7 +228,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MapS Wrong Code
     id: SFX_M00_WrongCode
-    clip: {fileID: 8300000, guid: 12d101f9f269f4a4c8b6baf069b435e0, type: 3}
+    clip: {fileID: 8300000, guid: 0d8ab84ee96ccec43973f4e7676a5222, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -318,7 +318,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map2 Quiz Completed
     id: SFX_M02_Complete
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 537c77ce42b2e304186a26f6ff07f104, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -328,7 +328,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map2 Correct Answer
     id: SFX_M02_CorrectAnswer
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: c2163748a50367045962791c0bb4c387, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
