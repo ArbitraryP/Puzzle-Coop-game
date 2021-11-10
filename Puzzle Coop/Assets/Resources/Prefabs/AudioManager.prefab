@@ -238,7 +238,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map1 Book Close
     id: SFX_M01_BookClose
-    clip: {fileID: 8300000, guid: 9df45e73f6e9de04f8fcaddfacac2340, type: 3}
+    clip: {fileID: 8300000, guid: aec72abd77819df4e9030e00ecff4b43, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -248,7 +248,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map1 Book Open
     id: SFX_M01_BookOpen
-    clip: {fileID: 8300000, guid: de86dcc047b97e7459b147bb6547ee93, type: 3}
+    clip: {fileID: 8300000, guid: 5c9ea3df305ed41458cc256d86967ced, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -258,7 +258,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map1 Lever Off
     id: SFX_M01_LeverOff
-    clip: {fileID: 8300000, guid: f6b34569340ddc8408274f7d497a48f3, type: 3}
+    clip: {fileID: 8300000, guid: 6c07fb30e8b7b9f4db4e4655a86d806b, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -268,7 +268,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map1 Lever On
     id: SFX_M01_LeverOn
-    clip: {fileID: 8300000, guid: a8b4a31353a3c6c439e393f93835e383, type: 3}
+    clip: {fileID: 8300000, guid: 6ee45aa73e3160e4ba85e92403369b07, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -278,7 +278,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map1 Page Turn
     id: SFX_M01_PageTurn
-    clip: {fileID: 8300000, guid: 09a2372c312fd27498519d2f873388e1, type: 3}
+    clip: {fileID: 8300000, guid: 2b377e5f77fa6944b827929f9510c0c9, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
