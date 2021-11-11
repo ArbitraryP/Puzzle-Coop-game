@@ -13,6 +13,8 @@ public class PlayerData
     public int[] unlockedMaps;
     public int[] unlockedAchievements;
 
+    // Add code that handles hasRated to be saved too
+
     public PlayerData(PlayerProgress player)
     {
         playerName = player.playerName;
@@ -20,17 +22,17 @@ public class PlayerData
         playerSteamId = player.playerSteamId;
 
         // Convert Achievements to Index Int Array
-        unlockedAchievements = new int[player.unlockedAchievements.Count];
-        for (int i = 0; i < player.unlockedAchievements.Count; i++)
+        unlockedAchievements = new int[player.UnlockedAchievements.Count];
+        for (int i = 0; i < player.UnlockedAchievements.Count; i++)
         {
-            unlockedAchievements[i] = player.unlockedAchievements[i];
+            unlockedAchievements[i] = player.UnlockedAchievements[i];
         }
 
         // Convert Maps to Index Int Array
-        unlockedMaps = new int[player.unlockedMaps.Count];
-        for (int i = 0; i < player.unlockedMaps.Count; i++)
+        unlockedMaps = new int[player.UnlockedMaps.Count];
+        for (int i = 0; i < player.UnlockedMaps.Count; i++)
         {
-            unlockedMaps[i] = player.unlockedMaps[i];
+            unlockedMaps[i] = player.UnlockedMaps[i];
         }
 
 

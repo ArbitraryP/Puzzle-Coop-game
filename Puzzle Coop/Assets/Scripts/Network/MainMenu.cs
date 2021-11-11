@@ -17,7 +17,9 @@ namespace TangentNodes.Network
         [SerializeField] private Panel_Achievement panelAchievementPrefab = null;
         [SerializeField] private Transform panelAchievementParent = null;
         [SerializeField] private List<Achievement> achievements = null;
-        
+
+        [Header("Feedback")]
+        [SerializeField] private Feedback feedbackPrefab = null;
 
         private void Awake()
         {
@@ -50,6 +52,11 @@ namespace TangentNodes.Network
             }
         }
 
+        public void ShowFeedbackPanel()
+        {
+            GameObject.Instantiate(feedbackPrefab);
+            PlayUIButtonClick();
+        }
 
         public void PlayUIButtonClick()
         {

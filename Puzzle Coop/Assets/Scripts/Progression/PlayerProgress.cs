@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,17 @@ public class PlayerProgress : MonoBehaviour
     public string playerName;
     public int playerSteamId; // adjust this based on steamID datatype
 
-    public List<int> completedMaps;
-    public List<int> unlockedMaps;
-    public List<int> unlockedAchievements;
+    [SerializeField] private List<int> completedMaps;
+    [SerializeField] private List<int> unlockedMaps;
+    [SerializeField] private List<int> unlockedAchievements;
+
+    public List<int> CompletedMaps => completedMaps;
+    public List<int> UnlockedMaps => unlockedMaps;
+    public List<int> UnlockedAchievements => unlockedAchievements;
+
+    public int gameRating = 0;
+
+    public static event Action<int> OnAchievementUnlocked;
 
     private static PlayerProgress instance;
 
@@ -69,6 +78,19 @@ public class PlayerProgress : MonoBehaviour
     
     }
 
+    public bool IsAllMapsCompleted => completedMaps.Count >= 10;
+
+    public void UnlockAchievement(Achievement achievement) => UnlockAchievement(achievement.Index);
+
+    public void UnlockAchievement(int index)
+    {
+        unlockedAchievements.Add(index);
+        CleanDuplicates();
+
+        OnAchievementUnlocked?.Invoke(index);
+    }
+
+    
 
     public void SendPlayerProgress(
         List<int> cMaps,
