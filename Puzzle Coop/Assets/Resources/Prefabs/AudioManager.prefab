@@ -88,9 +88,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Menu Button Click
     id: SFX_GEN_MenuButtonClick
-    clip: {fileID: 8300000, guid: e4cdf8f89bb1e534489de554cfec253a, type: 3}
+    clip: {fileID: 8300000, guid: 3b6d42cd8bfc02b4cadf45b4476f4fd9, type: 3}
     isBGM: 0
-    volume: 1
+    volume: 0.6
     dynamicVolumeFactor: 1
     pitch: 1
     loop: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Menu Button Hover
     id: SFX_GEN_MouseHover
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: e26044bff1baade43a78518a533be3d9, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -128,7 +128,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map Door Unlocked
     id: SFX_MAP_DoorUnlocked
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: ba8ca8ebb7a54e0499f5ee740cec4e55, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
