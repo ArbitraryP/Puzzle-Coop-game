@@ -158,7 +158,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map Stair Steps
     id: SFX_MAP_StairSteps
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 38ebf03a032ed73489c95000b1772cf1, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -168,7 +168,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map Paper Sound
     id: SFX_MAP_Paper
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: ab273013a7669fb49b62ec021b5418f7, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -398,7 +398,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map9 Terminal Typing
     id: SFX_M09_TerminalTyping
-    clip: {fileID: 8300000, guid: 8f7a7eb04bb67ff459315da826f9e9a3, type: 3}
+    clip: {fileID: 8300000, guid: 7c8bf76abbbeb804da773460691eefb9, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
