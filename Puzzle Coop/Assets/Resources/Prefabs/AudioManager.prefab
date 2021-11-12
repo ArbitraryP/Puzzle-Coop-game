@@ -50,7 +50,7 @@ MonoBehaviour:
     id: BGM_MAP_Ambient
     clip: {fileID: 8300000, guid: 6e133282430c75d41805eb0d1640867d, type: 3}
     isBGM: 1
-    volume: 0.6
+    volume: 0.3
     dynamicVolumeFactor: 1
     pitch: 1
     loop: 1
@@ -58,7 +58,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BGM Map Select Ambient
     id: BGM_SEL_Ambient
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 2cb7f9c62b9fe35459bfd3c7ae8cf3fd, type: 3}
     isBGM: 1
     volume: 0.3
     dynamicVolumeFactor: 1
@@ -70,7 +70,7 @@ MonoBehaviour:
     id: BGM_MainMenu
     clip: {fileID: 8300000, guid: afad22bedf130bb41a3e8811d55e51ae, type: 3}
     isBGM: 1
-    volume: 0.6
+    volume: 0.3
     dynamicVolumeFactor: 1
     pitch: 1
     loop: 1
@@ -90,7 +90,7 @@ MonoBehaviour:
     id: SFX_GEN_MenuButtonClick
     clip: {fileID: 8300000, guid: 3b6d42cd8bfc02b4cadf45b4476f4fd9, type: 3}
     isBGM: 0
-    volume: 0.6
+    volume: 0.3
     dynamicVolumeFactor: 1
     pitch: 1
     loop: 0
@@ -138,7 +138,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map Door Opened
     id: SFX_MAP_DoorOpened
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 28b2fd6625c52bd4da42bee03624cff2, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -208,7 +208,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MapS Plug Out
     id: SFX_M00_PlugOut
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: b2fb36660d4ffbb439a11182e49795b4, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MapS Plug Collide
     id: SFX_M00_PlugCollide
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6beef9890241a0243915afdc3904621f, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -298,7 +298,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map1 Node Drop
     id: SFX_M01_NodeDrop
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 0}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -388,7 +388,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map4 Ticket Dispense
     id: SFX_M04_TicketDispense
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 8b01213a6a8977c46bd102d0dbe832b2, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -408,7 +408,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map9 Terminal Error
     id: SFX_M09_TerminalError
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: a3260961366c014459127181ddf9b4d9, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -418,7 +418,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map9 Hallway Lights On
     id: SFX_M09_HallwayLightsOn
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 343bc04b6fa635444b0f4a625f6477df, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -428,7 +428,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map9 Hallway Enter
     id: SFX_M09_HallwayEnter
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 70401cbb201d5c94e98160ed1ee10a2d, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
