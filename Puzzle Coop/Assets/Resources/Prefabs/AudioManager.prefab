@@ -358,7 +358,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map3 Calendar/Clock Button Click
     id: SFX_M03_CalendarClockButtonClick
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: 954a49c23d252ab4c9c770b7d22ad763, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
@@ -368,7 +368,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Map3 Calendar/Clock Interact
     id: SFX_M03_CalendarClockInteract
-    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
+    clip: {fileID: 8300000, guid: f08113a52265af94b815ccf740765c31, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
