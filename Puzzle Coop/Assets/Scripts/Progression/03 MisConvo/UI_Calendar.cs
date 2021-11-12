@@ -26,13 +26,14 @@ public class UI_Calendar : MonoBehaviour
 
     private void Start()
     {
-        // Generate Random Starting value (may start with correct value)
+        
+        // Always start with August
 
-        selectedMonth = Random.Range(1,13);
+        selectedMonth = 8;
         monthText.text = months[selectedMonth - 1];
 
         /*
-        
+        // Generate Random Starting value (may start with correct value)
         selectedDate = Random.Range(1, 32);
         foreach (Button button in dateButtons)
             button.interactable = true;

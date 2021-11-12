@@ -28,14 +28,15 @@ public class SettingsAndExit : MonoBehaviour
     [Header("How To Play")]
     [SerializeField] private GameObject[] panelHowToPages = null;
     [SerializeField] private int currentPage = 0;
-    [SerializeField] private bool isAlreadyOpened = false;
+    public bool showHelpInMapSelect = true;
 
     [Header("Loading Screen")]
     [SerializeField] private GameObject panelLoadingScreen = null;
 
     [Header("Sound Volume")]
     [SerializeField] private AudioManager audioManager = null;
-
+    private readonly string playerPrefKeyBGM = "VolumeBGM";
+    private readonly string playerPrefKeySFX = "VolumeSFX";
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -68,6 +69,11 @@ public class SettingsAndExit : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.activeSceneChanged += OnSceneChanged;
+
+        SetVolume(
+            PlayerPrefs.GetFloat(playerPrefKeyBGM, .8f),
+            PlayerPrefs.GetFloat(playerPrefKeySFX, .8f));
+
     }
 
 
@@ -116,10 +122,10 @@ public class SettingsAndExit : MonoBehaviour
     public void OnSceneChanged(Scene currentScene, Scene nextScene)
     {
         toggleHowTo.isOn = false;
-        if (nextScene.name == "Scene_Map_Select" && !isAlreadyOpened)
+        if (nextScene.name == "Scene_Map_Select" && showHelpInMapSelect)
         {
             toggleHowTo.isOn = true;
-            isAlreadyOpened = true;
+            showHelpInMapSelect = false;
         }
     }
 
@@ -241,11 +247,13 @@ public class SettingsAndExit : MonoBehaviour
     public void ChangeVolumeBGM(float value)
     {
         audioManager.masterVolumeBGM = value;
+        PlayerPrefs.SetFloat(playerPrefKeyBGM, value);
     }
 
     public void ChangeVolumeSFX(float value)
     {
         audioManager.masterVolumeSFX = value;
+        PlayerPrefs.SetFloat(playerPrefKeySFX, value);
     }
 
     // Code to call when loading the volume settings from save

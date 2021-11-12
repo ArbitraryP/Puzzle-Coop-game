@@ -9,7 +9,7 @@ public class PlayerProgress : MonoBehaviour
     // This class is where the progress of the player will get loaded locally
 
     public string playerName;
-    public int playerSteamId; // adjust this based on steamID datatype
+    public ulong playerSteamId; // adjust this based on steamID datatype
 
     [SerializeField] private List<int> completedMaps;
     [SerializeField] private List<int> unlockedMaps;
@@ -25,6 +25,10 @@ public class PlayerProgress : MonoBehaviour
 
     private static PlayerProgress instance;
 
+    // Master Volume must be adjusted from SettingsAndExit/AudioManager
+    public int volumeSFXdata;
+    public int volumeBGMdata;
+
     private void Awake()
     {
         if(instance != null)
@@ -39,7 +43,7 @@ public class PlayerProgress : MonoBehaviour
 
         unlockedMaps.Add(0);
         // Test Code to Generate Random Numbers
-        
+        /*
         completedMaps.Add(0);
         completedMaps.Add(1);
         completedMaps.Add(2);
@@ -57,22 +61,18 @@ public class PlayerProgress : MonoBehaviour
         unlockedMaps.Add(6);
         unlockedMaps.Add(7);
         unlockedMaps.Add(8);
-        /*
+        
         /*
         completedMaps.Add(2);
         completedMaps.Add(7);
         unlockedMaps.Add(1);
         unlockedMaps.Add(2);
         */
-        for (int i = 0; i < 3; i++)
-        {
-            //completedMaps.Add(Random.Range(1, 10));
-            //unlockedMaps.Add(Random.Range(1, 10));
-            //unlockedAchievements.Add(Random.Range(1, 10));
-        }
 
         CleanDuplicates();
 
+        // change this later. must be called when steam has initialized first
+        LoadPlayerProgress();
 
         // Add code that cleanses duplication
     
@@ -87,6 +87,7 @@ public class PlayerProgress : MonoBehaviour
         unlockedAchievements.Add(index);
         CleanDuplicates();
 
+        SavePlayerProgress();
         OnAchievementUnlocked?.Invoke(index);
     }
 
@@ -109,6 +110,9 @@ public class PlayerProgress : MonoBehaviour
         unlockedAchievements.AddRange(uAchievements);
         
         CleanDuplicates();
+
+        // Save Progress every time NetworkGamePlayer send new data
+        SavePlayerProgress();
     }
 
     public void CleanDuplicates()
@@ -119,6 +123,59 @@ public class PlayerProgress : MonoBehaviour
     }
 
     // Add Code here where it loads Progress from file
+    // Call this code when Steam has already initialized.
+    public void LoadPlayerProgress()
+    {
+        Debug.Log("Loading Player Progress...");
+        PlayerData data = SaveSystem.LoadPlayer(playerSteamId);
 
+        if (data == null) return;
+
+        if (data.playerSteamId != playerSteamId)
+        {
+            Debug.Log("Save File not for this user...");
+            return;
+        }
+
+        completedMaps.Clear();
+        unlockedMaps.Clear();
+        unlockedAchievements.Clear();
+
+        // Always Add First Map
+        unlockedMaps.Add(0);
+
+        completedMaps.AddRange(data.completedMaps);
+        unlockedMaps.AddRange(data.unlockedMaps);
+        unlockedAchievements.AddRange(data.unlockedAchievements);
+
+        CleanDuplicates();
+
+        gameRating = data.gameRating;
+
+
+        // Dont Show HowToPlay when theres is a completed map already
+        if (completedMaps.Count <= 0) return;
+        SettingsAndExit settingsAndExit = FindObjectOfType<SettingsAndExit>();
+        if(settingsAndExit) settingsAndExit.showHelpInMapSelect = false;
+        
+            
+
+    }
+
+
+    public void SavePlayerProgress()
+    {
+        Debug.Log("Saving Player Progress...");
+        SaveSystem.SavePlayer(this);        
+    }
+
+    
+    private void OnApplicationQuit()
+    {
+        // Autosaves whenever the application quits
+        // Double check the documentation if game is ported to different OS
+
+        SavePlayerProgress();
+    }
 
 }

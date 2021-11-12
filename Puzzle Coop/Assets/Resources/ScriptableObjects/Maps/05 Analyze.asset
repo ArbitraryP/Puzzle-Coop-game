@@ -18,7 +18,8 @@ MonoBehaviour:
   unlocks: []
   displayName: Analyze
   difficulty: 1
-  description: This the Analyze Map
+  description: There are so many numbers in this room, it makes my head hurt. I wonder
+    how this puzzle works. I need to think this critically.
   achievements:
   - {fileID: 11400000, guid: 9fa8afb8742d2d146b831a9fbb7e6e83, type: 2}
   Scene: Assets/Scenes/Scene_Map_05_Analyze.unity

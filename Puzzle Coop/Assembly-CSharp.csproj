@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Progression\Map.cs" />
     <Compile Include="Assets\Scripts\Progression\MapObjectManager_L.cs" />
     <Compile Include="Assets\Scripts\Progression\04 CareerGallery\PhotoFrame.cs" />
+    <Compile Include="Assets\Scripts\UI\Feedback.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\SentenceSet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -159,7 +160,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Sounds\Sound.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\UI\Feedback.cs" />
+    <Compile Include="Assets\Scripts\Progression\SaveSystem.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

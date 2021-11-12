@@ -317,6 +317,7 @@ MonoBehaviour:
   panelTarget: {fileID: 2026788133}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &42461595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1309,7 +1310,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_text
-      value: '"a person with no direction will never go anywhere"
+      value: '"A person with no direction will never go anywhere"
 
 
         Up! that''s
@@ -1319,7 +1320,7 @@ PrefabInstance:
         specializations, means you can''t carve your own path.
 
 
-        you won''t
+        You won''t
         get left behind if you won''t let it.
 
         just remember to keep your
@@ -2554,6 +2555,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341563794415781}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &396135482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3514,6 +3516,7 @@ MonoBehaviour:
   panelTarget: {fileID: 366008387}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &539733491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5093,7 +5096,7 @@ PrefabInstance:
         stop.
 
 
-        what do these initials mean?
+        What do these initials mean?
 
 '
       objectReference: {fileID: 0}
@@ -13307,6 +13310,7 @@ MonoBehaviour:
   panelTarget: {fileID: 578827237}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &1952170498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14486,7 +14490,7 @@ PrefabInstance:
       value: 'Mr. North has once told me,
 
 
-        they are right, i.t. cover a
+        They are right, i.t. cover a
         large portion of technology
 
 
@@ -14494,7 +14498,7 @@ PrefabInstance:
         everything.
 
 
-        technologies evolve fast, therefore we take up specializations.
+        Technologies evolve fast, therefore we take up specializations.
 
 
         so

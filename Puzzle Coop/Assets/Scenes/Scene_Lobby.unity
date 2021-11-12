@@ -290,11 +290,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
-  playerSteamId: 0
+  playerSteamId: 2
   completedMaps: 
   unlockedMaps: 
   unlockedAchievements: 
   gameRating: 0
+  volumeSFXdata: 0
+  volumeBGMdata: 0
 --- !u!4 &1092412258
 Transform:
   m_ObjectHideFlags: 0
