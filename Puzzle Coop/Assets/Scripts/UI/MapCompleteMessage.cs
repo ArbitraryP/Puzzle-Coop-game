@@ -50,7 +50,7 @@ public class MapCompleteMessage : NetworkBehaviour
     private void CmdOnClickContinue()
     {
         serverObjectManager = FindObjectOfType<MapObjectManager_S>();
-        serverObjectManager?.CmdExitDoor(1);
+        serverObjectManager?.CmdExitDoor();
     }
 
 

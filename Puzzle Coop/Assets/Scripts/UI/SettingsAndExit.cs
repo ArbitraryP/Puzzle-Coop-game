@@ -27,6 +27,9 @@ public class SettingsAndExit : MonoBehaviour
     [SerializeField] private int currentPage = 0;
     [SerializeField] private bool isAlreadyOpened = false;
 
+    [Header("Loading Screen")]
+    [SerializeField] private GameObject panelLoadingScreen = null;
+
     private NetworkManagerTN room;
     private NetworkManagerTN Room
     {
@@ -118,9 +121,11 @@ public class SettingsAndExit : MonoBehaviour
         }
     }
 
-    public void DisplayHowTo()
+    public void EnableMenu(bool active)
     {
-        
+        toggleHowTo.gameObject.SetActive(active);
+        toggleSettings.gameObject.SetActive(active);
+        toggleQuitConfirm.gameObject.SetActive(active);
     }
 
     public void OnToggleHowTo(bool value)
@@ -220,5 +225,11 @@ public class SettingsAndExit : MonoBehaviour
         panelHowToPages[currentPage].SetActive(true);
     }
    
+
+    public void EnableLoadingScreen(bool state)
+    {
+        panelLoadingScreen.SetActive(state);
+        EnableMenu(!state);
+    }
 
 }

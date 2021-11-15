@@ -31,11 +31,16 @@ public class UI_Calendar : MonoBehaviour
         selectedMonth = Random.Range(1,13);
         monthText.text = months[selectedMonth - 1];
 
+        /*
+        
         selectedDate = Random.Range(1, 32);
         foreach (Button button in dateButtons)
             button.interactable = true;
 
         dateButtons[selectedDate - 1].interactable = false;
+
+        */
+
     }
 
     public void SetSolution(int month, int date)

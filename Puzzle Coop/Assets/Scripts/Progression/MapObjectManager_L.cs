@@ -36,6 +36,7 @@ public class MapObjectManager_L : MonoBehaviour
 
     [Header("09 Terminal")]
     [SerializeField] private GameObject hallwayOn = null;
+    [SerializeField] private GameObject panelAfterVideo = null;
 
 
     private NetworkManagerTN room;
@@ -232,6 +233,27 @@ public class MapObjectManager_L : MonoBehaviour
     public void M09_UnlockHallway()
     {
         hallwayOn.SetActive(true);
+    }
+
+    public void M09_HideUI()
+    {
+        cameraControl.EnableNavigation(false);
+        FindObjectOfType<SettingsAndExit>()?.EnableMenu(false);
+        // Disable Floor Navigation
+        // Disable Quiting the game
+    }
+
+    public void M09_OnVideoPlayerEnded(UnityEngine.Video.VideoPlayer videoPlayer)
+    {
+        panelAfterVideo.SetActive(true);
+        cameraControl.EnableNavigation(true);
+        FindObjectOfType<SettingsAndExit>()?.EnableMenu(true);
+
+        videoPlayer.enabled = false;
+        Debug.Log("TERMINAL MAP COMPLETED! hehe");
+        // Tell server that player is done
+
+        serverObjectManager.CmdExitDoor();
     }
 
     #endregion

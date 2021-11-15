@@ -49,6 +49,12 @@ public class CameraControl : MonoBehaviour
         }
     }
 
+    public void EnableNavigation(bool active)
+    {
+        button_up.gameObject.SetActive(active);
+        button_down.gameObject.SetActive(active);
+    }
+
     public void JumpToFloor(int floorNumber)
     {
         currentFloor = floorNumber;
