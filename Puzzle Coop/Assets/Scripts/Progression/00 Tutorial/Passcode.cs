@@ -14,7 +14,6 @@ public class Passcode : MonoBehaviour
 
     public void OnClickInput(string character)
     {
-        PlayUIKeyTone();
         if (currentString == "XXXX") currentString = "";
 
         if(currentString.Length >= 4)
@@ -31,14 +30,12 @@ public class Passcode : MonoBehaviour
 
     public void OnClickEnter()
     {
-        PlayUIKeyTone();
-        if (currentString != correctCode)
+        if(currentString != correctCode)
         {
             currentString = "XXXX";
             inputField.text = currentString;
 
             // Play sound error
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_WrongCode);
         }
         else
         {
@@ -52,7 +49,7 @@ public class Passcode : MonoBehaviour
             }
 
             // Play sound correct code
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_CorrectCode);
+
             monitorScreen.Completed();
             localObjectManager.serverObjectManager.CmdUnlockDoors();
 
@@ -66,14 +63,9 @@ public class Passcode : MonoBehaviour
 
     public void OnClickDelete()
     {
-        PlayUIKeyTone();
         currentString = "";
         inputField.text = "****";
     }
 
-    public void PlayUIKeyTone()
-    {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_KeyTone);
-    }
 
 }

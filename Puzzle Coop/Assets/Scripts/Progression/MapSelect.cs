@@ -133,9 +133,6 @@ namespace TangentNodes.Network
 
                     mapButton.SetMapAsSelectable(mapButton.map.IsPrerequisiteMet(listOfCompletedMaps, listOfUnlockedMaps));
 
-                    // Check if Unlocked Map is also Completed
-                    if (player.completedMaps.Contains(unlockedMapIndex))
-                        mapButton.SetMapAsCompleted();
                 }
             }
         }
@@ -225,31 +222,13 @@ namespace TangentNodes.Network
             if (selectedMap.Scene == "")
                 return;
 
-            RpcPlayUIButtonClick();
-
             string newScene = Path.GetFileNameWithoutExtension(selectedMap.Scene).ToString();
             Room.currentMap = selectedMap;
             Room.ServerChangeScene(newScene);
 
             Debug.Log("Change Scene to " + newScene);
-            
         }
 
-        [ClientRpc]
-        private void RpcPlayUIButtonClick()
-        {
-            PlayUIMapSelectedSound();
-        }
-
-        public void PlayUIButtonClick()
-        {
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
-        }
-
-        public void PlayUIMapSelectedSound()
-        {
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MapSelected);
-        }
 
 
     }

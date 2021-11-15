@@ -26,22 +26,16 @@ public class UI_Calendar : MonoBehaviour
 
     private void Start()
     {
-        
-        // Always start with August
+        // Generate Random Starting value (may start with correct value)
 
-        selectedMonth = 8;
+        selectedMonth = Random.Range(1,13);
         monthText.text = months[selectedMonth - 1];
 
-        /*
-        // Generate Random Starting value (may start with correct value)
         selectedDate = Random.Range(1, 32);
         foreach (Button button in dateButtons)
             button.interactable = true;
 
         dateButtons[selectedDate - 1].interactable = false;
-
-        */
-
     }
 
     public void SetSolution(int month, int date)
@@ -64,7 +58,6 @@ public class UI_Calendar : MonoBehaviour
 
     public void OnClickMonthButton()
     {
-        PlaySoundButtonClick();
         selectedMonth = selectedMonth >= 12 ? 1 : selectedMonth + 1;
         monthText.text = months[selectedMonth-1];
         CheckIfSelectedCorrect();
@@ -72,18 +65,12 @@ public class UI_Calendar : MonoBehaviour
 
     public void OnClickDateButton(int date)
     {
-        PlaySoundButtonClick();
-        foreach (Button button in dateButtons)
+        foreach(Button button in dateButtons)
             button.interactable = true;
 
         dateButtons[date - 1].interactable = false;
         selectedDate = date;
         CheckIfSelectedCorrect();
-    }
-
-    public void PlaySoundButtonClick()
-    {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M03_CalendarClockButtonClick);
     }
 
 }

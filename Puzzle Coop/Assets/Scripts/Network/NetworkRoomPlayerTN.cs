@@ -62,17 +62,17 @@ namespace TangentNodes.Network
 
                 CmdClearPlayerProgress();
 
-                foreach (int i in playerProgress.CompletedMaps)
+                foreach (int i in playerProgress.completedMaps)
                 {
                     CmdAddPlayerCompletedMapsProgress(i);
                 }
 
-                foreach (int i in playerProgress.UnlockedMaps)
+                foreach (int i in playerProgress.unlockedMaps)
                 {
                     CmdAddPlayerUnlockedMapsProgress(i);                    
                 }
                 
-                foreach (int i in playerProgress.UnlockedAchievements)
+                foreach (int i in playerProgress.unlockedAchievements)
                 {
                     CmdAddPlayerAchievementProgress(i);
                 }
@@ -178,11 +178,6 @@ namespace TangentNodes.Network
 
             Debug.Log("Game Started");
             Room.StartGame();
-        }
-
-        public void PlayUIButtonClick()
-        {
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
         }
     }
 }

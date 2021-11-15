@@ -1,6 +1,5 @@
 using Mirror;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -90,9 +89,6 @@ namespace TangentNodes.Network
             base.OnClientDisconnect(conn);
             OnClientDisconnected?.Invoke();
 
-            // Close Loading Screen
-            FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(false);
-
             // Show Disconnected Panel
             Instantiate(disconnectPanelPrefab);
         }
@@ -148,9 +144,6 @@ namespace TangentNodes.Network
                     DisconnectPanel disconnectPanel = Instantiate(disconnectPanelPrefab);
                     disconnectPanel.ChangeTextToLostClient();
 
-                    // Close Loading Screen
-                    FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(false);
-
                 }
             }
 
@@ -166,8 +159,6 @@ namespace TangentNodes.Network
             ClearCurrentMap();
 
             base.OnStopServer();
-
-
 
             SceneManager.LoadScene("Scene_Lobby");
             Debug.Log("Server Stopped, Scene Changed");
@@ -237,25 +228,8 @@ namespace TangentNodes.Network
             }
 
             base.ServerChangeScene(newSceneName);
-
-            // Runs Loading Screen When Server changes Scene
-            StartLoadingScreen();
         }
-
-        // Runs Loading Screen When Client changes Scene
-        public override void OnClientChangeScene(string newSceneName, SceneOperation sceneOperation, bool customHandling)
-        {
-            StartLoadingScreen();
-        }
-
-
-        private void StartLoadingScreen()
-        {
-            FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(true);
-        }
-
-
-
+        
         public override void OnServerSceneChanged(string sceneName)
         {
             
