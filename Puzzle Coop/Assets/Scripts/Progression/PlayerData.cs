@@ -8,18 +8,10 @@ public class PlayerData
     // This Class is responsible for conversion of PlayerProgression for saving/loading
     
     public string playerName;
-    public ulong playerSteamId; // adjust this based on steamID datatype
+    public int playerSteamId; // adjust this based on steamID datatype
 
     public int[] unlockedMaps;
-    public int[] completedMaps;
     public int[] unlockedAchievements;
-
-    public int gameRating;
-
-    public float volumeSFX;
-    public float volumeBGM;
-
-    // Add code that handles hasRated to be saved too
 
     public PlayerData(PlayerProgress player)
     {
@@ -28,27 +20,18 @@ public class PlayerData
         playerSteamId = player.playerSteamId;
 
         // Convert Achievements to Index Int Array
-        unlockedAchievements = new int[player.UnlockedAchievements.Count];
-        for (int i = 0; i < player.UnlockedAchievements.Count; i++)
+        unlockedAchievements = new int[player.unlockedAchievements.Count];
+        for (int i = 0; i < player.unlockedAchievements.Count; i++)
         {
-            unlockedAchievements[i] = player.UnlockedAchievements[i];
+            unlockedAchievements[i] = player.unlockedAchievements[i];
         }
 
-        // Convert Unlocked Maps to Index Int Array
-        unlockedMaps = new int[player.UnlockedMaps.Count];
-        for (int i = 0; i < player.UnlockedMaps.Count; i++)
+        // Convert Maps to Index Int Array
+        unlockedMaps = new int[player.unlockedMaps.Count];
+        for (int i = 0; i < player.unlockedMaps.Count; i++)
         {
-            unlockedMaps[i] = player.UnlockedMaps[i];
+            unlockedMaps[i] = player.unlockedMaps[i];
         }
-
-        // Convert Completed Maps to Index Int Array
-        completedMaps = new int[player.CompletedMaps.Count];
-        for (int i = 0; i < player.CompletedMaps.Count; i++)
-        {
-            completedMaps[i] = player.CompletedMaps[i];
-        }
-
-        gameRating = player.gameRating;
 
 
 

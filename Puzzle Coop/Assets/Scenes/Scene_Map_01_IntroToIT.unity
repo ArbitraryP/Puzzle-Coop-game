@@ -487,18 +487,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1858227029}
-        m_TargetAssemblyTypeName: BookSounds, Assembly-CSharp
-        m_MethodName: PlaySoundPageTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &65832397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1230,7 +1218,6 @@ MonoBehaviour:
   panelTarget: {fileID: 2677835418038047238}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
-  soundToPlay: SFX_M01_BookOpen
 --- !u!61 &161302511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1431,7 +1418,6 @@ MonoBehaviour:
   panelTarget: {fileID: 1858227027}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
-  soundToPlay: SFX_M01_BookOpen
 --- !u!61 &203695636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2795,7 +2781,6 @@ MonoBehaviour:
   panelTarget: {fileID: 968529904}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
-  soundToPlay: SFX_MAP_Paper
 --- !u!212 &396135482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4643,18 +4628,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1858227029}
-        m_TargetAssemblyTypeName: BookSounds, Assembly-CSharp
-        m_MethodName: PlaySoundBookClose
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &674786925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5950,8 +5923,6 @@ MonoBehaviour:
   gallery: {fileID: 0}
   photoFrame: {fileID: 0}
   navBreaker: {fileID: 0}
-  hallwayOn: {fileID: 0}
-  panelAfterVideo: {fileID: 0}
 --- !u!1 &916000855
 GameObject:
   m_ObjectHideFlags: 0
@@ -7213,18 +7184,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1858227029}
-        m_TargetAssemblyTypeName: BookSounds, Assembly-CSharp
-        m_MethodName: PlaySoundPageTurn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1239596832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7709,18 +7668,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2677835416282885716}
         m_TargetAssemblyTypeName: PageSystem, Assembly-CSharp
         m_MethodName: NextPage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2677835418038047240}
-        m_TargetAssemblyTypeName: BookSounds, Assembly-CSharp
-        m_MethodName: PlaySoundPageTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8884,8 +8831,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1197617582}
-  selectionSet: 1b000000230000002f0000000c00000043000000620000000b0000002d000000370000000c000000
-  correctValue: 55
+  selectionSet: 1b000000230000002f0000003700000043000000
+  correctIndex: 3
 --- !u!1 &1470474465
 GameObject:
   m_ObjectHideFlags: 0
@@ -8971,18 +8918,6 @@ MonoBehaviour:
       - m_Target: {fileID: 2677835416282885716}
         m_TargetAssemblyTypeName: PageSystem, Assembly-CSharp
         m_MethodName: PreviousPage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2677835418038047240}
-        m_TargetAssemblyTypeName: BookSounds, Assembly-CSharp
-        m_MethodName: PlaySoundPageTurn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11320,7 +11255,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1858227028}
-  - component: {fileID: 1858227029}
   m_Layer: 5
   m_Name: Panel_Book2
   m_TagString: Untagged
@@ -11350,18 +11284,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1858227029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858227027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cc6a7b92ef0d8459bc0fa392eb4d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1863437270
 GameObject:
   m_ObjectHideFlags: 0
@@ -11396,8 +11318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -181.09052, y: 37}
-  m_SizeDelta: {x: 283.5611, y: 555.061}
+  m_AnchoredPosition: {x: -184.45508, y: 37}
+  m_SizeDelta: {x: 276.832, y: 555.061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863437272
 MonoBehaviour:
@@ -11419,16 +11341,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<b>Cloud Computing</b>
-
-    <size=31>Utilizes server computers to provide
-    services through the internet.</size>
-
-
-    <b>Hardware-Software</b>
-
-    <size=31>These
-    are the physical components and the set of instructions that runs on computers.</size>'
+  m_text: "<b>Cloud Computing</b>\nLorem ipsum dolor sit amet, consectetur adipiscing
+    elit, \n\n<b>Hardware-Software</b>\nLorem ipsum dolor sit amet, consectetur adipiscing
+    elit, sed do eius"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12194,8 +12109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1639924519}
-  selectionSet: 0a00000008000000060000000400000002000000050000000e0000003d0000003b00000006000000
-  correctValue: 4
+  selectionSet: 0a00000008000000060000000400000002000000
+  correctIndex: 3
 --- !u!1 &2029001151
 GameObject:
   m_ObjectHideFlags: 0
@@ -12693,8 +12608,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonText: {fileID: 691030755}
-  selectionSet: 08000000090000000a0000000b0000000c000000010000000200000006000000250000002c000000
-  correctValue: 10
+  selectionSet: 08000000090000000a0000000b0000000c000000
+  correctIndex: 2
 --- !u!1 &2056731015
 GameObject:
   m_ObjectHideFlags: 0
@@ -12884,15 +12799,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<b>Gaming</b>
 
-    <size=31>In tech, it refers to developing/playing games
-    using an electronic device like a computer.</size>
+    Lorem ipsum dolor sit amet, consectetur adipiscing
+    elit, sed do eius
 
 
     <b>Internet of Things</b>
 
-    <size=31>IoT
-    is the system of interconnected devices that serve to automate/record tasks like
-    phones, cars, cameras, etc.</size>'
+    Lorem ipsum dolor sit
+    amet, consectetur adipiscing elit, sed do eius'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13275,15 +13189,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<b>E-commerce</b>
 
-    <size=31>Business model that buys/sells its products/services
-    through an electronic network, usually the internet.</size>
+    Lorem ipsum dolor sit amet, consectetur adipiscing
+    elit, sed do eius
 
 
     <b>Social Media</b>
 
-    <size=31>A
-    general term used to refer to websites/apps that focus on social interaction
-    and communication.</size>'
+    Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit, sed do eius'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13582,18 +13495,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2677835418038047240}
-        m_TargetAssemblyTypeName: BookSounds, Assembly-CSharp
-        m_MethodName: PlaySoundBookClose
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &2677835417930844345
 GameObject:
   m_ObjectHideFlags: 0
@@ -13622,7 +13523,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2677835418038047239}
-  - component: {fileID: 2677835418038047240}
   m_Layer: 5
   m_Name: Panel_Book1
   m_TagString: Untagged
@@ -13652,18 +13552,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2677835418038047240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2677835418038047238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07cc6a7b92ef0d8459bc0fa392eb4d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4420616193458367565
 PrefabInstance:
   m_ObjectHideFlags: 0

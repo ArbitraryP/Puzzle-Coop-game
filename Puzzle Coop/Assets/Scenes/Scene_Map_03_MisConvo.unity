@@ -459,7 +459,6 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341563843198869}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
-  soundToPlay: SFX_M03_CalendarClockInteract
 --- !u!1 &75592027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2146,7 +2145,6 @@ MonoBehaviour:
   panelTarget: {fileID: 951382640}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
-  soundToPlay: SFX_M03_CalendarClockInteract
 --- !u!1 &373140569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4246,7 +4244,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 597191916}
   m_OnClick:
     m_PersistentCalls:
@@ -6345,8 +6343,6 @@ MonoBehaviour:
   gallery: {fileID: 0}
   photoFrame: {fileID: 0}
   navBreaker: {fileID: 0}
-  hallwayOn: {fileID: 0}
-  panelAfterVideo: {fileID: 0}
 --- !u!4 &885396762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1733465800023168780, guid: 198603d8f058d88468e32a3f38453136, type: 3}
@@ -13356,8 +13352,6 @@ MonoBehaviour:
   detectionRange: 0.035
   visibleThreshold: 0.015
   minimumAlpha: 0.15
-  detectionVolume: 0.5
-  muteThreshold: 0.15
 --- !u!1 &1613582502
 GameObject:
   m_ObjectHideFlags: 0
@@ -17250,7 +17244,6 @@ MonoBehaviour:
   panelTarget: {fileID: 1395744587}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
-  soundToPlay: SFX_MAP_Paper
 --- !u!212 &2036705192
 SpriteRenderer:
   m_ObjectHideFlags: 0

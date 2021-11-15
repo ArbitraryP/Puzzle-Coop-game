@@ -15,9 +15,6 @@ public class Panel_Achievement : MonoBehaviour
 
     [SerializeField] private Achievement achievement = null;
 
-
-    private void OnDestroy() => PlayerProgress.OnAchievementUnlocked -= ShowUnlockedAchievement;
-
     public void DisplayAchievement(Achievement newAchievement)
     {
         achievement = newAchievement;
@@ -35,7 +32,7 @@ public class Panel_Achievement : MonoBehaviour
         PlayerProgress playerProgress = FindObjectOfType<PlayerProgress>();
 
 
-        if (playerProgress.UnlockedAchievements.Contains(achievement.Index))
+        if (playerProgress.unlockedAchievements.Contains(achievement.Index))
         {
             panelImageAchievement.color = Color.white;
             imageThumbnail.color = Color.white;
@@ -45,24 +42,7 @@ public class Panel_Achievement : MonoBehaviour
             panelImageAchievement.color = Color.grey;
             imageThumbnail.color = Color.grey;
         }
-
-        // Subscribe to the event after updating itself. So that it is sure that PlayerProgress has already initialized.
-        // Fix this code Achievements is not showing unlocked when even is called.
-        PlayerProgress.OnAchievementUnlocked += ShowUnlockedAchievement;
-
+            
     }
-
-    public void ShowUnlockedAchievement(int index)
-    {
-        PlayerProgress playerProgress = FindObjectOfType<PlayerProgress>();
-        if (!playerProgress) return;
-
-        if (achievement.Index != index || !playerProgress.UnlockedAchievements.Contains(achievement.Index))
-            return;
-
-        panelImageAchievement.color = Color.white;
-        imageThumbnail.color = Color.white;
-    }
-
 
 }

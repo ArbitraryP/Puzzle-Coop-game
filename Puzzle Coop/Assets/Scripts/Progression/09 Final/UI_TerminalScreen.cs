@@ -8,7 +8,6 @@ using UnityEngine.Video;
 public class UI_TerminalScreen : MonoBehaviour
 {
     [Header("UI")]
-    [SerializeField] private MapObjectManager_L localObjectManager = null;
     [SerializeField] private TMP_Text textTerminalName = null;
     [SerializeField] private TMP_Text textMessage = null;
     [SerializeField] private TMP_Text textStatus = null;
@@ -16,7 +15,6 @@ public class UI_TerminalScreen : MonoBehaviour
     [SerializeField] private Image imageButton = null;
     [SerializeField] private Button buttonDownload = null;
     [SerializeField] private VideoPlayer videoPlayerCred = null;
-    
 
     [Header("Data")]
     [SerializeField] private int currentMessage = 1;
@@ -35,7 +33,6 @@ public class UI_TerminalScreen : MonoBehaviour
     [Range(0.001f, 1f)]
     [SerializeField] private float bufferDifference = 0.02f;
     [SerializeField] private float bufferLastPercentage = 0f;
-    private bool hasPlayedErrorSound = false;
 
     [Header("Data: Text Display")]
     [SerializeField] private bool isDisplayingText = false;
@@ -103,7 +100,6 @@ public class UI_TerminalScreen : MonoBehaviour
 
     public void OnClickDownload()
     {
-        PlayUIButtonClick();
         if (isRetryButton) return;
 
         ResetProgress();
@@ -143,7 +139,7 @@ public class UI_TerminalScreen : MonoBehaviour
             partnerTerminal + ".";
 
         // Call Server Command to spawn BSOD Cutscene when both players clicked
-        
+
         TerminalManager terminalManager = FindObjectOfType<TerminalManager>();
         if (!terminalManager) return;
 
@@ -154,25 +150,15 @@ public class UI_TerminalScreen : MonoBehaviour
     {
         isDownloading = true;
         isDisplayingText = true;
-        FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M09_TerminalTyping);
     }
 
     public void StartRetry()
     {
-        // Sets the Volume of AudioSource first before playing the cutscene
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
-        if (audioManager)
-        {
-            audioManager.ApplySoundSettings();
-            videoPlayerCred.SetTargetAudioSource(0, audioManager.GetCutsceneAudioSource());
-        }
-        else Debug.LogWarning("Audio Manager not found.");
-
-        localObjectManager.M09_HideUI();
+        Debug.Log("TERMINAL MAP COMPLETED! hehe");
         videoPlayerCred.enabled = true;
-        videoPlayerCred.loopPointReached += localObjectManager.M09_OnVideoPlayerEnded;
+        // Disable Floor Navigation
+        // Disable Quiting the game
     }
-
 
     private void UpdateDownloadingProgress()
     {
@@ -214,13 +200,6 @@ public class UI_TerminalScreen : MonoBehaviour
         imageProgressFill.color = isFinalMessage && currentPercentage > finalMaxProgress?
             color : Color.white;
 
-        // Code that will play sound when it reached FinalMessage Limit
-        if(!hasPlayedErrorSound && isFinalMessage && currentPercentage > finalMaxProgress)
-        {
-            FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M09_TerminalError);
-            hasPlayedErrorSound = true;
-        }
-
         isDownloading = currentPercentage < 1.0f;
 
 
@@ -228,8 +207,6 @@ public class UI_TerminalScreen : MonoBehaviour
         // --- Code that runs when download is completed ---
 
         if (isDownloading) return;
-
-        FindObjectOfType<AudioManager>()?.Stop(AudioManager.SoundNames.SFX_M09_TerminalTyping);
 
         if (isFinalMessage)
         {
@@ -293,10 +270,6 @@ public class UI_TerminalScreen : MonoBehaviour
 
             isDisplayingText = textToDisplay != tempString;
 
-            // Code that stops typing sounds when it is not displaying text anymore
-            if(!isDisplayingText)
-                FindObjectOfType<AudioManager>()?.Stop(AudioManager.SoundNames.SFX_M09_TerminalTyping);
-
             // Calculates The number of Char left to be extra chars
             int tempExtraCharLength = Mathf.Clamp(extraCharacters, 0, textToDisplay.Length - tempString.Length);
             
@@ -318,11 +291,6 @@ public class UI_TerminalScreen : MonoBehaviour
             
         }
 
-    }
-
-    private void PlayUIButtonClick()
-    {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
     }
 
 }

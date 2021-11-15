@@ -20,14 +20,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1ae01cc1e97c64f499b8665933ad328f, type: 2}
   displayName: Misused Terms B
   difficulty: 3
-  description: Luckily, we passed the test from the first map without breaking a
-    sweat. This is easier than we thought, we will finish this game as fast as we
-    can and discover what secrets our grandfather hid from this town. We need to
-    get out of here fast.
+  description: This the Misused Terms B Map
   achievements:
   - {fileID: 11400000, guid: 43bc1c12eee1a5e4e81364f8447227d1, type: 2}
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity
-  cutsceneVideo: {fileID: 32900000, guid: 74102222db6b7f646a4d2787ce359464, type: 3}
   stringGeneral: "I was so proud when your Dad told me he wanted to study Graphic
     Designing I was one hundred and one percent fully on board with his aspirations
     he was a very artistic child and I know it would fit him perfectly. One day he

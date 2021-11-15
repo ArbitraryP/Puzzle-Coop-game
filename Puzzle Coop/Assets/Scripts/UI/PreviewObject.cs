@@ -8,15 +8,9 @@ public class PreviewObject : MonoBehaviour, IClickable
     [SerializeField] private CameraControl cameraControl = null;
 
     [SerializeField] private bool isCloseButton = false;
-
-    [SerializeField] private string soundToPlay = "SFX_MAP_Paper";
-
-
     public void Click()
     {
         if (isCloseButton) return;
-
-        PlaySound();
 
         panelTarget.SetActive(true);
         cameraControl.button_up.gameObject.SetActive(false);
@@ -29,11 +23,4 @@ public class PreviewObject : MonoBehaviour, IClickable
         cameraControl.button_up.gameObject.SetActive(true);
         cameraControl.button_down.gameObject.SetActive(true);
     }
-
-    public void PlaySound()
-    {
-        if (soundToPlay == "") return;
-        FindObjectOfType<AudioManager>()?.Play(soundToPlay);
-    }
-
 }
