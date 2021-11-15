@@ -19,14 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b4e33b228a101c3498668c4c5ffbb073, type: 2}
   displayName: Misused Terms A
   difficulty: 2
-  description: "What a strange room. I can see a computer with multiple questions
-    that needs to be answered. There\u2019s a note that says \u201CAnswer the questions
-    correctly and consistently, you will proceed to the next room, failed to do so
-    will result in a never-ending loop.\u201D"
+  description: This the Misused Terms A Map
   achievements:
   - {fileID: 11400000, guid: cb6ec193bf36be646b894676ca145fa8, type: 2}
   Scene: Assets/Scenes/Scene_Map_02_Misused.unity
-  cutsceneVideo: {fileID: 32900000, guid: 77af5740b0f4dd84f82bc65a469c6fd1, type: 3}
   stringGeneral: "I was scanning some magazines the other day and I stumble upon
     an article about keypad phones and got interested. It would be an easier way
     to be connected with your father and I can also study the device, so I bought

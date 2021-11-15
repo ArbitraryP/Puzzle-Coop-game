@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: 03_Sentence 1
   m_EditorClassIdentifier: 
   location: 0.082
-  firstText: 2021. There was a time that my friend asked me to...
-  secondText: "...help him hack his girlfriend\u2019s Footbook account."
+  firstText: There was a time that my friend asked me to...
+  secondText: "...help him hack his girlfriend\u2019s Facebook account."

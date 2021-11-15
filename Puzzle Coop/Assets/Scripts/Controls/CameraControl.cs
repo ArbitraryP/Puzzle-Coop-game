@@ -21,8 +21,7 @@ public class CameraControl : MonoBehaviour
     [SerializeField] private Camera mainCamera = null;
     public Transform[] camPoints_P1;
     public Transform[] camPoints_P2;
-
-    public Camera MainCamera => mainCamera;
+    
 
     [Header("Camera Pan")]
     [Range(0.1f, 10f)]
@@ -48,12 +47,6 @@ public class CameraControl : MonoBehaviour
 
             mainCamera.transform.position = new Vector3(smoothPosition.x, smoothPosition.y, -10f);
         }
-    }
-
-    public void EnableNavigation(bool active)
-    {
-        button_up.gameObject.SetActive(active);
-        button_down.gameObject.SetActive(active);
     }
 
     public void JumpToFloor(int floorNumber)
@@ -98,7 +91,6 @@ public class CameraControl : MonoBehaviour
 
     public void OnClickButtonUp()
     {
-        PlayUIStairSteps();
         if (currentFloor >= numberOfExtraFloors)
             return;
 
@@ -115,7 +107,6 @@ public class CameraControl : MonoBehaviour
 
     public void OnClickButtonDown()
     {
-        PlayUIStairSteps();
         if (currentFloor <= 0)
             return;
 
@@ -141,10 +132,5 @@ public class CameraControl : MonoBehaviour
         else if (currentFloor >= numberOfExtraFloors)
             button_up.interactable = false;
 
-    }
-
-    public void PlayUIStairSteps()
-    {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_StairSteps);
     }
 }

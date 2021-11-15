@@ -47,7 +47,6 @@ public class CalculatorPuzzle : MonoBehaviour
 
     public void OnClickButtonFactor(int buttonIndex)
     {
-        PlayUIButtonClick();
         selectedFactorIndex = buttonIndex;
         foreach (Button button in buttonFactors)
             button.interactable = true;
@@ -57,7 +56,6 @@ public class CalculatorPuzzle : MonoBehaviour
 
     public void OnClickButtonChoice(int value)
     {
-        PlayUIButtonClick();
         currentFactors[selectedFactorIndex] = value;
         textFactors[selectedFactorIndex].text = value.ToString();
 
@@ -65,14 +63,12 @@ public class CalculatorPuzzle : MonoBehaviour
 
     public void OnClickEnter()
     {
-        PlayUIButtonClick();
         if (!currentCalcAnswer.CompareFactors(currentFactors))
         {
             ClearFactors();
             RandomizeCalcAnswer();
 
             // Play Wrong Answer Sound
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_WrongCode);
             return;
         }
 
@@ -91,10 +87,7 @@ public class CalculatorPuzzle : MonoBehaviour
         FindObjectOfType<MapObjectManager_S>()?.CmdUnlockDoors();
     }
 
-    private void PlayUIButtonClick()
-    {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
-    }
+
 
 
 }

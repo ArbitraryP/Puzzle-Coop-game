@@ -19,13 +19,10 @@ MonoBehaviour:
   unlocks: []
   displayName: Career Gallery
   difficulty: 5
-  description: So many picture frames in the wall with different people and professions,
-    I wonder what it is for. Strange, there are more notes that were scattered within
-    the room, I think this can also lead us to the other rooms.
+  description: This the Career Gallery Map
   achievements:
   - {fileID: 11400000, guid: 01ec284119161ed46929b0a0ef621d82, type: 2}
   Scene: Assets/Scenes/Scene_Map_04_CareerGallery.unity
-  cutsceneVideo: {fileID: 32900000, guid: 5f28d02bf933f7c43826ffe97e038a41, type: 3}
   stringGeneral: "After the incident I started building my secret lab where I moved
     all my research and books relating to technology, there I continuously did my
     own studies where I found that there are vast occupations an IT person can pursue.

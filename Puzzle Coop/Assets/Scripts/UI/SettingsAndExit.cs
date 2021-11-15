@@ -6,7 +6,6 @@ using TangentNodes.Network;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Mirror;
-using System;
 
 public class SettingsAndExit : MonoBehaviour
 {
@@ -22,21 +21,11 @@ public class SettingsAndExit : MonoBehaviour
     [SerializeField] private Toggle toggleHowTo = null;
     [SerializeField] private Toggle toggleSettings = null;
     [SerializeField] private Toggle toggleQuitConfirm = null;
-    [SerializeField] private Slider sliderSFX = null;
-    [SerializeField] private Slider sliderBGM = null;
 
     [Header("How To Play")]
     [SerializeField] private GameObject[] panelHowToPages = null;
     [SerializeField] private int currentPage = 0;
-    public bool showHelpInMapSelect = true;
-
-    [Header("Loading Screen")]
-    [SerializeField] private GameObject panelLoadingScreen = null;
-
-    [Header("Sound Volume")]
-    [SerializeField] private AudioManager audioManager = null;
-    private readonly string playerPrefKeyBGM = "VolumeBGM";
-    private readonly string playerPrefKeySFX = "VolumeSFX";
+    [SerializeField] private bool isAlreadyOpened = false;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -69,26 +58,26 @@ public class SettingsAndExit : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.activeSceneChanged += OnSceneChanged;
-
-        SetVolume(
-            PlayerPrefs.GetFloat(playerPrefKeyBGM, .8f),
-            PlayerPrefs.GetFloat(playerPrefKeySFX, .8f));
-
     }
-
 
     private void OnDestroy() => SceneManager.activeSceneChanged -= OnSceneChanged;
 
     public void SetFullScreen(bool isFullScreen)
     {
         //Screen.fullScreen = isFullScreen;
-
+       
         if (isFullScreen)
+        {
             Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true);
         
+        }
         else
+        {
             Screen.SetResolution(1024, 576, false);
             
+        }
+           
+
     }
 
 
@@ -122,23 +111,20 @@ public class SettingsAndExit : MonoBehaviour
     public void OnSceneChanged(Scene currentScene, Scene nextScene)
     {
         toggleHowTo.isOn = false;
-        if (nextScene.name == "Scene_Map_Select" && showHelpInMapSelect)
+        if (nextScene.name == "Scene_Map_Select" && !isAlreadyOpened)
         {
             toggleHowTo.isOn = true;
-            showHelpInMapSelect = false;
+            isAlreadyOpened = true;
         }
     }
 
-    public void EnableMenu(bool active)
+    public void DisplayHowTo()
     {
-        toggleHowTo.gameObject.SetActive(active);
-        toggleSettings.gameObject.SetActive(active);
-        toggleQuitConfirm.gameObject.SetActive(active);
+        
     }
 
     public void OnToggleHowTo(bool value)
     {
-        PlayUIClickSound();
         panelHowTo.SetActive(value);
         if(value)
             CloseOtherToggles(0);
@@ -152,7 +138,6 @@ public class SettingsAndExit : MonoBehaviour
 
     public void OnToggleSettings(bool value)
     {
-        PlayUIClickSound();
         panelSettings.SetActive(value);
         if (value) 
             CloseOtherToggles(1);
@@ -161,7 +146,6 @@ public class SettingsAndExit : MonoBehaviour
 
     public void OnToggleQuit(bool isToggleOn)
     {
-        PlayUIClickSound();
         panelQuitConfirm.SetActive(isToggleOn);
         if (isToggleOn) 
             CloseOtherToggles(2);
@@ -236,40 +220,5 @@ public class SettingsAndExit : MonoBehaviour
         panelHowToPages[currentPage].SetActive(true);
     }
    
-
-    public void EnableLoadingScreen(bool state)
-    {
-        panelLoadingScreen.SetActive(state);
-        EnableMenu(!state);
-    }
-
-
-    public void ChangeVolumeBGM(float value)
-    {
-        audioManager.masterVolumeBGM = value;
-        PlayerPrefs.SetFloat(playerPrefKeyBGM, value);
-    }
-
-    public void ChangeVolumeSFX(float value)
-    {
-        audioManager.masterVolumeSFX = value;
-        PlayerPrefs.SetFloat(playerPrefKeySFX, value);
-    }
-
-    // Code to call when loading the volume settings from save
-    public void SetVolume(float volumeBGM = 1f, float volumeSFX = 1f)
-    {
-        sliderBGM.value = volumeBGM;
-        sliderSFX.value = volumeSFX;
-    }
-
-    // Code to call to play UI Button Click Sound
-    public void PlayUIClickSound()
-    {
-        // This will catch the exception since Fullscreen toggle will change before AudioManager would initialize
-        try { FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick); }
-        catch(NullReferenceException e) { } 
-
-    }
 
 }

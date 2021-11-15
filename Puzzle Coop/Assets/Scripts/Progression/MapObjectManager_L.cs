@@ -36,7 +36,6 @@ public class MapObjectManager_L : MonoBehaviour
 
     [Header("09 Terminal")]
     [SerializeField] private GameObject hallwayOn = null;
-    [SerializeField] private GameObject panelAfterVideo = null;
 
 
     private NetworkManagerTN room;
@@ -78,8 +77,6 @@ public class MapObjectManager_L : MonoBehaviour
         }
 
         // Play unlocked door sound and Show doors unlock text
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_DoorUnlocked);
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_AccessGrant);
     }
 
     #region 00 Tutorial
@@ -90,7 +87,6 @@ public class MapObjectManager_L : MonoBehaviour
         passCodeScreen.SetActive(true);
 
         // Play sound. Show text
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_PlugIn);
     }
 
 
@@ -107,7 +103,6 @@ public class MapObjectManager_L : MonoBehaviour
             if (!button.isSelectedCorrect())
             {
                 //Play wrong sound
-                FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_WrongCode);
                 return false;
             }
         }
@@ -127,7 +122,6 @@ public class MapObjectManager_L : MonoBehaviour
         lightGlowBreaker.color = Color.green;
 
         // Play sound. Show text
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_PlugIn);
     }
 
     public void M01_OnNodeInserted()
@@ -141,7 +135,6 @@ public class MapObjectManager_L : MonoBehaviour
         foreach (NodesMove node in nodes)
             node.isEnabled = false;
 
-        
         serverObjectManager.CmdUnlockDoors();
         lightGlowNode.color = Color.green;
     }
@@ -192,7 +185,6 @@ public class MapObjectManager_L : MonoBehaviour
         isCalendarCompleted = true;
 
         // play sound
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M03_CalendarClockCorrect);
         M03_CheckIfAllPuzzlesCompleted();
     }
 
@@ -202,7 +194,6 @@ public class MapObjectManager_L : MonoBehaviour
         isClockCompleted = true;
 
         // play sound
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M03_CalendarClockCorrect);
         M03_CheckIfAllPuzzlesCompleted();
     }
 
@@ -230,8 +221,6 @@ public class MapObjectManager_L : MonoBehaviour
         gallery.ShowCode = true;
         photoFrame.codeEnabled = true;
         // Play sound. Show text
-
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_PlugIn);
     }
 
     #endregion
@@ -243,28 +232,6 @@ public class MapObjectManager_L : MonoBehaviour
     public void M09_UnlockHallway()
     {
         hallwayOn.SetActive(true);
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M09_HallwayLightsOn);
-    }
-
-    public void M09_HideUI()
-    {
-        cameraControl.EnableNavigation(false);
-        FindObjectOfType<SettingsAndExit>()?.EnableMenu(false);
-        // Disable Floor Navigation
-        // Disable Quiting the game
-    }
-
-    public void M09_OnVideoPlayerEnded(UnityEngine.Video.VideoPlayer videoPlayer)
-    {
-        panelAfterVideo.SetActive(true);
-        cameraControl.EnableNavigation(true);
-        FindObjectOfType<SettingsAndExit>()?.EnableMenu(true);
-
-        videoPlayer.enabled = false;
-        Debug.Log("TERMINAL MAP COMPLETED! hehe");
-        // Tell server that player is done
-
-        serverObjectManager.CmdExitDoor();
     }
 
     #endregion

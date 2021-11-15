@@ -41,7 +41,6 @@ public class MapCompleteMessage : NetworkBehaviour
 
     public void OnClickContinue()
     {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
         buttonContinue.interactable = false;
         textButton.text = "Waiting for partner...";
         CmdOnClickContinue();
@@ -51,7 +50,7 @@ public class MapCompleteMessage : NetworkBehaviour
     private void CmdOnClickContinue()
     {
         serverObjectManager = FindObjectOfType<MapObjectManager_S>();
-        serverObjectManager?.CmdExitDoor();
+        serverObjectManager?.CmdExitDoor(1);
     }
 
 

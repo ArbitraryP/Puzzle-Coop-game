@@ -67,7 +67,6 @@ public class NodesMove : MonoBehaviour
         startPosY = mousePos.y - this.transform.localPosition.y;
 
         isMoving = true;
-        PlayNodeSound(true);
 
         if (currentSlot)
         {
@@ -84,7 +83,6 @@ public class NodesMove : MonoBehaviour
             return;
 
         isMoving = false;
-        PlayNodeSound(false);
 
         if (colliderList.Count <= 0)
         {
@@ -113,14 +111,6 @@ public class NodesMove : MonoBehaviour
             break;
         }
 
-    }
-
-    public void PlayNodeSound(bool isPickup)
-    {
-        if(isPickup)
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M01_NodePickUp);
-        else
-            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M01_NodeDrop);
     }
 
 }

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Mirror;
 using TMPro;
 using UnityEngine;
@@ -30,11 +29,6 @@ namespace TangentNodes.Network
             }
         }
 
-        public override void OnStartServer()
-        {
-            NetworkManagerTN.OnServerReadied += CloseLoadingScreen;
-        }
-
         public override void OnStartAuthority()
         {
             // Tells the SettingsAndExit that player is inConnection
@@ -55,11 +49,6 @@ namespace TangentNodes.Network
             Room.GamePlayers.Remove(this);
 
             SendPlayerData();
-        }
-
-        private void OnDestroy()
-        {
-            NetworkManagerTN.OnServerReadied -= CloseLoadingScreen;
         }
 
         [Server]
@@ -122,20 +111,6 @@ namespace TangentNodes.Network
                 new List<int>(unlockedAchievements));
         }
 
-        [Server]
-        private void CloseLoadingScreen(NetworkConnection conn)
-        {
-            if (Room.GamePlayers.Count(x => x.connectionToClient.isReady) != Room.GamePlayers.Count) { return; }
-
-            RpcCloseLoadingScreen();
-        }
-
-        [ClientRpc]
-        private void RpcCloseLoadingScreen()
-        {
-            if (hasAuthority)
-                FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(false);
-        }
 
     }
 }
