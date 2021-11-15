@@ -20,10 +20,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f0bfa0ee277134140b03489e910120d7, type: 2}
   displayName: Misconception A
   difficulty: 2
-  description: This the Misconception A Map
+  description: "Hmmm.. This room is very intriguing. Hmm! I found two strange radios,
+    it appears to be working, there are broken lines of words that needs to be deciphered.
+    There is a note saying \u201CYou will witness the future and the world full of
+    misconception\u201D. It gave me the creeps while reading it."
   achievements:
   - {fileID: 11400000, guid: c76cf5ee468d8b946a7cbc80a3270150, type: 2}
   Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity
+  cutsceneVideo: {fileID: 32900000, guid: 6b019994dcf8e6f449c5758e46a9c871, type: 3}
   stringGeneral: "When I was twelve, I\u2019ve read a comic strip in a newspaper.
     It was a conversation between a chef and another person in a supermarket, the
     person asks \u201CCan you prepare a full course meal?\u201D the chef answered

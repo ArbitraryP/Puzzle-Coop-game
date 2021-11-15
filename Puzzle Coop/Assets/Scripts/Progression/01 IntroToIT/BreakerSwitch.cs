@@ -64,11 +64,16 @@ public class BreakerSwitch : MonoBehaviour, IClickable
             return;
 
         if (changeToOn)
+        {
             targetPosition = ObjectRef_On.position;
-        
+            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M01_LeverOn);
+        }
         else
+        {
             targetPosition = ObjectRef_Off.position;
-
+            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M01_LeverOff);
+        }
+            
         targetSwitchState = changeToOn;
         isHandleFullySwitched = false;
     }

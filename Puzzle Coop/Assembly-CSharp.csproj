@@ -61,6 +61,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\Progression\02 Misused\UI_QuestionScreen.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\NodesMove.cs" />
+    <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BookSounds.cs" />
     <Compile Include="Assets\Scripts\Progression\05 Analyze\CalcAnswer.cs" />
     <Compile Include="Assets\Scripts\Progression\04 CareerGallery\CareerSet.cs" />
     <Compile Include="Assets\Scripts\Controls\ClickManager.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Assets\Scripts\Progression\Map.cs" />
     <Compile Include="Assets\Scripts\Progression\MapObjectManager_L.cs" />
     <Compile Include="Assets\Scripts\Progression\04 CareerGallery\PhotoFrame.cs" />
+    <Compile Include="Assets\Scripts\UI\Feedback.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\SentenceSet.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
@@ -109,6 +111,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\Network\NetworkGamePlayerTN.cs" />
+    <Compile Include="Assets\Scripts\Progression\09 Final\FadeToBlackMapF.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Progression\PlayerProgress.cs" />
     <Compile Include="Assets\Scripts\Progression\00 Tutorial\MonitorScreen.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\Scripts\Progression\ExitDoor.cs" />
     <Compile Include="Assets\Scripts\Network\JoinLobbyMenu.cs" />
+    <Compile Include="Assets\Scripts\Sounds\AudioManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\ShuffleString.cs" />
     <Compile Include="Assets\Scripts\Prototype\SteamTest.cs" />
@@ -143,6 +147,7 @@
     <Compile Include="Assets\Scripts\Progression\MapObjectManager_S.cs" />
     <Compile Include="Assets\Scripts\Controls\CameraControl.cs" />
     <Compile Include="Assets\Scripts\Network\NetworkRoomPlayerTN.cs" />
+    <Compile Include="Assets\Scripts\Progression\IntroCutscenePlayer.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\Progression\09 Final\Hallway.cs" />
@@ -153,8 +158,9 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Scripts\Progression\03 MisConvo\UI_Receiver.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\Sounds\Sound.cs" />
     <Compile Include="Assets\Scripts\Progression\MapIdentity.cs" />
-    <Compile Include="Assets\Scripts\Progression\09 Final\FadeToBlackMapF.cs" />
+    <Compile Include="Assets\Scripts\Progression\SaveSystem.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

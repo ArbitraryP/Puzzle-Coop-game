@@ -40,6 +40,7 @@ public class NavBreaker : MonoBehaviour
 
     public void OnClickButton(string inputCode)
     {
+        PlayUIButtonClick();
         if (currentInput.Length >= 5)
             currentInput = "";
 
@@ -58,14 +59,13 @@ public class NavBreaker : MonoBehaviour
 
     private void CheckIfCorrect()
     {
-
+        PlayUIButtonClick();
         if (CheckLightSolution())
         {
             light2DLight.color = Color.green;
             FindObjectOfType<MapObjectManager_S>()?.CmdM04_LightCompleted();
             enableDoorSolution = true;
             OnClickButtonDelete();
-            // Play breaker unlock sound
             return;
         }
 
@@ -86,6 +86,11 @@ public class NavBreaker : MonoBehaviour
 
     private bool CheckDoorSolution() =>    
         currentInput == doorSolution && enableDoorSolution;
-                     
+
+
+    private void PlayUIButtonClick()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
+    }
 
 }

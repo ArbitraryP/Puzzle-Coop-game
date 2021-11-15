@@ -35,17 +35,18 @@ public class UI_Clock : MonoBehaviour
 
     private void Start()
     {
-        // Generate Random Starting value (may start with correct value)
+        // Always start with 1 AM
 
-        selectedHour = Random.Range(1, 13);
-        selectedMin10 = Random.Range(0, 6);
-        selectedMin1 = Random.Range(0, 10);
-        selectedMeridiemAM = Random.Range(0, 2) == 1;
+        selectedHour = 1;
+        selectedMin10 = 0;
+        selectedMin1 = 0;
+        selectedMeridiemAM = true;
 
         hourText.text = selectedHour.ToString();
         min10Text.text = selectedMin10.ToString();
         min1Text.text = selectedMin1.ToString();
         meridiemText.text = selectedMeridiemAM ? "AM" : "PM";
+        
     }
 
     public void SetSolution(int hour, int minutes, bool meridiemAM)
@@ -57,7 +58,8 @@ public class UI_Clock : MonoBehaviour
 
     public void OnClickClockButton(string buttonName)
     {
-        if(buttonName.ToLower() == "hour")
+        PlaySoundButtonClick();
+        if (buttonName.ToLower() == "hour")
         {
             selectedHour = selectedHour >= 12 ? 1 : selectedHour + 1;
             hourText.text = selectedHour.ToString();
@@ -96,4 +98,8 @@ public class UI_Clock : MonoBehaviour
         }
     }
 
+    public void PlaySoundButtonClick()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M03_CalendarClockButtonClick);
+    }
 }

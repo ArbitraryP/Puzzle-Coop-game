@@ -26,10 +26,11 @@ MonoBehaviour:
   unlocks: []
   displayName: Terminal
   difficulty: 5
-  description: This the Final Map
+  description: "Behold the truth that you are waiting for\u2026\u2026"
   achievements:
   - {fileID: 11400000, guid: d253bc1f0905d9542925afcb715c41a7, type: 2}
   Scene: Assets/Scenes/Scene_Map_09_Final.unity
+  cutsceneVideo: {fileID: 0}
   stringGeneral: 
   stringP1: 
   stringP2: 

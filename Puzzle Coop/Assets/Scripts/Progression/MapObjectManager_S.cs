@@ -5,6 +5,7 @@ using Mirror;
 using TangentNodes.Network;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEngine.Video;
 
 /// <summary>
 /// This object is owned by players through network
@@ -20,6 +21,7 @@ public class MapObjectManager_S : NetworkBehaviour
     [SerializeField] private MapObjectManager_L localObjectManager = null;
     [SerializeField] private QuestionsManager questionsManager = null;
     [SerializeField] private TerminalManager terminalManager = null;
+    [SerializeField] private IntroCutscenePlayer cutscenePlayer = null;
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -32,8 +34,7 @@ public class MapObjectManager_S : NetworkBehaviour
     }
 
     private int numberOfPlayersReadyToExit = 0;
-
-
+    private int numberOfPlayersVoteSkip = 0;
 
     public override void OnStartServer()
     { 
@@ -50,6 +51,10 @@ public class MapObjectManager_S : NetworkBehaviour
     private void InitializeScene(NetworkConnection conn)
     {
         RpcInitializePlayers(Room.currentMap.name);
+
+        //Initialize Cutscene
+        RpcSetupCutscene(Room.currentMap.name);
+        
 
         if (SceneManager.GetActiveScene().name == "Scene_Map_02_Misused")
         {
@@ -95,11 +100,13 @@ public class MapObjectManager_S : NetworkBehaviour
     {
         if (Room.GamePlayers.Count(x => x.connectionToClient.isReady) != Room.GamePlayers.Count) { return; }
 
-        // Add Code that Closes or Stops the "Waiting for Other Player" loading screen or smth
-
         questionsManager?.ResetQuestions(); // Code that starts question if it is Map02 etc.
         terminalManager?.NextMessage();
+
+        // Code that tells the Cutscene to start playing
+        RpcPlayCutscene();
     }
+
 
     [ClientRpc]
     private void RpcInitializePlayers(string mapName)
@@ -115,9 +122,39 @@ public class MapObjectManager_S : NetworkBehaviour
         localObjectManager.serverObjectManager = this;
     }
 
+    #region Cutscenes
+
+    [ClientRpc]
+    private void RpcSetupCutscene(string mapName)
+    {
+        cutscenePlayer.SetupCutscene(mapName);
+    }
+
+    [ClientRpc]
+    private void RpcPlayCutscene()
+    {
+        cutscenePlayer.PlayCutscene();
+    }
+
+    [Command(requiresAuthority =false)]
+    public void CmdVoteSkipCutscene()
+    {
+        numberOfPlayersVoteSkip++;
+        if (numberOfPlayersVoteSkip >= 2)
+        {
+            RpcSkipCutscene();
+            numberOfPlayersVoteSkip = 0;
+        }
+    }
+
+    [ClientRpc]
+    private void RpcSkipCutscene() => cutscenePlayer.SkipCutscene();
+    
+
+    #endregion
 
     [Command(requiresAuthority = false)]
-    public void CmdExitDoor(int playerNum)
+    public void CmdExitDoor()
     {
         numberOfPlayersReadyToExit++;
         CheckReadyToExit();
@@ -146,6 +183,16 @@ public class MapObjectManager_S : NetworkBehaviour
                 // Unlocks Achievements
                 foreach (Achievement achievementToUnlock in Room.currentMap.achievements)
                     player.AddUnlockAchievement(achievementToUnlock.Index);
+
+                // Removes all Unlocked Maps IF Final Map is Finished
+                if(Room.currentMap.name == "09 Final Level")
+                {
+                    player.completedMaps.Clear();
+                    player.unlockedMaps.Clear();
+                    player.unlockedMaps.Add(0); // Adds Map S, the first map
+
+                }
+
 
                 // Sync Progress to Local PlayerProgress Object
                 player.ServerSendPlayerData();

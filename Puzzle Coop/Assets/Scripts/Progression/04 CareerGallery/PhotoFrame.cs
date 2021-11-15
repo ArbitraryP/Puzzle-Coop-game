@@ -39,6 +39,8 @@ public class PhotoFrame : MonoBehaviour
 
     public void ChangeCode(int index)
     {
+        PlayUIButtonClick();
+
         code[index]++;
         if (code[index] > 9)
             code[index] = 0;
@@ -60,9 +62,14 @@ public class PhotoFrame : MonoBehaviour
         ticket.SetActive(true);
         ticket2DLight.color = Color.green;
         // play ticket release correct sound 
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M04_TicketDispense);
 
         foreach (Button button in buttonCodes)
             button.interactable = false;
     }
 
+    private void PlayUIButtonClick()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
+    }
 }

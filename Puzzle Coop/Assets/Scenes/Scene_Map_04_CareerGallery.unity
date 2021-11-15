@@ -317,6 +317,7 @@ MonoBehaviour:
   panelTarget: {fileID: 2026788133}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &42461595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1309,21 +1310,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_text
-      value: '"a person with no direction will never go anywhere"
+      value: '"A person with no direction will never go anywhere"
 
 
         Up! that''s
-        Right always go Up.
+        right always go up.
 
         not because there are these types of career
         specializations, means you can''t carve your own path.
 
 
-        you won''t
-        get Left behind if you won''t let it.
+        You won''t
+        get left behind if you won''t let it.
 
         just remember to keep your
-        feet Down to the ground and you''ll know where to go.'
+        feet down to the ground and you''ll know where to go.'
       objectReference: {fileID: 0}
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_fontSize
@@ -2554,6 +2555,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341563794415781}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &396135482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3514,6 +3516,7 @@ MonoBehaviour:
   panelTarget: {fileID: 366008387}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &539733491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5082,14 +5085,14 @@ PrefabInstance:
       value: 'Nelson came yesterday,
 
 
-        With a cup of coffee and said,
+        with a cup of coffee and said,
 
 
-        Whenever
+        whenever
         it be on great prosperity, or
 
 
-        Even in a crisis, technology never
+        even in a crisis, technology never
         stop.
 
 
@@ -5810,6 +5813,8 @@ MonoBehaviour:
   gallery: {fileID: 396529840}
   photoFrame: {fileID: 1216438373}
   navBreaker: {fileID: 1963263823}
+  hallwayOn: {fileID: 0}
+  panelAfterVideo: {fileID: 0}
 --- !u!1 &932131330
 GameObject:
   m_ObjectHideFlags: 0
@@ -13305,6 +13310,7 @@ MonoBehaviour:
   panelTarget: {fileID: 578827237}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &1952170498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14481,22 +14487,22 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_text
-      value: 'mr. North had left me this quote.
+      value: 'Mr. North has once told me,
 
 
-        they are Right, i.t. cover
-        a large portion of technology
+        They are right, i.t. cover a
+        large portion of technology
 
 
-        yet what''s not Right is that we
-        know everything.
+        yet what''s not right is that we know
+        everything.
 
 
-        technologies evolve fast, therefore we take Up
-        specializations.
+        Technologies evolve fast, therefore we take up specializations.
 
 
-        so don''t let that misconception let you Down.'
+        so
+        don''t let that misconception let you down.'
       objectReference: {fileID: 0}
     - target: {fileID: 1396341563934309864, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_fontSize

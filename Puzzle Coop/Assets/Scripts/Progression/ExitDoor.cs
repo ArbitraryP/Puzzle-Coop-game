@@ -15,16 +15,19 @@ public class ExitDoor : MonoBehaviour, IClickable
         
         if (!isUnlocked)
         {
+            FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_DoorLockInteract);
             Debug.Log("Door is Locked.");
             return;
         }
 
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_DoorOpened);
         localObjectManager = FindObjectOfType<MapObjectManager_L>();
         if (!localObjectManager)
         {
             Debug.Log("Local Map Object Manager Missing!");
             return;
         }
+
 
         FindObjectOfType<MapCompleteMessage>()?.ShowMessage(true);
         gameObject.SetActive(false);
