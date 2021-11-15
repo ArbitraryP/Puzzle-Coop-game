@@ -86,21 +86,45 @@ public class QuestionsManager : NetworkBehaviour
         {
             currentScore++;
             // Play Correct Answer sound
-            if(currentScore == maxScore)
+
+            if (currentScore == maxScore)
             {
                 serverObjectManager.RpcM02_QuizCompleted();
+                RpcPlayQuizSound(QuizSound.COMPLETE);
                 RpcShowQuizComplete();
             }
-                
-                       
+            else
+                RpcPlayQuizSound(QuizSound.CORRECT);
+
+
             NextQuestion();
         }
         else
         {
             // Play Wrong Answer sound
+            RpcPlayQuizSound(QuizSound.INCORRECT);
             ResetQuestions();
         }
         
+    }
+
+    private enum QuizSound { CORRECT, INCORRECT, COMPLETE };
+
+    [ClientRpc]
+    private void RpcPlayQuizSound(QuizSound quizSound)
+    {
+        switch (quizSound)
+        {
+            case QuizSound.CORRECT:
+                FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M02_CorrectAnswer);
+                break;
+            case QuizSound.INCORRECT:
+                FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M02_IncorrectAnswer);
+                break;
+            case QuizSound.COMPLETE:
+                FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M02_Complete);
+                break;
+        }
     }
 
     [ClientRpc]

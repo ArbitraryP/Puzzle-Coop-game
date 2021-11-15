@@ -21,10 +21,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1452d590238bc9647ba2a8a9c811332f, type: 2}
   displayName: Initialization
   difficulty: 1
-  description: The beginning of it all.
+  description: The beginning of it all, for all these years, this place has been
+    locked out from the outside world. I wonder what lies in here. The laboratory
+    has been abandoned since grandfather was gone, luckily the door still works.
+    I should explore this place.
   achievements:
   - {fileID: 11400000, guid: 1049a95c7bfef7b43b0d65b962e22773, type: 2}
   Scene: Assets/Scenes/Scene_Map_00_Tutorial.unity
+  cutsceneVideo: {fileID: 32900000, guid: 3615fb77b36ca9d40bcb8f275c3d760c, type: 3}
   stringGeneral: "<size=37><i>\u201CThose who can\u2019t change their minds can\u2019t
     change anything.\u201D</i>\nGO! YOU ARE NOT WELCOME HERE!\n<i>Though if you exceed
     this level, I will deem you worthy to whatever you may discover inside.</i></size>"

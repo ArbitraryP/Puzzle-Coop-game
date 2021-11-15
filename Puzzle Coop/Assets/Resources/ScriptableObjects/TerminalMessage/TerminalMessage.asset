@@ -13,15 +13,33 @@ MonoBehaviour:
   m_Name: TerminalMessage
   m_EditorClassIdentifier: 
   messages:
-  - Message 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 4. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 5. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
-  - Message 6. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pellentesque
-    finibus fermentum...
+  - "March 05 19XX\nI\u2019ve installed the monitors on the wall, it would look like
+    leaves on a tree if I add some designs. I grew up in a town where people despise
+    technology, that\u2019s why the lab will be hidden in the first place. I don\u2019t
+    know the reason, maybe they are scared of change that they were always a victim
+    of false information or maybe it\u2019s something deeper.\r\n"
+  - "March 07 19XX\nI was just done with the upper levels of my lab and for the past
+    few weeks it took most of my time. I\u2019ve thought about it before, but it\u2019s
+    true there are no easy courses yet there are also no hard ones specially when
+    your heart desires it. In time, everything will feel natural for everything can
+    be learned.\r\n"
+  - "August 15 19XX\nI tried tinkering with the frequencies. And I\u2019ve been grounded
+    way too many times. But I think I\u2019m close to something greater! They say
+    it\u2019s always good to be hungry for new knowledge. It doesn\u2019t mean you
+    need to know everything immediately. But it\u2019s better to be eager to know
+    things, how they work, or what they are used for.\r\n"
+  - "September 21 19XX\nI KNEW IT! I KNEW IT! I KNEW IT! There is so much more than
+    \u2018just\u2019 being an IT! If the town\u2019s people only knew this, they\u2019ll
+    be stock! (no puns intended). I just need to remember to master the fundamentals,
+    I know for sure that will help me in the long run.\r\n"
+  - "October 11 19XX\nMATH! WHO KNEW?! I\u2019ve never thought of adding math problems
+    in my coding, yet here I am. But I must learn to be comfortable with problems,
+    for an IT are like problem solvers especially in technical problems. If you gave
+    up in simple problems, then you lose. I should try solving it one at a time instead
+    of giving up.\r\n"
+  - "November 17 19XX\nIt took YEARS! My blood and sweat, but now it\u2019s done!
+    And I couldn\u2019t even be any prouder of myself! At this point I only need
+    to worry for the maintenance and upgrades for this place. I\u2019m proud of myself
+    for not giving up on something that I really want to learn despite what this
+    town believes. I know that everything takes time that I should be consistent
+    and that I must always trust the process.\r\n"

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11508dfba03e38346a0bea36d8f82116, type: 3}
   m_Name: 04_DataScientist
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: dff3d2ed63bb95b47a8f2ee3ceafcd28, type: 3}
+  image: {fileID: 21300000, guid: 074469b1ae187944da0533f2f768f6e2, type: 3}
   careerName: Data Scientist
   code: 01000000040000000700000004000000

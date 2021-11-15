@@ -5,7 +5,7 @@ public class BreakerButton : MonoBehaviour
 {
     [SerializeField] private TMP_Text buttonText = null;
     [SerializeField] private int[] selectionSet;
-    [SerializeField] private int correctIndex = 0;
+    [SerializeField] private int correctValue = 0;
     private int currentSelectedIndex = 0;
     
 
@@ -17,14 +17,19 @@ public class BreakerButton : MonoBehaviour
 
     public void OnClickChangeValue()
     {
+        PlayUIButtonClick();
         currentSelectedIndex = currentSelectedIndex < (selectionSet.Length - 1) ? currentSelectedIndex + 1 : 0;
         buttonText.text = selectionSet[currentSelectedIndex].ToString();
     }
 
     public bool isSelectedCorrect()
     {
-        return currentSelectedIndex == correctIndex;
+        return selectionSet[currentSelectedIndex] == correctValue;
         // To see correct answer go the MapObjectManager_L
     }
 
+    public void PlayUIButtonClick()
+    {
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
+    }
 }

@@ -18,12 +18,13 @@ MonoBehaviour:
   unlocks: []
   displayName: Introduction to IT
   difficulty: 3
-  description: Information, Technology. What's more into it? Why the town forbidden
-    anyone who talks about it. How come something that improves lives not accepted
-    here? Only one way to find out.
+  description: "Information Technology, What's more into it? I don\u2019t understand
+    why the town forbids anyone to talk about it. How come something that can improve
+    people\u2019s lives is not accepted here? Only one way to find out."
   achievements:
   - {fileID: 11400000, guid: a24d3a405025b2e4db3d9bec1a549ecb, type: 2}
   Scene: Assets/Scenes/Scene_Map_01_IntroToIT.unity
+  cutsceneVideo: {fileID: 32900000, guid: f4308350774258a4da6692054a4bf90b, type: 3}
   stringGeneral: "I remember my first calculator it was an \u2018abacus\u2019, a
     gift from my father when I was five then I have thought how a simple invention
     can solve simple calculations. Now as time passed by, I've thought to myself

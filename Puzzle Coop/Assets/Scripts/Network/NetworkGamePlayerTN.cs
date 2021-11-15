@@ -133,7 +133,8 @@ namespace TangentNodes.Network
         [ClientRpc]
         private void RpcCloseLoadingScreen()
         {
-            FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(false);
+            if (hasAuthority)
+                FindObjectOfType<SettingsAndExit>()?.EnableLoadingScreen(false);
         }
 
     }
