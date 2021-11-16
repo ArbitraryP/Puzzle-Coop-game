@@ -27,7 +27,7 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: c76cf5ee468d8b946a7cbc80a3270150, type: 2}
   Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity
-  cutsceneVideo: {fileID: 32900000, guid: 6b019994dcf8e6f449c5758e46a9c871, type: 3}
+  cutsceneVideo: {fileID: 32900000, guid: 324eb4d88179fef48a476064687a5b4c, type: 3}
   stringGeneral: "When I was twelve, I\u2019ve read a comic strip in a newspaper.
     It was a conversation between a chef and another person in a supermarket, the
     person asks \u201CCan you prepare a full course meal?\u201D the chef answered

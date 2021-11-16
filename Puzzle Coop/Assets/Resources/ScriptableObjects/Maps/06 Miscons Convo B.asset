@@ -25,7 +25,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bbbcbd37f88c4f54cbffe8973a2ed9e7, type: 2}
   - {fileID: 11400000, guid: 25236a021f8ed9644827666906de6e81, type: 2}
   Scene: Assets/Scenes/Scene_Map_03_MisConvo.unity
-  cutsceneVideo: {fileID: 32900000, guid: 1c48f68f09a6de6468c27485b433637f, type: 3}
+  cutsceneVideo: {fileID: 32900000, guid: db6819bf3500d664bb66028956e33ffa, type: 3}
   stringGeneral: "In my late teenage years I remember teaching and telling people
     about technology, most of the town's people obviously hated it. Yet surprisingly
     a handful of people listened to me at first, then after they asked me if I can

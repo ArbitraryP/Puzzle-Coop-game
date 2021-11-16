@@ -30,7 +30,8 @@ MonoBehaviour:
   achievements:
   - {fileID: 11400000, guid: d253bc1f0905d9542925afcb715c41a7, type: 2}
   Scene: Assets/Scenes/Scene_Map_09_Final.unity
-  cutsceneVideo: {fileID: 0}
+  cutsceneVideo: {fileID: 32900000, guid: 1917ba5db3499ed4f8b9567bd8d451f2, type: 3}
+
   stringGeneral: 
   stringP1: 
   stringP2: 
