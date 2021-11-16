@@ -28,8 +28,10 @@ public class AudioManager : MonoBehaviour
 		SFX_MAP_DoorOpened,
 		SFX_MAP_DoorLockInteract,
 		SFX_MAP_StairSteps,
+		SFX_MAP_Envelope,
 		SFX_MAP_Paper,
 		SFX_MAP_KeyTone,
+		SFX_MAP_BreakerButtonClick,
 
 		SFX_M00_CorrectCode,
 		SFX_M00_PlugIn,
@@ -197,6 +199,14 @@ public class AudioManager : MonoBehaviour
 			Debug.LogWarning("Sound: " + name + " not found!");
 		}
 		return s;
+	}
+
+	public AudioClip GetAudioClip(SoundNames name)
+    {
+		Sound s = FindSound(name);
+		if (s == null) return null;
+
+		return s.clip;
 	}
 
 	public void ApplySoundSettings()

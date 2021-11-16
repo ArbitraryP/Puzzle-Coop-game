@@ -30,6 +30,6 @@ public class BreakerButton : MonoBehaviour
 
     public void PlayUIButtonClick()
     {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_BreakerButtonClick);
     }
 }

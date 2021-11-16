@@ -25,7 +25,12 @@ public class UI_Receiver : MonoBehaviour
     [SerializeField] private float detectionVolume = 0.5f;
     [Range(0, 1f)]
     [SerializeField] private float muteThreshold = 0.1f;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] AudioSource audioSource = null;
+    
 
+    private float baseVolume;
+    
 
     private NetworkManagerTN room;
     private NetworkManagerTN Room
@@ -37,7 +42,7 @@ public class UI_Receiver : MonoBehaviour
         }
     }
 
-    public void InitializeSentences(SentenceSet set)
+    public void InitializeUIReceiver(SentenceSet set)
     {
         sentenceSet = set;
         
@@ -46,6 +51,19 @@ public class UI_Receiver : MonoBehaviour
             if (!player.hasAuthority) { continue; }
             showTextP1 = player.isLeader;
         }
+
+        // Initialize AudioSource
+        audioManager = FindObjectOfType<AudioManager>();
+        
+
+        Sound s = audioManager.FindSound(AudioManager.SoundNames.SFX_M03_RadioStatic);
+        if (s == null) return;
+
+        baseVolume = s.volume;
+        audioSource.volume = baseVolume;
+        audioSource.clip = s.clip;
+        audioSource.loop = s.loop;
+        audioSource.playOnAwake = s.playOnAwake;
 
     }
 
@@ -63,7 +81,8 @@ public class UI_Receiver : MonoBehaviour
             if (!TestInRange(minRange, maxRange, value))
             {
                 // Play Static Sound at full volume when no detected
-                FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M03_RadioStatic, 1f);
+                //FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M03_RadioStatic, 1f);
+                PlayRadioStaticSound();
                 continue;
             }
                 
@@ -81,7 +100,8 @@ public class UI_Receiver : MonoBehaviour
             if (!TestInRange(minRange, maxRange, value))
             {
                 // Play Static Sound slightly lower volume when within detectionRange
-                FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M03_RadioStatic, detectionVolume);
+                // FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M03_RadioStatic, detectionVolume);
+                PlayRadioStaticSound(detectionVolume);
                 break;
             }
                 
@@ -100,7 +120,8 @@ public class UI_Receiver : MonoBehaviour
 
             textScreen.color = new Color(0, 0, 0, clampAlpha);
 
-            FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M03_RadioStatic, soundVolume);
+            //FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M03_RadioStatic, soundVolume);
+            PlayRadioStaticSound(soundVolume);
 
             break;
         }
@@ -110,4 +131,14 @@ public class UI_Receiver : MonoBehaviour
 
     private bool TestInRange(float min, float max, float test) =>
         (test >= min && test <= max);
+
+    private void PlayRadioStaticSound(float dynamicVolume = 1f)
+    {
+        // Change Dynamic Volume Factor first before readjusting volume.
+        audioSource.volume = baseVolume * audioManager.masterVolumeSFX * dynamicVolume;
+
+        if (audioSource.isPlaying) return;
+        audioSource.Play();
+    }
+
 }

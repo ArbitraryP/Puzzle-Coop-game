@@ -226,6 +226,8 @@ public class SettingsAndExit : MonoBehaviour
         if (panelHowToPages == null)
             return;
 
+        PlayUIClickSound();
+
         if (currentPage >= panelHowToPages.Length - 1)
             toggleHowTo.isOn = false;
 
@@ -271,5 +273,6 @@ public class SettingsAndExit : MonoBehaviour
         catch(NullReferenceException e) { } 
 
     }
+
 
 }

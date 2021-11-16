@@ -34,6 +34,7 @@ public class NavBreaker : MonoBehaviour
 
     public void OnClickButtonDelete()
     {
+        PlayUIButtonClick();
         currentInput = "";
         DisplayText();
     }
@@ -90,7 +91,7 @@ public class NavBreaker : MonoBehaviour
 
     private void PlayUIButtonClick()
     {
-        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
+        FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_MAP_BreakerButtonClick);
     }
 
 }

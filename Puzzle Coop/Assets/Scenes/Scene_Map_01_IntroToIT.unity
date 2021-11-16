@@ -2051,7 +2051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &274733616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2795,7 +2795,7 @@ MonoBehaviour:
   panelTarget: {fileID: 968529904}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
-  soundToPlay: SFX_MAP_Paper
+  soundToPlay: SFX_MAP_Envelope
 --- !u!212 &396135482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3895,7 +3895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 79.599976, y: 15.799988}
+  m_AnchoredPosition: {x: 79.6001, y: 15.800049}
   m_SizeDelta: {x: 1820.7595, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586554727
@@ -4560,7 +4560,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 79.599976, y: 15.799988}
+  m_AnchoredPosition: {x: 79.6001, y: 15.800049}
   m_SizeDelta: {x: 1820.7595, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674786924
@@ -8071,6 +8071,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ee16969dddb1373499c28b1af854220e, type: 3}
+    - target: {fileID: 1396341564942411084, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 79.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1396341564942411084, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15.800049
+      objectReference: {fileID: 0}
     - target: {fileID: 1396341564942411085, guid: 1dc30002c2bb74441afc71b523b73f43, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -8465,7 +8473,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000061035156, y: 288}
+  m_AnchoredPosition: {x: 0, y: 288}
   m_SizeDelta: {x: -216.459, y: -791.777}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438979582
@@ -10597,7 +10605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1696286035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13499,7 +13507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 79.599976, y: 15.799988}
+  m_AnchoredPosition: {x: 79.6001, y: 15.800049}
   m_SizeDelta: {x: 1820.7595, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2677835417930844327
@@ -13848,6 +13856,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 437311867}
+    - target: {fileID: 5647536549956026938, guid: 5031d65bc6fcc57499c36860b172c6b9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 79.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647536549956026938, guid: 5031d65bc6fcc57499c36860b172c6b9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 15.800049
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5031d65bc6fcc57499c36860b172c6b9, type: 3}
 --- !u!1 &5647536549550459252 stripped

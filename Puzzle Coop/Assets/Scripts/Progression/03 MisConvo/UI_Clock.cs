@@ -37,10 +37,10 @@ public class UI_Clock : MonoBehaviour
     {
         // Always start with 1 AM
 
-        selectedHour = 1;
-        selectedMin10 = 0;
-        selectedMin1 = 0;
-        selectedMeridiemAM = true;
+        selectedHour = 8;
+        selectedMin10 = 3;
+        selectedMin1 = 9;
+        selectedMeridiemAM = false;
 
         hourText.text = selectedHour.ToString();
         min10Text.text = selectedMin10.ToString();

@@ -317,6 +317,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341564123715818}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &42461595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1569,7 +1570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &274733616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2246,6 +2247,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341563794415781}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &396135482
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3323,6 +3325,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341563572843211}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &539733491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6612,6 +6615,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341565381842202}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &1128318288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6767,6 +6771,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341563572843211}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &1161212543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10411,7 +10416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1696286035
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10934,6 +10939,7 @@ MonoBehaviour:
   panelTarget: {fileID: 849879144}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &1778344421
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11192,6 +11198,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341564925032897}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &1805881818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12411,6 +12418,7 @@ MonoBehaviour:
   panelTarget: {fileID: 1396341565526007300}
   cameraControl: {fileID: 1733465798801091833}
   isCloseButton: 0
+  soundToPlay: SFX_MAP_Paper
 --- !u!212 &1952170498
 SpriteRenderer:
   m_ObjectHideFlags: 0

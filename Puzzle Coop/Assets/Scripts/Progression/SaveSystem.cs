@@ -15,22 +15,22 @@ public static class SaveSystem
 
         // Add Function that will double check for saves that is not his.
 
-        FileStream stream = new FileStream(path, FileMode.Create);
-        PlayerData data = new PlayerData(player);
-
-        // Might add Finaly if stream close not working properly
         try
         {
+            FileStream stream = new FileStream(path, FileMode.Create);
+            PlayerData data = new PlayerData(player);
+
+            // Might add Finaly if stream close not working properly
+        
             formatter.Serialize(stream, data);
+            stream.Close();
+            Debug.Log("Save Completed");
         }
         catch(IOException ex)
         {
-            stream.Close();
-            Debug.LogError("Save Failed: " + ex.Message);
+            Debug.LogWarning("Save Failed: " + ex.Message);
         }
-
-        stream.Close();
-        Debug.Log("Save Completed");
+        
     }
 
     // Loads a save file based on playerSteamID
@@ -38,23 +38,31 @@ public static class SaveSystem
     {
         string path = saveLocation + "/player-" + playerSteamId + ".tns";
 
-        if (File.Exists(path))
+        try
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
+            if (File.Exists(path))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                FileStream stream = new FileStream(path, FileMode.Open);
 
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
+                PlayerData data = formatter.Deserialize(stream) as PlayerData;
 
-            stream.Close();
-            Debug.Log("Load Completed");
-            return data;
+                stream.Close();
+                Debug.Log("Load Completed");
+                return data;
+            }
+            else
+            {
+                Debug.LogWarning("Load Failed: No Save file for this player found in " + path);
+                return null;
+            }
+
         }
-        else
+        catch(IOException ex)
         {
-            Debug.Log("No Save file for this player found in " + path);
+            Debug.LogWarning("Load Failed: " + ex.Message);
             return null;
         }
-
 
     }
 

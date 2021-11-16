@@ -62,5 +62,6 @@ namespace TangentNodes.Network
         {
             FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
         }
+
     }
 }

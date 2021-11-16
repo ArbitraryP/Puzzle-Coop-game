@@ -107,7 +107,6 @@ public class MapObjectManager_L : MonoBehaviour
             if (!button.isSelectedCorrect())
             {
                 //Play wrong sound
-                FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_M00_WrongCode);
                 return false;
             }
         }
@@ -162,7 +161,7 @@ public class MapObjectManager_L : MonoBehaviour
             sentenceSet = set;
 
             // Loads the Sentences to the Receiver
-            receiver.InitializeSentences(sentenceSet);
+            receiver.InitializeUIReceiver(sentenceSet);
 
             // Setup the Correct Solution of Clock and Calendar
             calendar.SetSolution(sentenceSet.CorrectMonth, sentenceSet.CorrectDate);

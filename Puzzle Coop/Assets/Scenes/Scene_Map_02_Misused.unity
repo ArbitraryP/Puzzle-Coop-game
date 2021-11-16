@@ -945,7 +945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &274733616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3370,6 +3370,8 @@ MonoBehaviour:
   gallery: {fileID: 0}
   photoFrame: {fileID: 0}
   navBreaker: {fileID: 0}
+  hallwayOn: {fileID: 0}
+  panelAfterVideo: {fileID: 0}
 --- !u!1 &883785764
 GameObject:
   m_ObjectHideFlags: 0

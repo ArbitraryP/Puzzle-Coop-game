@@ -38,6 +38,11 @@ namespace TangentNodes.Network
         // Map Select
         public Map selectedMap;
 
+        [Header("Map Button UI")]
+        [SerializeField] private Sprite imageButtonLocked = null;
+        [SerializeField] private Sprite imageButtonUnlocked = null;
+        [SerializeField] private Sprite imageButtonCompleted = null;
+
         [Header("Description UI")]
         [SerializeField] private TMP_Text textMapName = null;
         [SerializeField] private TMP_Text textDescription = null;
@@ -131,11 +136,16 @@ namespace TangentNodes.Network
                     List<int> listOfCompletedMaps = new List<int>(player.completedMaps);
                     List<int> listOfUnlockedMaps = new List<int>(player.unlockedMaps);
 
-                    mapButton.SetMapAsSelectable(mapButton.map.IsPrerequisiteMet(listOfCompletedMaps, listOfUnlockedMaps));
+                    bool isUnlocked = mapButton.map.IsPrerequisiteMet(listOfCompletedMaps, listOfUnlockedMaps);
+                    mapButton.SetMapAsSelectable(isUnlocked);
+                    if (isUnlocked)
+                        mapButton.SetButtonImage(imageButtonUnlocked);
+                    else
+                        mapButton.SetButtonImage(imageButtonLocked);
 
                     // Check if Unlocked Map is also Completed
                     if (player.completedMaps.Contains(unlockedMapIndex))
-                        mapButton.SetMapAsCompleted();
+                        mapButton.SetButtonImage(imageButtonCompleted);
                 }
             }
         }

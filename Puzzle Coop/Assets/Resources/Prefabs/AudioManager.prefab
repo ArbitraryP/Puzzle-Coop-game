@@ -100,7 +100,7 @@ MonoBehaviour:
     id: SFX_GEN_MouseHover
     clip: {fileID: 8300000, guid: e26044bff1baade43a78518a533be3d9, type: 3}
     isBGM: 0
-    volume: 1
+    volume: 0.02
     dynamicVolumeFactor: 1
     pitch: 1
     loop: 0
@@ -166,6 +166,16 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: Map Envelope Sound
+    id: SFX_MAP_Envelope
+    clip: {fileID: 8300000, guid: a5b30660dba3239428b4a6f1439dd37e, type: 3}
+    isBGM: 0
+    volume: 1
+    dynamicVolumeFactor: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   - name: Map Paper Sound
     id: SFX_MAP_Paper
     clip: {fileID: 8300000, guid: ab273013a7669fb49b62ec021b5418f7, type: 3}
@@ -176,9 +186,19 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
-  - name: MapS Key Tone
+  - name: Map Key Tone
     id: SFX_MAP_KeyTone
     clip: {fileID: 8300000, guid: 5367b0816c431884da23091c90d1f52c, type: 3}
+    isBGM: 0
+    volume: 1
+    dynamicVolumeFactor: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: Map Breaker Button Click
+    id: SFX_MAP_BreakerButtonClick
+    clip: {fileID: 8300000, guid: 9effcbb67248ebe41a7b8ec9b8fb2363, type: 3}
     isBGM: 0
     volume: 1
     dynamicVolumeFactor: 1
