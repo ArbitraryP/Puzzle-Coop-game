@@ -17,14 +17,18 @@ public static class SaveSystem
 
         try
         {
-            FileStream stream = new FileStream(path, FileMode.Create);
-            PlayerData data = new PlayerData(player);
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                PlayerData data = new PlayerData(player);
 
-            // Might add Finaly if stream close not working properly
-        
-            formatter.Serialize(stream, data);
-            stream.Close();
-            Debug.Log("Save Completed");
+                // Might add Finaly if stream close not working properly
+
+                formatter.Serialize(stream, data);
+                stream.Close();
+                Debug.Log("Save Completed");
+
+            }
+
         }
         catch(IOException ex)
         {
@@ -43,13 +47,14 @@ public static class SaveSystem
             if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-                FileStream stream = new FileStream(path, FileMode.Open);
+                using (FileStream stream = new FileStream(path, FileMode.Open))
+                {
+                    PlayerData data = formatter.Deserialize(stream) as PlayerData;
 
-                PlayerData data = formatter.Deserialize(stream) as PlayerData;
-
-                stream.Close();
-                Debug.Log("Load Completed");
-                return data;
+                    stream.Close();
+                    Debug.Log("Load Completed");
+                    return data;
+                }
             }
             else
             {

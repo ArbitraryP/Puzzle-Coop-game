@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
-  playerSteamId: 1
+  playerSteamId: 0
   completedMaps: 
   unlockedMaps: 
   unlockedAchievements: 
