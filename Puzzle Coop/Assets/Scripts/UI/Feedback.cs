@@ -106,7 +106,7 @@ public class Feedback : MonoBehaviour
 
         PlayerProgress playerProgress = FindObjectOfType<PlayerProgress>();
         if (playerProgress)
-            isFinished = playerProgress.IsAllMapsCompleted ? "Yes" : "No";
+            isFinished = playerProgress.IsGameFinished ? "Yes" : "No";
 
         // Setup Rating Response. dont send rate if hasRated already.
         string rate = "";
@@ -116,15 +116,7 @@ public class Feedback : MonoBehaviour
         // Setup Feedback Text Response
         string feedback = inputFieldFeedback.text.Trim();
 
-        // Post Data to Google Forms
-        coroutine = StartCoroutine(Post(
-            buildVersion,
-            isFinished,
-            rate,
-            feedback
-            ));
-
-
+        
         // Show Sending Message
         textTitle.gameObject.SetActive(false);
         inputFieldFeedback.gameObject.SetActive(false);
@@ -133,6 +125,15 @@ public class Feedback : MonoBehaviour
         buttonFeedbackClose.gameObject.SetActive(false);
         textStatus.gameObject.SetActive(true);
         textStatus.text = "Sending feedback...";
+
+
+        // Post Data to Google Forms
+        coroutine = StartCoroutine(Post(
+            buildVersion,
+            isFinished,
+            rate,
+            feedback
+            ));
 
     }
 

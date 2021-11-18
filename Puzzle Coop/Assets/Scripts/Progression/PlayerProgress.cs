@@ -11,6 +11,8 @@ public class PlayerProgress : MonoBehaviour
     public string playerName;
     public ulong playerSteamId; // adjust this based on steamID datatype
 
+    [SerializeField] private Achievement completedGameAchievement;
+
     [SerializeField] private List<int> completedMaps;
     [SerializeField] private List<int> unlockedMaps;
     [SerializeField] private List<int> unlockedAchievements;
@@ -20,8 +22,6 @@ public class PlayerProgress : MonoBehaviour
     public List<int> UnlockedAchievements => unlockedAchievements;
 
     public int gameRating = 0;
-
-    public static event Action<int> OnAchievementUnlocked;
 
     private static PlayerProgress instance;
 
@@ -78,7 +78,7 @@ public class PlayerProgress : MonoBehaviour
     
     }
 
-    public bool IsAllMapsCompleted => completedMaps.Count >= 10;
+    public bool IsGameFinished => unlockedAchievements.Contains(completedGameAchievement.Index);
 
     public void UnlockAchievement(Achievement achievement) => UnlockAchievement(achievement.Index);
 
@@ -88,7 +88,9 @@ public class PlayerProgress : MonoBehaviour
         CleanDuplicates();
 
         SavePlayerProgress();
-        OnAchievementUnlocked?.Invoke(index);
+
+        // Refreshes displayed achievements if Main Menu is found.
+        FindObjectOfType<TangentNodes.Network.MainMenu>()?.RefreshAchievements();
     }
 
     
