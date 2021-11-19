@@ -15,4 +15,4 @@ MonoBehaviour:
   index: 0
   title: Initialized
   description: Completed the Initialization map.
-  thumbnail: {fileID: 21300000, guid: 987b589e3e7c9934c8c15b4976f7491f, type: 3}
+  thumbnail: {fileID: 21300000, guid: 219f1d40cf0dd2747acddaf966b25e5e, type: 3}
