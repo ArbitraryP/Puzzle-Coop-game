@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 40
-    m_Right: 40
+    m_Left: 90
+    m_Right: 90
     m_Top: 30
     m_Bottom: 30
   m_ChildAlignment: 3
@@ -840,6 +840,7 @@ MonoBehaviour:
   panelAchievementPrefab: {fileID: 3937321194249690715, guid: 9b5ba95e8ce58984b848c17307fefc00, type: 3}
   panelAchievementParent: {fileID: 4469146059309897691}
   achievements: []
+  panelAchievements: []
   feedbackPrefab: {fileID: 6768822134756025797, guid: bab0c9a423405004883bbd719b08beb4, type: 3}
 --- !u!1 &3284264887185304010
 GameObject:
