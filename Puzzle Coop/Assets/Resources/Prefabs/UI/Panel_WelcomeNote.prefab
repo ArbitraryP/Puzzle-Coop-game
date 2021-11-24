@@ -76,8 +76,8 @@ MonoBehaviour:
     always be the right thing, but sometimes it\u2019s not and it\u2019s fine we
     just have to keep on learning."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a7afb97427e4ae34db70014e1473ac2d, type: 2}
+  m_sharedMaterial: {fileID: 4932764076983314021, guid: a7afb97427e4ae34db70014e1473ac2d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ee16969dddb1373499c28b1af854220e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b971f3c10bf16eb4697a32d66acf7068, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -236,7 +236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5647536549556079081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -288,6 +288,7 @@ MonoBehaviour:
   panelTarget: {fileID: 5647536549556079082}
   cameraControl: {fileID: 0}
   isCloseButton: 1
+  soundToPlay: SFX_MAP_Paper
 --- !u!1 &5647536549836186774
 GameObject:
   m_ObjectHideFlags: 0
