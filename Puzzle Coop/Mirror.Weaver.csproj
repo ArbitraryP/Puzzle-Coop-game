@@ -86,8 +86,22 @@
     <Compile Include="Assets\Mirror\Editor\Weaver\Processors\MonoBehaviourProcessor.cs" />
     <Compile Include="Assets\Mirror\Editor\Weaver\Resolvers.cs" />
     <Compile Include="Assets\Mirror\Editor\Weaver\Log.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\Processors\SyncVarAttributeAccessReplacer.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPointILPostProcessor\ILPostProcessorFromFile.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPoint\CompilationFinishedLogger.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPointILPostProcessor\CompiledAssemblyFromFile.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPointILPostProcessor\ILPostProcessorAssemblyResolver.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\Processors\SyncVarAttributeProcessor.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPointILPostProcessor\ILPostProcessorHook.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\SyncVarAccessLists.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPointILPostProcessor\ILPostProcessorLogger.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\Logger.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPoint\EnterPlayModeHook.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPointILPostProcessor\ILPostProcessorReflectionImporterProvider.cs" />
+    <Compile Include="Assets\Mirror\Editor\Weaver\EntryPointILPostProcessor\ILPostProcessorReflectionImporter.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\Mirror\Editor\Weaver\Unity.Mirror.CodeGen.asmdef" />
      <None Include="Assets\Mirror\Editor\Weaver\Mirror.Weaver.asmdef" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

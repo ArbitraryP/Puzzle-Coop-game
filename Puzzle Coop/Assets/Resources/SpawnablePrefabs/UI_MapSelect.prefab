@@ -857,7 +857,6 @@ GameObject:
   - component: {fileID: 4554997604150941495}
   - component: {fileID: 4554997604150941492}
   - component: {fileID: 2654043301594436703}
-  - component: {fileID: 3215063576044505387}
   m_Layer: 5
   m_Name: Button_F
   m_TagString: Untagged
@@ -1007,23 +1006,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 23e06287dde376b4ab69452a51b4f253, type: 2}
   lightGlow: {fileID: 1211283551682183045}
   imageButton: {fileID: 4554997604150941495}
---- !u!114 &3215063576044505387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997604150941490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997604204875005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,7 +1600,6 @@ GameObject:
   - component: {fileID: 4554997604438509100}
   - component: {fileID: 4554997604438509101}
   - component: {fileID: 7159584968244075573}
-  - component: {fileID: 4892062473998770458}
   m_Layer: 5
   m_Name: Button_4
   m_TagString: Untagged
@@ -1768,23 +1749,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: f0bfa0ee277134140b03489e910120d7, type: 2}
   lightGlow: {fileID: 3527772168965109248}
   imageButton: {fileID: 4554997604438509100}
---- !u!114 &4892062473998770458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997604438509099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997604445476402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,7 +2121,6 @@ GameObject:
   - component: {fileID: 4554997604557702130}
   - component: {fileID: 4554997604557702131}
   - component: {fileID: 905731241509532675}
-  - component: {fileID: 6050291281734057199}
   m_Layer: 5
   m_Name: Button_5
   m_TagString: Untagged
@@ -2307,23 +2270,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 1452d590238bc9647ba2a8a9c811332f, type: 2}
   lightGlow: {fileID: 5529770726845766074}
   imageButton: {fileID: 4554997604557702130}
---- !u!114 &6050291281734057199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997604557702129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997604665955267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2670,6 @@ GameObject:
   - component: {fileID: 4554997605112225012}
   - component: {fileID: 4554997605112225013}
   - component: {fileID: 5541083045119772598}
-  - component: {fileID: 587361642044323234}
   m_Layer: 5
   m_Name: Button_6
   m_TagString: Untagged
@@ -2874,23 +2819,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 76fedb94ad1748a4cbca72664d5dade1, type: 2}
   lightGlow: {fileID: 6456177324998813199}
   imageButton: {fileID: 4554997605112225012}
---- !u!114 &587361642044323234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997605112225011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997605150287609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,7 +3141,7 @@ MonoBehaviour:
   sceneId: 0
   serverOnly: 0
   visible: 0
-  m_AssetId: 
+  m_AssetId: 9a6ce91b38b8a0b41961f52caaec1e32
   hasSpawned: 0
 --- !u!114 &4554997605169069631
 MonoBehaviour:
@@ -3621,7 +3549,6 @@ GameObject:
   - component: {fileID: 4554997605275624184}
   - component: {fileID: 4554997605275624185}
   - component: {fileID: 5584148506363153811}
-  - component: {fileID: 7288550970373200956}
   m_Layer: 5
   m_Name: Button_2
   m_TagString: Untagged
@@ -3771,23 +3698,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 7cc44a0a19a238841a119894faa5c2e8, type: 2}
   lightGlow: {fileID: 2669740268677690520}
   imageButton: {fileID: 4554997605275624184}
---- !u!114 &7288550970373200956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997605275624183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997605332814383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3876,7 +3786,6 @@ GameObject:
   - component: {fileID: 4554997605397682965}
   - component: {fileID: 4554997605397682962}
   - component: {fileID: 5727474115431701874}
-  - component: {fileID: 3109713124730866623}
   m_Layer: 5
   m_Name: Button_8
   m_TagString: Untagged
@@ -4026,23 +3935,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 1ae01cc1e97c64f499b8665933ad328f, type: 2}
   lightGlow: {fileID: 2036216496098585681}
   imageButton: {fileID: 4554997605397682965}
---- !u!114 &3109713124730866623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997605397682960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997605400835598
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,7 +4064,6 @@ GameObject:
   - component: {fileID: 4554997605412813457}
   - component: {fileID: 4554997605412813454}
   - component: {fileID: 29965849167193925}
-  - component: {fileID: 508933860680930106}
   m_Layer: 5
   m_Name: Button_1
   m_TagString: Untagged
@@ -4322,23 +4213,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 6b38d26dfa510d442bd73939afc5a60a, type: 2}
   lightGlow: {fileID: 1563581002952212038}
   imageButton: {fileID: 4554997605412813457}
---- !u!114 &508933860680930106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997605412813452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997605429642412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4352,7 +4226,6 @@ GameObject:
   - component: {fileID: 4554997605429642417}
   - component: {fileID: 4554997605429642414}
   - component: {fileID: 1856855820749978979}
-  - component: {fileID: 5408334887832502532}
   m_Layer: 5
   m_Name: Button_S
   m_TagString: Untagged
@@ -4502,23 +4375,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 4bfb3f11f6dee0f41a9e71d9aaf02435, type: 2}
   lightGlow: {fileID: 9041270357225910665}
   imageButton: {fileID: 4554997605429642417}
---- !u!114 &5408334887832502532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997605429642412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997605474871715
 GameObject:
   m_ObjectHideFlags: 0
@@ -4889,7 +4745,6 @@ GameObject:
   - component: {fileID: 4554997605586303585}
   - component: {fileID: 4554997605586303582}
   - component: {fileID: 7868052748233037760}
-  - component: {fileID: 5202084126822162398}
   m_Layer: 5
   m_Name: Button_7
   m_TagString: Untagged
@@ -5039,23 +4894,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: b4e33b228a101c3498668c4c5ffbb073, type: 2}
   lightGlow: {fileID: 3542517499128920199}
   imageButton: {fileID: 4554997605586303585}
---- !u!114 &5202084126822162398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997605586303580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997605779981647
 GameObject:
   m_ObjectHideFlags: 0
@@ -5990,7 +5828,6 @@ GameObject:
   - component: {fileID: 4554997606104303559}
   - component: {fileID: 4554997606104303556}
   - component: {fileID: 3268025361305484257}
-  - component: {fileID: 4269049878887654817}
   m_Layer: 5
   m_Name: Button_3
   m_TagString: Untagged
@@ -6140,23 +5977,6 @@ MonoBehaviour:
   map: {fileID: 11400000, guid: 0bcd9d19ba23a694a86536837699b032, type: 2}
   lightGlow: {fileID: 6986519973746313343}
   imageButton: {fileID: 4554997606104303559}
---- !u!114 &4269049878887654817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4554997606104303554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneId: 0
-  serverOnly: 0
-  visible: 0
-  m_AssetId: 
-  hasSpawned: 0
 --- !u!1 &4554997606139378653
 GameObject:
   m_ObjectHideFlags: 0

@@ -460,7 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: 
-  playerSteamId: 0
+  playerSteamId: 1
   completedGameAchievement: {fileID: 11400000, guid: d253bc1f0905d9542925afcb715c41a7, type: 2}
   completedMaps: 
   unlockedMaps: 
@@ -537,19 +537,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontDestroyOnLoad: 1
+  PersistNetworkManagerToOfflineScene: 0
   runInBackground: 1
   autoStartServerBuild: 1
-  showDebugMessages: 0
   serverTickRate: 30
-  serverBatching: 0
-  serverBatchInterval: 0
   offlineScene: 
   onlineScene: Assets/Scenes/Scene_Lobby.unity
   transport: {fileID: 1495594494}
   networkAddress: localhost
   maxConnections: 4
-  disconnectInactiveConnections: 0
-  disconnectInactiveTimeout: 60
   authenticator: {fileID: 0}
   playerPrefab: {fileID: 4162408580991982019, guid: 8458c4aae0503e84a906ab1dbadf8c27, type: 3}
   autoCreatePlayer: 1

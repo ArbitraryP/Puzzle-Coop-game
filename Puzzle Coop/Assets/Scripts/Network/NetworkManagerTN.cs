@@ -69,7 +69,7 @@ namespace TangentNodes.Network
 
             foreach (var prefab in spawnablePrefabs)
             {
-                ClientScene.RegisterPrefab(prefab);
+                NetworkClient.RegisterPrefab(prefab);
             }
         }
 

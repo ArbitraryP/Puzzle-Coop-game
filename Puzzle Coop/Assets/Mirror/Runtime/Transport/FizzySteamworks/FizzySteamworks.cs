@@ -1,3 +1,4 @@
+#if !DISABLESTEAMWORKS
 using Steamworks;
 using System;
 using System.IO;
@@ -10,8 +11,8 @@ namespace Mirror.FizzySteam
   {
     private const string STEAM_SCHEME = "steam";
 
-    private static Client client;
-    private static Server server;
+    private static IClient client;
+    private static IServer server;
 
     [SerializeField]
     public EP2PSend[] Channels = new EP2PSend[2] { EP2PSend.k_EP2PSendReliable, EP2PSend.k_EP2PSendUnreliableNoDelay };
@@ -22,6 +23,9 @@ namespace Mirror.FizzySteam
     public string SteamAppID = "480";
     [Tooltip("Allow or disallow P2P connections to fall back to being relayed through the Steam servers if a direct connection or NAT-traversal cannot be established.")]
     public bool AllowSteamRelay = true;
+
+    [Tooltip("Use SteamSockets instead of the (deprecated) SteamNetworking. This will always use Relay.")]
+    public bool UseNextGenSteamNetworking = true;
 
     [Header("Info")]
     [Tooltip("This will display your Steam User ID when you start or connect to a server.")]
@@ -44,9 +48,11 @@ namespace Mirror.FizzySteam
         File.WriteAllText(fileName, SteamAppID.ToString());
         Debug.Log($"New {fileName} written with SteamAppID {SteamAppID}");
       }
+    }
 
+    private void OnEnable()
+    {
       Debug.Assert(Channels != null && Channels.Length > 0, "No channel configured for FizzySteamworks.");
-
       Invoke(nameof(FetchSteamID), 1f);
     }
 
@@ -63,6 +69,22 @@ namespace Mirror.FizzySteam
       if(enabled)
       {
         server?.ReceiveData();
+      }
+    }
+
+    public override void ClientLateUpdate()
+    {
+      if (enabled)
+      {
+        client?.FlushData();
+      }
+    }
+
+    public override void ServerLateUpdate()
+    {
+      if (enabled)
+      {
+        server?.FlushData();
       }
     }
 
@@ -86,10 +108,17 @@ namespace Mirror.FizzySteam
 
       if (!ClientActive() || client.Error)
       {
-        Debug.Log($"Starting client, target address {address}.");
-
-        SteamNetworking.AllowP2PPacketRelay(AllowSteamRelay);
-        client = Client.CreateClient(this, address);
+        if (UseNextGenSteamNetworking)
+        {
+          Debug.Log($"Starting client [SteamSockets], target address {address}.");
+          client = NextClient.CreateClient(this, address);
+        }
+        else
+        {
+          Debug.Log($"Starting client [DEPRECATED SteamNetworking], target address {address}. Relay enabled: {AllowSteamRelay}");
+          SteamNetworking.AllowP2PPacketRelay(AllowSteamRelay);
+          client = LegacyClient.CreateClient(this, address);
+        }
       }
       else
       {
@@ -105,7 +134,7 @@ namespace Mirror.FizzySteam
       ClientConnect(uri.Host);
     }
 
-    public override void ClientSend(int channelId, ArraySegment<byte> segment)
+    public override void ClientSend(ArraySegment<byte> segment, int channelId)
     {
       byte[] data = new byte[segment.Count];
       Array.Copy(segment.Array, segment.Offset, data, 0, segment.Count);
@@ -141,9 +170,17 @@ namespace Mirror.FizzySteam
 
       if (!ServerActive())
       {
-        Debug.Log("Starting server.");
-        SteamNetworking.AllowP2PPacketRelay(AllowSteamRelay);
-        server = Server.CreateServer(this, NetworkManager.singleton.maxConnections);
+        if (UseNextGenSteamNetworking)
+        {
+          Debug.Log($"Starting server [SteamSockets].");
+          server = NextServer.CreateServer(this, NetworkManager.singleton.maxConnections);
+        }
+        else
+        {
+          Debug.Log($"Starting server [DEPRECATED SteamNetworking]. Relay enabled: {AllowSteamRelay}");
+          SteamNetworking.AllowP2PPacketRelay(AllowSteamRelay);
+          server = LegacyServer.CreateServer(this, NetworkManager.singleton.maxConnections);
+        }
       }
       else
       {
@@ -162,16 +199,22 @@ namespace Mirror.FizzySteam
       return steamBuilder.Uri;
     }
 
-    public override void ServerSend(int connectionId, int channelId, ArraySegment<byte> segment)
+    public override void ServerSend(int connectionId, ArraySegment<byte> segment, int channelId)
     {
       if (ServerActive())
       {
         byte[] data = new byte[segment.Count];
         Array.Copy(segment.Array, segment.Offset, data, 0, segment.Count);
-        server.SendAll(connectionId, data, channelId);
+        server.Send(connectionId, data, channelId);
       }
     }
-    public override bool ServerDisconnect(int connectionId) => ServerActive() && server.Disconnect(connectionId);
+    public override void ServerDisconnect(int connectionId)
+    {
+      if (ServerActive())
+      {
+        server.Disconnect(connectionId);
+      }
+    }
     public override string ServerGetClientAddress(int connectionId) => ServerActive() ? server.ServerGetClientAddress(connectionId) : string.Empty;
     public override void ServerStop()
     {
@@ -200,22 +243,29 @@ namespace Mirror.FizzySteam
 
     public override int GetMaxPacketSize(int channelId)
     {
-      if (channelId >= Channels.Length)
+      if (UseNextGenSteamNetworking)
       {
-        Debug.LogError("Channel Id exceeded configured channels! Please configure more channels.");
-        return 1200;
+        return Constants.k_cbMaxSteamNetworkingSocketsMessageSizeSend;
       }
-
-      switch (Channels[channelId])
+      else
       {
-        case EP2PSend.k_EP2PSendUnreliable:
-        case EP2PSend.k_EP2PSendUnreliableNoDelay:
+        if (channelId >= Channels.Length)
+        {
+          Debug.LogError("Channel Id exceeded configured channels! Please configure more channels.");
           return 1200;
-        case EP2PSend.k_EP2PSendReliable:
-        case EP2PSend.k_EP2PSendReliableWithBuffering:
-          return 1048576;
-        default:
-          throw new NotSupportedException();
+        }
+
+        switch (Channels[channelId])
+        {
+          case EP2PSend.k_EP2PSendUnreliable:
+          case EP2PSend.k_EP2PSendUnreliableNoDelay:
+            return 1200;
+          case EP2PSend.k_EP2PSendReliable:
+          case EP2PSend.k_EP2PSendReliableWithBuffering:
+            return 1048576;
+          default:
+            throw new NotSupportedException();
+        }
       }
     }
 
@@ -235,6 +285,11 @@ namespace Mirror.FizzySteam
     {
       if (SteamManager.Initialized)
       {
+        if (UseNextGenSteamNetworking)
+        {
+          SteamNetworkingUtils.InitRelayNetworkAccess();
+        }
+
         SteamUserID = SteamUser.GetSteamID().m_SteamID;
       }
     }
@@ -245,3 +300,4 @@ namespace Mirror.FizzySteam
     }
   }
 }
+#endif // !DISABLESTEAMWORKS
