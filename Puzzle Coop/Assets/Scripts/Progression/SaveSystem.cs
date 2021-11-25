@@ -17,6 +17,7 @@ public static class SaveSystem
 
         try
         {
+            SetupSaveLocation();
             using (FileStream stream = new FileStream(path, FileMode.Create))
             {
                 PlayerData data = new PlayerData(player);
@@ -44,6 +45,7 @@ public static class SaveSystem
 
         try
         {
+            SetupSaveLocation();
             if (File.Exists(path))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
@@ -69,6 +71,11 @@ public static class SaveSystem
             return null;
         }
 
+    }
+
+    private static void SetupSaveLocation()
+    {
+        Directory.CreateDirectory(saveLocation);
     }
 
 }

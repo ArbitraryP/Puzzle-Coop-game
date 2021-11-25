@@ -62,7 +62,9 @@
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkLerpRigidbody.cs" />
     <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscovery.cs" />
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransform.cs" />
+    <Compile Include="Assets\Mirror\Components\InterestManagement\Scene\SceneInterestManagement.cs" />
     <Compile Include="Assets\Mirror\Components\Discovery\ServerResponse.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkTransform2k\NetworkTransformSnapshot.cs" />
     <Compile Include="Assets\Mirror\Components\GUIConsole.cs" />
     <Compile Include="Assets\Mirror\Components\AssemblyInfo.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkPingDisplay.cs" />
@@ -76,8 +78,11 @@
     <Compile Include="Assets\Mirror\Components\Experimental\NetworkTransformChild.cs" />
     <Compile Include="Assets\Mirror\Components\Discovery\NetworkDiscoveryBase.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkOwnerChecker.cs" />
+    <Compile Include="Assets\Mirror\Components\NetworkMatch.cs" />
     <Compile Include="Assets\Mirror\Components\Discovery\ServerRequest.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkLobbyManager.cs" />
+    <Compile Include="Assets\Mirror\Components\InterestManagement\Match\MatchInterestManagement.cs" />
+    <Compile Include="Assets\Mirror\Components\InterestManagement\Distance\DistanceInterestManagementCustomRange.cs" />
     <Compile Include="Assets\Mirror\Components\InterestManagement\Distance\DistanceInterestManagement.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkProximityChecker.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkSceneChecker.cs" />
@@ -85,11 +90,6 @@
     <Compile Include="Assets\Mirror\Components\NetworkRoomPlayer.cs" />
     <Compile Include="Assets\Mirror\Components\NetworkMatchChecker.cs" />
     <Compile Include="Assets\Mirror\Components\InterestManagement\SpatialHashing\SpatialHashingInterestManagement.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Scene\SceneInterestManagement.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkMatch.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Match\MatchInterestManagement.cs" />
-    <Compile Include="Assets\Mirror\Components\NetworkTransform2k\NetworkTransformSnapshot.cs" />
-    <Compile Include="Assets\Mirror\Components\InterestManagement\Distance\DistanceInterestManagementCustomRange.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Components\Mirror.Components.asmdef" />

@@ -30,10 +30,28 @@ namespace TangentNodes.Network
 
         public void HostLobby()
         {
+            // Add Code that determines if it is LAN mode or Steam Mode
+
+            // Code for FizzySteamworks Transport
+            
+            SteamLobby steamLobby = FindObjectOfType<SteamLobby>();
+            if (!steamLobby)
+            {
+                Debug.Log("SteamLobby not found");
+            }
+            else
+            {
+                steamLobby.HostLobby();
+            }
+            /*
+            */
+
+            // Code for Telepathy Transport (LAN)
+            /*
             networkManager = FindObjectOfType<NetworkManagerTN>();
-
             networkManager.StartHost();
-
+            
+            */
             landingPagePanel.SetActive(false);
         }
 

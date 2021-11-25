@@ -28,6 +28,9 @@ namespace TangentNodes.Network
 
         public void JoinLobby()
         {
+            // Add Code that determines if it is LAN mode or Steam Mode
+
+            // Code for LAN 
             string ipAddress = ipAddressInputField.text;
 
 

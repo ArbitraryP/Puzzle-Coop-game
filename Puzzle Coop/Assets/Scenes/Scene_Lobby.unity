@@ -459,8 +459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8894a8ac5c42b4eb2cdf152f772f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: 
-  playerSteamId: 1
+  playerName: Player
+  playerSteamId: 0
   completedGameAchievement: {fileID: 11400000, guid: d253bc1f0905d9542925afcb715c41a7, type: 2}
   completedMaps: 
   unlockedMaps: 
@@ -468,6 +468,7 @@ MonoBehaviour:
   gameRating: 0
   volumeSFXdata: 0
   volumeBGMdata: 0
+  notRunningMessagePrefab: {fileID: 6560888479412316762, guid: 6834f92d8c7f0024d8bd6c0356b004ff, type: 3}
 --- !u!4 &1092412258
 Transform:
   m_ObjectHideFlags: 0
@@ -492,7 +493,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1495594496}
   - component: {fileID: 1495594495}
-  - component: {fileID: 1495594494}
+  - component: {fileID: 1495594497}
+  - component: {fileID: 1495594498}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -500,30 +502,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
---- !u!114 &1495594494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495594493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7424c1070fad4ba2a7a96b02fbeb4bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 7777
-  NoDelay: 1
-  SendTimeout: 5000
-  ReceiveTimeout: 30000
-  serverMaxMessageSize: 16384
-  serverMaxReceivesPerTick: 10000
-  serverSendQueueLimitPerConnection: 10000
-  serverReceiveQueueLimitPerConnection: 10000
-  clientMaxMessageSize: 16384
-  clientMaxReceivesPerTick: 1000
-  clientSendQueueLimit: 10000
-  clientReceiveQueueLimit: 10000
 --- !u!114 &1495594495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +521,7 @@ MonoBehaviour:
   serverTickRate: 30
   offlineScene: 
   onlineScene: Assets/Scenes/Scene_Lobby.unity
-  transport: {fileID: 1495594494}
+  transport: {fileID: 1495594498}
   networkAddress: localhost
   maxConnections: 4
   authenticator: {fileID: 0}
@@ -577,6 +555,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1495594497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495594493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebfc06e4e422bad47b1c14f25007c0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkManager: {fileID: 1495594495}
+--- !u!114 &1495594498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495594493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea368fb6f27ec2f40a40e20977992b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Channels: 0200000001000000
+  Timeout: 25
+  SteamAppID: 480
+  AllowSteamRelay: 1
+  UseNextGenSteamNetworking: 1
+  SteamUserID: 0
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0

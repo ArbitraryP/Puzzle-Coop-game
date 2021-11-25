@@ -57,22 +57,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\KcpServerConnection.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpClientConnectionNonAlloc.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\kcp\AssemblyInfo.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\kcp\Kcp.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\KcpServer.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\KcpConnection.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\KcpClient.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpServerNonAlloc.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\kcp\Pool.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpServerConnectionNonAlloc.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\KcpHeader.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\kcp\Segment.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\KcpClientConnection.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\KcpChannel.cs" />
+    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpClientNonAlloc.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\kcp\Utils.cs" />
     <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\Log.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpClientConnectionNonAlloc.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpClientNonAlloc.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpServerNonAlloc.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\kcp\Pool.cs" />
-    <Compile Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\highlevel\NonAlloc\KcpServerConnectionNonAlloc.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Runtime\Transport\KCP\kcp2k\kcp2k.asmdef" />

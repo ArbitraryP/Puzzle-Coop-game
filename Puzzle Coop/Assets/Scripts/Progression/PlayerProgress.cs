@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Steamworks;
 using UnityEngine;
 
 public class PlayerProgress : MonoBehaviour
 {
+    
+
     // This class is where the progress of the player will get loaded locally
 
     public string playerName;
@@ -29,7 +32,11 @@ public class PlayerProgress : MonoBehaviour
     public int volumeSFXdata;
     public int volumeBGMdata;
 
-    private void Awake()
+    // Steam not Initialized MessagePrefab
+    [Header("Steam Not Running Message")]
+    [SerializeField] private SteamNotRunningMessage notRunningMessagePrefab = null;
+
+    private void Start()
     {
         if(instance != null)
         {
@@ -40,6 +47,8 @@ public class PlayerProgress : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
+        // Change Player Steam ID based on what's logged in
+        RetrieveSteamInfo();
 
         unlockedMaps.Add(0);
         // Test Code to Generate Random Numbers
@@ -79,6 +88,22 @@ public class PlayerProgress : MonoBehaviour
     }
 
     public bool IsGameFinished => unlockedAchievements.Contains(completedGameAchievement.Index);
+
+    private void RetrieveSteamInfo()
+    {
+        if (!SteamManager.Initialized)
+        {
+            GameObject.Instantiate(notRunningMessagePrefab);
+            Debug.Log("Steam not Initialized");
+            return;
+        }
+
+        playerSteamId = SteamUser.GetSteamID().m_SteamID;
+        playerName = SteamFriends.GetPersonaName();
+
+        Debug.Log("The game is connected to Steam: " + playerName + " : " + playerSteamId);
+
+    }
 
     public void UnlockAchievement(Achievement achievement) => UnlockAchievement(achievement.Index);
 

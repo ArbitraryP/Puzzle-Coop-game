@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Mirror\Editor\SyncObjectCollectionsDrawer.cs" />
     <Compile Include="Assets\Mirror\Editor\SyncVarAttributeDrawer.cs" />
     <Compile Include="Assets\Mirror\Editor\EnterPlayModeSettingsCheck.cs" />
     <Compile Include="Assets\Mirror\Editor\Empty\Logging\LogLevelsGUI.cs" />
@@ -71,7 +72,6 @@
     <Compile Include="Assets\Mirror\Editor\InspectorHelper.cs" />
     <Compile Include="Assets\Mirror\Editor\NetworkScenePostProcess.cs" />
     <Compile Include="Assets\Mirror\Editor\Empty\Logging\LogSettingsEditor.cs" />
-    <Compile Include="Assets\Mirror\Editor\SyncObjectCollectionsDrawer.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Editor\Mirror.Editor.asmdef" />
@@ -681,11 +681,11 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.TestRunner">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

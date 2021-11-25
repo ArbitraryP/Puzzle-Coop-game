@@ -61,6 +61,7 @@
     <Compile Include="Assets\Mirror\Examples\MultipleAdditiveScenes\Scripts\MultiSceneNetManager.cs" />
     <Compile Include="Assets\Mirror\Examples\Benchmark\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Mirror\Examples\AdditiveScenes\Scripts\AdditiveNetworkManager.cs" />
+    <Compile Include="Assets\Mirror\Examples\Tanks\Scripts\FaceCamera.cs" />
     <Compile Include="Assets\Mirror\Examples\MultipleMatches\Scripts\PlayerGUI.cs" />
     <Compile Include="Assets\Mirror\Examples\Room\Scripts\Spawner.cs" />
     <Compile Include="Assets\Mirror\Examples\Pong\Scripts\Player.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="Assets\Mirror\Examples\MultipleAdditiveScenes\Scripts\PhysicsSimulator.cs" />
     <Compile Include="Assets\Mirror\Examples\Room\Scripts\NetworkRoomPlayerExt.cs" />
     <Compile Include="Assets\Mirror\Examples\MultipleAdditiveScenes\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Mirror\Examples\Tanks\Scripts\FaceCamera.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Examples\Tanks\Textures\(Public Domain) Dirt Hand Painted Texture\Dirt Hand Painted Texture - License.txt" />

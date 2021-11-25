@@ -15,6 +15,11 @@ namespace TangentNodes.Network
 
         [SyncVar(hook = nameof(HandleDisplayNameChanged))]
         public string displayName = "Loading...";
+
+        // Add hook if game will import player profile picture
+        [SyncVar]
+        public ulong steamId;
+
         [SyncVar(hook = nameof(HandleReadyStatusChanged))]
         public bool IsReady = false;
 
@@ -39,7 +44,7 @@ namespace TangentNodes.Network
 
         public override void OnStartAuthority()
         {
-            CmdSetDisplayName("SteamPlayer");
+            
 
             lobbyUI.SetActive(true);
 
@@ -58,6 +63,9 @@ namespace TangentNodes.Network
             PlayerProgress playerProgress = FindObjectOfType<PlayerProgress>();
             if (playerProgress != null)
             {
+                // Set Steam Player data 
+                CmdSetSteamPlayerInfo(playerProgress.playerName, playerProgress.playerSteamId);
+
                 // Add code to save first if not empty or has newer data
 
                 CmdClearPlayerProgress();
@@ -138,9 +146,10 @@ namespace TangentNodes.Network
         }
 
         [Command]
-        private void CmdSetDisplayName(string displayName)
+        private void CmdSetSteamPlayerInfo(string displayName, ulong steamId)
         {
             this.displayName = displayName;
+            this.steamId = steamId;
         }
 
         [Command]

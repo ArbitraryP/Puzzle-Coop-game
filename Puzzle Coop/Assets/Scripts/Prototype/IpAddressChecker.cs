@@ -4,13 +4,22 @@ using UnityEngine;
 using TMPro;
 using System.Net;
 using System.Net.Sockets;
+using Steamworks;
 
 public class IpAddressChecker : MonoBehaviour
 {
     
     void Start()
     {
+        // Shows LAN IP Address if there's no Steam
         GetComponent<TMP_Text>().text = "My IP Address: "+ GetLocalIPAddress();
+
+
+        // Shows Player's name if Steam is initialized
+        if (!SteamManager.Initialized) { return; }
+
+        string name = SteamFriends.GetPersonaName();
+        GetComponent<TMP_Text>().text = "Welcome: " + name;
     }
 
 
