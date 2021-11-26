@@ -656,10 +656,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5816260655377491428}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 3284264887100408702}
+        m_TargetAssemblyTypeName: TangentNodes.Network.MainMenu, Assembly-CSharp
+        m_MethodName: PlayUIButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -668,21 +668,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3284264888269736768}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 3284264887100408702}
         m_TargetAssemblyTypeName: TangentNodes.Network.MainMenu, Assembly-CSharp
-        m_MethodName: PlayUIButtonClick
+        m_MethodName: OnClickJoinWaitReturn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1132,11 +1120,14 @@ MonoBehaviour:
   achievementsPanel: {fileID: 3284264887774789803}
   creditsPanel: {fileID: 3284264887639733711}
   hostjoinPanel: {fileID: 3284264888269736768}
+  joinWaitPanel: {fileID: 5816260655377491428}
   panelAchievementPrefab: {fileID: 3937321194249690715, guid: 9b5ba95e8ce58984b848c17307fefc00, type: 3}
   panelAchievementParent: {fileID: 4469146059309897691}
   achievements: []
   panelAchievements: []
   feedbackPrefab: {fileID: 6768822134756025797, guid: bab0c9a423405004883bbd719b08beb4, type: 3}
+  textWaitingArea: {fileID: 9172864260919975788}
+  buttonReturn: {fileID: 6130394606447625291}
 --- !u!1 &3284264887185304010
 GameObject:
   m_ObjectHideFlags: 0

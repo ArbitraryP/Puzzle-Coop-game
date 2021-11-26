@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 namespace TangentNodes.Network
 {
@@ -12,6 +14,7 @@ namespace TangentNodes.Network
         [SerializeField] private GameObject achievementsPanel = null;
         [SerializeField] private GameObject creditsPanel = null;
         [SerializeField] private GameObject hostjoinPanel = null;
+        [SerializeField] private GameObject joinWaitPanel = null;
 
         [Header("Achievements")]
         [SerializeField] private Panel_Achievement panelAchievementPrefab = null;
@@ -22,9 +25,21 @@ namespace TangentNodes.Network
         [Header("Feedback")]
         [SerializeField] private Feedback feedbackPrefab = null;
 
+        [Header("Join Wait UI")]
+        [SerializeField] private TMP_Text textWaitingArea = null;
+        [SerializeField] private Button buttonReturn = null;
+        private string waitingAreaDefaultText = null;
+
+
         private void Awake()
         {
             achievements = new List<Achievement>(Resources.LoadAll<Achievement>("ScriptableObjects/Achievements"));
+            waitingAreaDefaultText = textWaitingArea.text;
+        }
+
+
+        private void Start()
+        {
             DisplayAchievements();
         }
 
@@ -84,10 +99,31 @@ namespace TangentNodes.Network
             PlayUIButtonClick();
         }
 
+        public void JumpToJoinWait(string message, bool showButton = false)
+        {
+            landingPagePanel.SetActive(false);
+            achievementsPanel.SetActive(false);
+            creditsPanel.SetActive(false);
+            hostjoinPanel.SetActive(false);
+            joinWaitPanel.SetActive(true);
+
+            textWaitingArea.text = message;
+            buttonReturn.gameObject.SetActive(showButton);
+        }
+
+        public void OnClickJoinWaitReturn()
+        {
+            hostjoinPanel.SetActive(true);
+            joinWaitPanel.SetActive(false);
+            textWaitingArea.text = waitingAreaDefaultText;
+        }
+
         public void PlayUIButtonClick()
         {
             FindObjectOfType<AudioManager>()?.Play(AudioManager.SoundNames.SFX_GEN_MenuButtonClick);
         }
+
+
 
     }
 }

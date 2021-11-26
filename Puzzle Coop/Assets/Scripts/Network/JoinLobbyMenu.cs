@@ -16,14 +16,20 @@ namespace TangentNodes.Network
 
         private void OnEnable()
         {
+            // Code Used for LAN connection
+            /*
             NetworkManagerTN.OnClientConnected += HandleClientConnected;
             NetworkManagerTN.OnClientDisconnected += HandleClientDisconnected;
+            */
         }
 
         private void OnDisable()
         {
+            // Code Used for LAN connection
+            /*
             NetworkManagerTN.OnClientConnected -= HandleClientConnected;
             NetworkManagerTN.OnClientDisconnected -= HandleClientDisconnected;
+            */
         }
 
         public void JoinLobby()

@@ -184,7 +184,10 @@ public class SettingsAndExit : MonoBehaviour
             return;
         }
         
-        textDescription.text = "Are you sure you want to\nQUIT the Game?";
+        if (SceneManager.GetActiveScene().name != "Scene_Lobby")
+            textDescription.text = "Are you sure you want to\nRETURN to Main Menu?";
+        else
+            textDescription.text = "Are you sure you want to\nQUIT the Game?";
         
     }
 
@@ -195,9 +198,15 @@ public class SettingsAndExit : MonoBehaviour
         // If Identity is null means it is not InGame
         if (!myPlayerIdentity)
         {
-            Application.Quit();
+            if (SceneManager.GetActiveScene().name != "Scene_Lobby")
+                SceneManager.LoadScene("Scene_Lobby");
+               
+            else
+                Application.Quit();
+
             return;
         }
+
 
         if (!myPlayerIdentity.isServer)
         {

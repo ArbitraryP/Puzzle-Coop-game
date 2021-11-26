@@ -50,25 +50,39 @@ namespace TangentNodes.Network
 
             networkManager.StartHost();
 
-            Debug.Log("Host Started");
-
             SteamMatchmaking.SetLobbyData(
                 new CSteamID(callback.m_ulSteamIDLobby),
                 HostAddressKey,
                 SteamUser.GetSteamID().ToString());
+
+            SteamFriends.ActivateGameOverlayInviteDialog(new CSteamID(callback.m_ulSteamIDLobby));
 
         }
 
         private void OnGameLobbyJoinRequested(GameLobbyJoinRequested_t callback)
         {
             SteamMatchmaking.JoinLobby(callback.m_steamIDLobby);
+
+            // Code that jumps to Join Waiting Area
+            MainMenu mainMenu = FindObjectOfType<MainMenu>();
+            if (!mainMenu) return;
+
+            mainMenu.JumpToJoinWait("Joining Game...", false);
+
         }
 
         private void OnLobbyEntered(LobbyEnter_t callback)
         {
             if (NetworkServer.active) { return; }
 
-            Debug.Log("Client Started");
+            if (callback.m_EChatRoomEnterResponse != (uint)EChatRoomEnterResponse.k_EChatRoomEnterResponseSuccess)
+            {
+                // Code that tells if join is NOT successfull
+                MainMenu mainMenu = FindObjectOfType<MainMenu>();
+                if (mainMenu)
+                    mainMenu.JumpToJoinWait("Join Failed...", true);
+            }
+
 
             string hostAdress = SteamMatchmaking.GetLobbyData(
                 new CSteamID(callback.m_ulSteamIDLobby),
@@ -76,7 +90,7 @@ namespace TangentNodes.Network
 
             networkManager.networkAddress = hostAdress;
             networkManager.StartClient();
-
+            
         }
 
 
