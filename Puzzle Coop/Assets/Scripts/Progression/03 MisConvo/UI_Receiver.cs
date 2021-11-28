@@ -88,7 +88,7 @@ public class UI_Receiver : MonoBehaviour
                 
 
             textScreen.text = ShuffleString.Shuffle(sentence.GetText(showTextP1));
-            textScreen.color = new Color(0, 0, 0, minimumAlpha);
+            textScreen.color = new Color(255, 255, 255, minimumAlpha);
 
             
 
@@ -118,7 +118,7 @@ public class UI_Receiver : MonoBehaviour
             // mutes sound when it reached the treshold
             soundVolume = soundVolume > muteThreshold ? soundVolume : 0;
 
-            textScreen.color = new Color(0, 0, 0, clampAlpha);
+            textScreen.color = new Color(255, 255, 255, clampAlpha);
 
             //FindObjectOfType<AudioManager>()?.PlayNonRepeat(AudioManager.SoundNames.SFX_M03_RadioStatic, soundVolume);
             PlayRadioStaticSound(soundVolume);
@@ -134,6 +134,8 @@ public class UI_Receiver : MonoBehaviour
 
     private void PlayRadioStaticSound(float dynamicVolume = 1f)
     {
+        if (!audioManager) return;
+
         // Change Dynamic Volume Factor first before readjusting volume.
         audioSource.volume = baseVolume * audioManager.masterVolumeSFX * dynamicVolume;
 

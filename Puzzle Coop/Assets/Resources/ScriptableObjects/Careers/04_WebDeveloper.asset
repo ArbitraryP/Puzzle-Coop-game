@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11508dfba03e38346a0bea36d8f82116, type: 3}
   m_Name: 04_WebDeveloper
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: dff3d2ed63bb95b47a8f2ee3ceafcd28, type: 3}
+  image: {fileID: 21300000, guid: 3a6b262fd4dbee540a6001146919c83a, type: 3}
   careerName: Web Developer
   code: 00000000030000000000000009000000
