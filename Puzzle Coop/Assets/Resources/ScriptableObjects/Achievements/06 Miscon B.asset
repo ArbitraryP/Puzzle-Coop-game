@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 06 Miscon B
   m_EditorClassIdentifier: 
   index: 6
-  title: Miscon B
-  description: Completed the map of this title.
+  title: Miscons B
+  description: Completed the second Misconceptions map
   thumbnail: {fileID: 21300000, guid: e67c441e7cbc0ba4f98c084797dddff0, type: 3}
