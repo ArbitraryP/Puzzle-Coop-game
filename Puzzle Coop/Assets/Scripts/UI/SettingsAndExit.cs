@@ -152,7 +152,8 @@ public class SettingsAndExit : MonoBehaviour
         foreach (GameObject panel in panelHowToPages)
             panel.SetActive(false);
 
-        panelHowToPages[0].SetActive(true);
+        currentPage = 0;
+        panelHowToPages[currentPage].SetActive(true);
 
     }
 
