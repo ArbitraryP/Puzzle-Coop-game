@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Mirror;
 using System.IO;
 using TMPro;
+using System.Linq;
 
 namespace TangentNodes.Network
 {
@@ -125,29 +126,42 @@ namespace TangentNodes.Network
 
         private void InitializeUnlockedMaps()
         {
-            foreach (NetworkGamePlayerTN player in Room.GamePlayers)
+            List<int>[] unlockedMaps = new List<int>[2];
+            List<int>[] completedMaps = new List<int>[2];
+
+            // Gets the List of Unlocked/Completed Maps of both players
+            for (int i = 0; i < Room.GamePlayers.Count; i++)
             {
-                if (!player.isLeader) { continue; }
-                foreach (int unlockedMapIndex in player.unlockedMaps)
-                {
-                    
-                    // Will enable the maps if prerequisites of unlocked maps are met
-                    MapIdentity mapButton = mapButtons.Find(i => i.map.Index == unlockedMapIndex);
-                    List<int> listOfCompletedMaps = new List<int>(player.completedMaps);
-                    List<int> listOfUnlockedMaps = new List<int>(player.unlockedMaps);
-
-                    bool isUnlocked = mapButton.map.IsPrerequisiteMet(listOfCompletedMaps, listOfUnlockedMaps);
-                    mapButton.SetMapAsSelectable(isUnlocked);
-                    if (isUnlocked)
-                        mapButton.SetButtonImage(imageButtonUnlocked);
-                    else
-                        mapButton.SetButtonImage(imageButtonLocked);
-
-                    // Check if Unlocked Map is also Completed
-                    if (player.completedMaps.Contains(unlockedMapIndex))
-                        mapButton.SetButtonImage(imageButtonCompleted);
-                }
+                unlockedMaps[i] = new List<int>(Room.GamePlayers[i].unlockedMaps);
+                completedMaps[i] = new List<int>(Room.GamePlayers[i].completedMaps);
             }
+
+            // Gets the Intersection of Both Unlock/Completed Maps of both players into "Common" progress
+            List<int> commonUnlockedMaps = new List<int>( unlockedMaps[0].AsQueryable().Intersect(unlockedMaps[1]) );
+            List<int> commonCompletedMaps = new List<int>( completedMaps[0].AsQueryable().Intersect(completedMaps[1]) );
+
+
+            // Checks Unlock/Completed Maps based on "Common" Progress
+            foreach (int unlockedMapIndex in commonUnlockedMaps)
+            {
+
+                // Will enable the maps if prerequisites of unlocked maps are met
+                MapIdentity mapButton = mapButtons.Find(i => i.map.Index == unlockedMapIndex);
+
+                bool isUnlocked = mapButton.map.IsPrerequisiteMet(commonCompletedMaps, commonUnlockedMaps);
+                mapButton.SetMapAsSelectable(isUnlocked);
+                if (isUnlocked)
+                    mapButton.SetButtonImage(imageButtonUnlocked);
+                else
+                    mapButton.SetButtonImage(imageButtonLocked);
+
+                // Check if Unlocked Map is also Completed
+                if (commonCompletedMaps.Contains(unlockedMapIndex))
+                    mapButton.SetButtonImage(imageButtonCompleted);
+            }
+
+
+
         }
 
         [Command]
