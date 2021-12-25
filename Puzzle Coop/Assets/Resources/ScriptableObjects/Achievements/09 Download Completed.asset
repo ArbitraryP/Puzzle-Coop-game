@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 9
   title: Download Completed
-  description: Finish the game.
-  thumbnail: {fileID: 21300000, guid: 1a249271a5760d94bb9501a5274537b0, type: 3}
+  description: Finished the game.
+  thumbnail: {fileID: 21300000, guid: 3bce3d5a0aca2b540bcdb336b9178d86, type: 3}

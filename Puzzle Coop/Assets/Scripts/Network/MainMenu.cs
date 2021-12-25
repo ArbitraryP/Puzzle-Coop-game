@@ -17,6 +17,7 @@ namespace TangentNodes.Network
         [SerializeField] private Panel_Achievement panelAchievementPrefab = null;
         [SerializeField] private Transform panelAchievementParent = null;
         [SerializeField] private List<Achievement> achievements = null;
+        [SerializeField] private List<Panel_Achievement> panelAchievements = null;
 
         [Header("Feedback")]
         [SerializeField] private Feedback feedbackPrefab = null;
@@ -49,7 +50,14 @@ namespace TangentNodes.Network
             {
                 var panelAchiv = GameObject.Instantiate(panelAchievementPrefab, panelAchievementParent);
                 panelAchiv.DisplayAchievement(achievements[i]);
+                panelAchievements.Add(panelAchiv);
             }
+        }
+
+        public void RefreshAchievements()
+        {
+            foreach (Panel_Achievement panel in panelAchievements)
+                panel.RefreshShowUnlockedAchievement();
         }
 
         public void ShowFeedbackPanel()

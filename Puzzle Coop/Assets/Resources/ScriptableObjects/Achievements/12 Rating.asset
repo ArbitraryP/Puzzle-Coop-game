@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 12
   title: Rate Us!
-  description: Send a rating of your experience playing the game.
-  thumbnail: {fileID: 21300000, guid: b9733427181d817408c5b2dceb87ba09, type: 3}
+  description: Sent a rating of your experience playing the game.
+  thumbnail: {fileID: 21300000, guid: 679c89082209fb549b7c30477762e47f, type: 3}

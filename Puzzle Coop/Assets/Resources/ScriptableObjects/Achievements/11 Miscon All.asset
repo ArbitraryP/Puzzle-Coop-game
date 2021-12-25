@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 11
   title: Miscons All
-  description: Completed all Miscons Convo maps
-  thumbnail: {fileID: 21300000, guid: 0e97edd6dc4c4a549a0cbfcd22b657ef, type: 3}
+  description: Completed all Misconceptions maps
+  thumbnail: {fileID: 21300000, guid: 498282b7cbb960b4bb0c37f42b44a4a2, type: 3}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 4
   title: Career Gallery
-  description: Completed the map of this title.
-  thumbnail: {fileID: 21300000, guid: 25c79b43f4e67004b8cb89977622cf0d, type: 3}
+  description: Completed the Career Gallery map.
+  thumbnail: {fileID: 21300000, guid: a9ea1758ed1eec04b9019347a603e36c, type: 3}

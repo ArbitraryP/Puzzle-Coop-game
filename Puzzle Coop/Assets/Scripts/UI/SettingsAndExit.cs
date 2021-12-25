@@ -131,6 +131,12 @@ public class SettingsAndExit : MonoBehaviour
 
     public void EnableMenu(bool active)
     {
+        // Closes all toggles
+        toggleHowTo.isOn = false;
+        toggleSettings.isOn = false;
+        toggleQuitConfirm.isOn = false;
+
+        // Disables all toggles
         toggleHowTo.gameObject.SetActive(active);
         toggleSettings.gameObject.SetActive(active);
         toggleQuitConfirm.gameObject.SetActive(active);
@@ -146,7 +152,8 @@ public class SettingsAndExit : MonoBehaviour
         foreach (GameObject panel in panelHowToPages)
             panel.SetActive(false);
 
-        panelHowToPages[0].SetActive(true);
+        currentPage = 0;
+        panelHowToPages[currentPage].SetActive(true);
 
     }
 

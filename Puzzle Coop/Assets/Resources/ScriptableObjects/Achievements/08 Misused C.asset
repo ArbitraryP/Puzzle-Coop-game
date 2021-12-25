@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 8
   title: Misused C
-  description: Completed the map of this title.
-  thumbnail: {fileID: 21300000, guid: 9f96f3f4ff6910345b95ac3073bd7cd9, type: 3}
+  description: Completed the third Misused Terms map.
+  thumbnail: {fileID: 21300000, guid: 6227213d96cfd834db87f957b7c8aab9, type: 3}

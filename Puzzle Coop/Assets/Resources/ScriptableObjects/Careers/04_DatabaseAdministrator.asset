@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11508dfba03e38346a0bea36d8f82116, type: 3}
   m_Name: 04_DatabaseAdministrator
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 69767438d0722e74ca63a6e53049c04d, type: 3}
+  image: {fileID: 21300000, guid: 02c7ec979f7059f43ad37be7c43e7e78, type: 3}
   careerName: Database Administrator
   code: 07000000040000000600000000000000

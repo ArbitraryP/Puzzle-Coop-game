@@ -461,6 +461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: 
   playerSteamId: 0
+  completedGameAchievement: {fileID: 11400000, guid: d253bc1f0905d9542925afcb715c41a7, type: 2}
   completedMaps: 
   unlockedMaps: 
   unlockedAchievements: 

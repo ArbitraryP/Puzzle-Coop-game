@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 5
   title: Analyze
-  description: Completed the map of this title.
-  thumbnail: {fileID: 21300000, guid: 0e97edd6dc4c4a549a0cbfcd22b657ef, type: 3}
+  description: Completed the Analyze map.
+  thumbnail: {fileID: 21300000, guid: 66afec45a09d4ab4c9b2a4464ac46a7b, type: 3}
