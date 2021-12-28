@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Progression\02 Misused\UI_QuestionScreen.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\NodesMove.cs" />
     <Compile Include="Assets\Scripts\Progression\01 IntroToIT\BookSounds.cs" />
+    <Compile Include="Assets\Scripts\UI\CreditsScroll.cs" />
     <Compile Include="Assets\Scripts\Progression\05 Analyze\CalcAnswer.cs" />
     <Compile Include="Assets\Scripts\Progression\04 CareerGallery\CareerSet.cs" />
     <Compile Include="Assets\Scripts\Controls\ClickManager.cs" />
