@@ -99,7 +99,7 @@ public class Feedback : MonoBehaviour
         // Call Google forms, send Rate and Feedback 
 
         // Setup Build Version Response
-        string buildVersion = "internal";
+        string buildVersion = Application.version;
 
         // Setup Is Game Finished Response
         string isFinished = "No";

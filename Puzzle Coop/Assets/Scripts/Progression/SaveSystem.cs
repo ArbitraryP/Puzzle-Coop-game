@@ -11,6 +11,7 @@ public static class SaveSystem
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
+        Directory.CreateDirectory(saveLocation);
         string path = saveLocation + "/player-" + player.playerSteamId + ".tns";
 
         // Add Function that will double check for saves that is not his.
@@ -40,6 +41,7 @@ public static class SaveSystem
     // Loads a save file based on playerSteamID
     public static PlayerData LoadPlayer(ulong playerSteamId)
     {
+        Directory.CreateDirectory(saveLocation);
         string path = saveLocation + "/player-" + playerSteamId + ".tns";
 
         try
